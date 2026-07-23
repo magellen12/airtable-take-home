@@ -1,0 +1,99 @@
+# Assumptions
+
+The brief invites these and says it's fine if they're off. Flagged by **how much of my argument
+falls over if the assumption is wrong** — that seems more useful than a flat list.
+
+---
+
+## Load-bearing — the priorities change if these are wrong
+
+**1 · CS influences or carries a renewal and expansion number.**
+The entire value-realization priority assumes CS is measured on commercial outcomes rather than
+satisfaction or adoption. If CS is a pure adoption function and renewals sit entirely with
+Sales, P2 drops to third and the first 90 days go to enablement and coverage instead.
+*Confidence: high — the brief says targets are "increasingly tied to demonstrable, AI-driven
+business outcomes."*
+
+**2 · A Solutions/SE or equivalent technical partner function exists and has capacity.**
+The ownership boundary — CSMs never have to be the smartest technical person in the room — is
+the load-bearing beam of the whole operating model. If there's no partner function, or it's
+oversubscribed, then the depth gap is a hiring and training problem, not a staffing one, and
+the 90 days look completely different.
+*Confidence: medium. This is the assumption I'd most want checked on day one.*
+
+**3 · There's a Trust/Security function that can produce customer-facing AI risk and controls
+artifacts.**
+P5 (Meridian) assumes I'm orchestrating an artifact rather than authoring one from nothing.
+If it doesn't exist, Meridian is a two-quarter project rather than a two-month one and I'd
+have to say so to that sponsor early.
+*Confidence: medium-low for AI-specific governance content specifically.*
+
+**4 · These six accounts are representative of the wider book of ~15 CSMs' worth of accounts.**
+I'm generalizing structural patterns from six. The brief says "your job is the book, not any
+one account," which implies they're a fair sample, but six is six. If Proof is genuinely a 1
+across the full book, P2 is right. If these six were selected as the interesting ones, the real
+book may skew toward Harbor Lane — quiet, healthy, unrealized — and the priority shifts toward
+demand creation.
+*Confidence: medium.*
+
+---
+
+## Structural — shape the design, wouldn't reverse the priorities
+
+**5 · A CSM can get a 45-minute structured working session with a customer.**
+The diagnostic is designed to be run *with* the customer, screen-shared. If these relationships
+can't support that, it degrades into a CRM field scored from a desk and loses most of its
+value. Meridian's order-taking drift suggests at least one relationship where this would be
+awkward to introduce.
+
+**6 · Renewal dates and ARR live in a CRM that can sync.**
+Static in the prototype. Called out in the build's "not built" list. If there's no clean sync,
+the base goes stale by month two and that's a real failure mode, not a nitpick.
+
+**7 · Airtable's AI fields can take long custom prompts with multiple field references and
+return structured multi-line text.**
+The three AI fields depend on this. My understanding is yes, but I'd verify prompt length
+limits and output stability before building the demo on it. **I'd want to be corrected here in
+the session if I've got it wrong** — I'd rather find out in the room than have it break live.
+
+**8 · The 15 CSMs skew relationship-led over technically deep, roughly half and half.**
+Drawn from the brief's description. If it's more like 12:3, partner capacity becomes the
+binding constraint before methodology does, and P3 moves ahead of P2.
+
+**9 · "AI transformation" here means workflow automation, AI fields and agents inside Airtable
+as the system of record — not that we're consulting on the customer's whole enterprise AI
+strategy.**
+The scope of what a CSM is credibly selling changes completely between those two readings.
+I've taken the narrower one.
+
+---
+
+## Cosmetic — mentioned for completeness
+
+**10 · Roughly one HTCSM per 4–6 high-touch accounts**, from 15 CSMs against a book of this
+shape. Only affects the CSM seed data.
+
+**11 · Support owns break/fix**, so Floor & Board's automation break isn't CSM work. If CSMs
+are the escalation path, that's real capacity I haven't accounted for.
+
+**12 · "Quarters to renewal" is knowable and reasonably accurate.** Stored as a static number
+since the snapshot gives relative timing only.
+
+**13 · Today is late July 2026.** All seed dates are relative to this.
+
+---
+
+## Invented content, stated plainly
+
+Everything factual about the six accounts comes from the snapshot. **What I made up:** all
+diagnostic scores (my judgment, reasoning in
+[`../docs/02-book-diagnosis.md`](../docs/02-book-diagnosis.md)), all stakeholder and CSM names,
+all signal records, and — most importantly — **the numbers in the Corvus value story**
+(14 min → 3 min triage, ~2,100 cases/month). The snapshot contains no metrics at all. I
+invented those so the AI value-narrative field has something to work with in a demo; the record
+is flagged as illustrative in its `Source of Truth` field and deliberately left in `Draft`
+status. See [`../airtable-build/data/README.md`](../airtable-build/data/README.md).
+
+**The thing I'd want believed:** every other value story is empty of numbers on purpose. That's
+what the book actually looks like, and it's what makes the AI field's refusal behaviour
+demonstrable on real data rather than staged.

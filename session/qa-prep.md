@@ -1,0 +1,189 @@
+# Q&A prep
+
+The assessment says they'll challenge specific assumptions in real time and that
+**coachability** is being scored. So these are positions to hold with reasons and concede
+cleanly when they're wrong — not scripts.
+
+**The general shape of a good answer:** the position, the reason, the thing that would change
+my mind. Third part matters most.
+
+---
+
+## On the diagnosis
+
+**"Isn't this just a health score with extra steps?"**
+No — and the difference is the whole design. A health score produces one number, and a
+composite number would show Voltaic green: seats growing, usage high, product working. The
+constraint model refuses to average, so the 1 on governance is what you see. **The four
+dimensions fail independently and the lowest one is the only one that predicts anything.**
+Meridian averages 3.5 and produces nothing. That's the argument against averaging in one
+account.
+
+**"You scored these from a one-paragraph snapshot. How much do you actually trust them?"**
+Not very much, and that's a design assumption rather than a caveat. The scores are a starting
+hypothesis a CSM corrects in front of the customer, which is why evidence is a required field
+and why the diagnostic is a working session rather than a form. Where I'd expect to be most
+wrong: Meridian's Proof at 2 — "mature deployment" may mean value was quantified years ago
+and nobody refreshed it, which is a different play. And TrailLine's Sponsorship at 3 could be
+generous; a COO who bought a vision without engaging their ops org may be a 2.
+
+**"Why is Proof the leading indicator and not usage?"**
+Because in this book usage and outcome have already come apart. Corvus and Voltaic have the
+strongest adoption and the weakest commercial position. Usage tells you whether the product
+works. Proof tells you whether anyone who signs the check knows it. **The renewal is decided
+by the second one.**
+
+**"Aren't you underweighting Meridian? It's $1.1M."**
+Deliberately, on timing rather than importance. It renews in four quarters and it has the one
+thing you can't manufacture — a committed exec sponsor pushing hard. It's a governance project
+with a long clock, and Trust/Security leads that work, not me. Floor & Board is $1.7M with no
+sponsor, no governance, no proof, and a renewal conversation in two quarters. **If Meridian
+still hasn't cleared its review board at day 60 I'd re-sequence**, because the sponsor's
+patience is the depreciating asset there.
+
+**"You've called Voltaic the trap. What if the RevOps team simply doesn't want us?"**
+Then I'm not going to relationship my way in, and I'd stop trying. But they told us the way in
+themselves — they volunteered that they have agents nobody owns and they're worried about cost.
+That's a problem building harder doesn't solve. **The offer isn't partnership, it's an agent
+inventory.** If they decline that, I'd change the goal from expansion to defending the price:
+get the AE in early with a multi-year construct while seats are still growing, and accept
+we're a tool at this account. Not every account gets to be a transformation account.
+
+---
+
+## On the methodology
+
+**"Six accounts and eight plays. Doesn't this collapse at 90 accounts?"**
+The library is sized to the constraint, not to the account count — four constraints, two to
+three plays each, so it grows with the failure modes rather than the book. At 90 accounts the
+thing that breaks first isn't the library, it's **diagnostic quality**: I can't personally
+grade three a week across 90. That's when the manager layer becomes structurally necessary
+rather than nice to have, and it's part of why I want the day-90 evidence before hiring it.
+
+**"The lowest-score rule is crude. Real accounts have two constraints."**
+Agreed, and it's crude on purpose. A weighted multi-factor model is more accurate and less
+usable, and a methodology fifteen people won't run is worth less than a blunt one they will.
+The system handles the real case by sequencing — Floor & Board is Sponsorship then Proof,
+Corvus is Proof then Capability. **What I'd watch is the override rate.** If CSMs override
+the recommendation more than about 20% of the time, the model is wrong, not them, and the
+override reasons are the data for fixing it. That field exists for exactly this challenge.
+
+**"Where did the four dimensions come from?"**
+They're the four things that have to be true for transformation to survive contact with a real
+organization, and each one visibly fails on its own in this book — Floor & Board on
+sponsorship, Meridian on governance, Harbor Lane on capability and awareness, Corvus on proof.
+I'd hold them loosely. If the book showed me a fifth independent failure mode — change
+management capacity is my candidate — I'd add it. What I wouldn't do is let it reach seven,
+because at seven nobody scores honestly.
+
+**"What if a CSM just games the scores to look good?"**
+Two controls, and neither is trust. Evidence is required for any 4 or 5, and stage movement is
+inspected against the play record — you cannot claim a sponsorship improvement without a play
+that produced a named sponsor. But the honest answer is that **the incentive runs the other
+way**: a low score gets you partner resources. I'd worry more about theatrical pessimism than
+inflation, and I'd catch that in the weekly.
+
+---
+
+## On the operating model
+
+**"Fifteen direct reports and a weekly book review. Do you actually have the hours?"**
+No, and I'd say so rather than pretend the system solves it. What the base buys me is that
+**inspection becomes asynchronous** — I read three diagnostics before the 1:1s instead of
+spending the 1:1s discovering what's happening. That's the difference between fifteen reports
+being temporarily survivable and immediately broken. It is temporary. I'd expect two or three
+leads visible by day 60 and I'd make the structural recommendation at day 90 with the base as
+the evidence, rather than guessing at it in week two.
+
+**"Why not hire managers immediately? That's the obvious fix."**
+Because I'd be picking them on tenure and book size, which are the two worst available signals,
+and I'd be reshaping fifteen people's reporting lines twice in one year. Ninety days of running
+the system tells me who authors plays other people adopt and whose diagnostics hold up under
+pressure. **That's a materially better hiring decision and the cost of waiting is three months
+of me being overextended** — which is a cost I'd rather carry than a wrong manager hire on a
+team that just lost its managers.
+
+**"Some CSMs will never be credible with a CFO on AI. What do you do with them?"**
+I stop trying to make them, and I'd say that to them directly. The ownership rule is that a CSM
+must own the diagnosis and the narrative and must never have to be the smartest technical
+person in the room. Corvus is the live case: excellent relationships, no technical depth, and
+the expansion needs a quantified CFO story. The base drafts the numbers, Value Eng validates
+them, and the CSM does the part they're genuinely best at — getting the CFO's office to believe
+it. **Where I'd draw a hard line is diagnosis.** If someone can't tell the difference between
+Voltaic looking healthy and being healthy after two quarters of coaching, that's a role fit
+question, and it's not one the system solves.
+
+**"What are the two or three metrics you'd actually be judged on?"**
+GRR and NRR are the outcome. But the one I'd volunteer to be measured on is **renewal
+surprises, target zero** — because a surprise at renewal is a diagnostic failure six months
+earlier, and it's the only lagging metric that indicts the system rather than the market.
+Leading, it's proof coverage; today it's 0 of 6.
+
+**"You're the new director. Why would fifteen people who just lost their managers trust you?"**
+Not by arriving with a methodology. I'd run the two hardest first plays myself, in front of
+them — Meridian's governance case and Voltaic's re-entry — and let them watch me get one wrong.
+The first thing I'd say is that the manager layer disappearing wasn't their failure and I'm not
+arriving with a verdict. **And the diagnostic is deliberately a coaching instrument, not an
+evaluation one:** I never grade a person, I grade an account with them.
+
+---
+
+## On the build
+
+**"What happens when the AI is confidently wrong in front of a customer?"**
+The design assumes it will be. Nothing AI-generated reaches a customer without a human status
+gate — a value story can't leave `Draft` without a traceable `Source of Truth`, and
+`Customer-validated` requires a named person who said the number back. The value narrative
+prompt is explicitly instructed to return `INSUFFICIENT EVIDENCE` rather than estimate, and on
+seed data it does exactly that on Floor & Board. **I'd rather it refuse six times than invent
+once**, because a plausible fabricated number in a CFO meeting is worse than walking in with
+nothing.
+
+**"How is this different from what a CSM does in a spreadsheet today?"**
+Three things a spreadsheet can't do. It's **shared**, so I can inspect fifteen books without
+asking fifteen people. It's **prescriptive** — the constraint logic and play library carry
+pattern recognition the newest CSM doesn't have yet. And it's **temporal**: diagnostics
+accumulate rather than overwrite, so stage movement over time is visible and is the actual
+coaching artifact. The spreadsheet version of this is what the team has now, and it's why
+nobody noticed Floor & Board's champion had left for three months.
+
+**"Your Airtable depth is shallow. How would you get credible in front of a customer exec?"**
+It is shallow, and I'd rather say that than perform expertise in front of the people who build
+it. The credibility a customer exec needs from me isn't product depth — it's whether I can
+diagnose their organization and tell them what usually fails. That I can do. For the product
+depth I'd pull Solutions in, which is the exact boundary the methodology draws for every CSM
+including me. **Ramp plan: build this base myself rather than spec it, run the two hardest
+accounts personally, and use the team's strongest builder as a reverse mentor.**
+
+**"If we gave you one more week on the build, what would you add?"**
+The discovery agent as the primary entry point rather than an accessory — pasting raw call
+notes and getting a scored draft with the questions you failed to ask is the highest-leverage
+piece for a fifteen-person team of varied depth, and it's the piece I'd most want to test with
+a real CSM. Second would be CRM sync on renewal dates and ARR, because static fields are the
+thing that will make this base stale by month two.
+
+**"What's the weakest part of this?"**
+Two, honestly. **One:** the value stories are mostly empty. Only Corvus has numbers and I
+invented them, because the snapshot contains none — so the thing I've argued is most important
+is the thing I've least demonstrated. **Two:** the plays are specified but only three are
+templated, and a play without a template is a slogan. If I'd had another four hours it would
+have gone into templating P2 and P5, which are the two the largest accounts need first.
+
+---
+
+## Questions I'd ask them
+
+Being asked "what questions do you have" is part of the assessment. These are real ones whose
+answers would change the plan:
+
+1. **Who owns AI governance content today** — is there a Trust/Security function producing
+   customer-facing risk and controls artifacts, or would P5 be the first time anyone's built
+   one? That's the difference between orchestrating and creating, and it changes my day-30 plan.
+2. **What's the actual ratio of relationship-led to technically-deep CSMs across the fifteen?**
+   I've assumed roughly half. If it's more like 12:3, P3 moves ahead of P2 because partner
+   capacity becomes the binding constraint before methodology does.
+3. **Is CS carrying an expansion number, or influencing one?** It changes how hard the value
+   spine has to work and how the AE relationship is drawn.
+4. **What happened to the manager layer?** Reorg, attrition, or performance — because the trust
+   rebuild is genuinely different in each case, and I'd want to know before day one rather than
+   find out in week three.

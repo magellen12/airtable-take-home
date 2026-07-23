@@ -1,0 +1,8 @@
+# The assessment PDF is Airtable's document — deliberately not committed to a public repo,
+# where it would be findable by future candidates.
+*.pdf
+
+.DS_Store
+__pycache__/
+*.pyc
+.env
