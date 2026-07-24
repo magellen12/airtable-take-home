@@ -25,10 +25,12 @@ Three structural patterns, not six account problems:
    Board, Harbor Lane — nobody noticed until Sales flagged risk. **The renewal risk is an
    evidence problem, not an adoption one.**
 2. **Transformation is person-dependent — on both sides of the table.** The customer's roadmap
-   dies with one champion (Floor & Board, Corvus); on our side, outcomes track individual CSM
-   strengths, not a common motion. Anything living in one head is a standing risk on a
-   multi-year contract. The function's job is to institutionalize — and with the manager layer
-   gone, we have no inspection surface to institutionalize anything.
+   dies with one champion (Floor & Board, Corvus); and on our side, fifteen CSMs sit on the same
+   team but run in parallel — connected on the org chart, not in practice. There's no team-wide
+   connective tissue and no common motion, so outcomes track individual strengths instead of a
+   shared standard. Anything living in one head is a standing risk on a multi-year contract; the
+   function's job is to institutionalize — and with the manager layer gone, there's no
+   inspection surface to institutionalize anything.
 3. **We engage with no readiness model.** TrailLine got an exec vision sale before frontline
    buy-in; Harbor Lane got nothing because no one has a play for "healthy but dormant"; Voltaic
    outgrew quarterly check-ins we kept scheduling; Meridian is ready but blocked at governance
@@ -91,7 +93,14 @@ signals, because it is one.
 **Operationalizing across 15 CSMs** rests on one rule: *a CSM must own knowing what their account
 needs, and must never have to be the smartest technical person in the room.* Depth is bought with
 partners (Professional Services, Trust/Security, Sales/Renewals) and covered by pairing; judgment
-can't be, so judgment is what I coach and inspect. **What I measure, weekly from the base:** %
+can't be, so judgment is what I coach and inspect. And because **this is the most tenured team in
+the company** — they know their customers better than I will — the operating principle is *global
+consistency, local customization*: **what** we do as a team is standard (the diagnostic, the play
+library, the operating rhythm, the definition of done); **how** each CSM runs it is theirs (the
+read on the customer, the sequencing, the creative spin only the person in the account can
+supply). I build the frameworks and we set the standards together; they keep the latitude where
+their expertise is the asset. Consistency is the floor, not the ceiling. **What I measure, weekly
+from the base:** %
 of book staged, stage progression QoQ, sponsor coverage (today 1/6), value coverage (today 0/6),
 governance body in place; and lagging, GRR/NRR, expansion influence, and **renewal surprises,
 target zero** — because a surprise at renewal is a diagnostic failure six months earlier.
@@ -107,7 +116,10 @@ recommends the play, and drafts the value narrative in the buyer's language; an 
 stale value ahead of renewal. **The leverage test** — the newest CSM's account gets the same
 diagnostic rigor and a *drafted* transformation plan as the strongest CSM's; senior judgment goes
 into running plays, not formatting updates; and I get one place to inspect instead of fifteen
-opinions, which is the specific thing this team lost when it lost its managers.
+opinions, which is the specific thing this team lost when it lost its managers. It's also the **connective
+tissue the team is missing**: the weekly book review and the peer-authored play library are where
+fifteen people who otherwise run in parallel finally engage with each other's accounts — the
+shared standard, sitting on top of the latitude each of them keeps.
 
 *Assumptions this depends on — and which would change my priorities if wrong — are in
 [`../appendix/assumptions.md`](../appendix/assumptions.md).*
