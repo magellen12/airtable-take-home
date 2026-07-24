@@ -162,6 +162,7 @@ Prepared answers: [`qa-prep.md`](qa-prep.md).
 - [ ] Demo path walked end to end, timed
 - [ ] One AI generation held back to run **live** — not pre-generated
 - [ ] Floor & Board left in its `INSUFFICIENT EVIDENCE` state on purpose
-- [ ] Brief open in a second tab for the scoring table
+- [ ] `02-book-diagnosis.md` open in a second tab for the full scoring table (the 1–2 page
+      brief only carries the averages)
 - [ ] Know the four numbers cold: **$5.06M book · $3.11M at risk · 61% · Value evidence 1.3 avg
       vs Adoption 3.2**
