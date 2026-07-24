@@ -52,7 +52,8 @@ is the exact thing this team lost when it lost its managers.
 | [`schema.md`](schema.md) | 8 tables, every field, types, formulas, relationships |
 | [`ai-components.md`](ai-components.md) | The 3 AI fields, 1 agent, and 3 automations — with copy-pasteable prompts |
 | [`interfaces.md`](interfaces.md) | CSM Cockpit, Director Book Review, and the live diagnostic session view |
-| [`build-checklist.md`](build-checklist.md) | Ordered build steps — roughly 2–3 hours in the product |
+| [`build-checklist.md`](build-checklist.md) | Ordered build steps for a human in the UI — roughly 2–3 hours |
+| [`omni-build-brief.md`](omni-build-brief.md) | The same build as copy-paste prompts for **Airtable Omni** (the AI app builder) |
 | [`data/`](data/) | Import-ready CSVs: 6 accounts pre-scored, 8 plays, 19 stakeholders, 24 signals, 6 value stories, 6 CSMs w/ skills matrix |
 
 ---
@@ -62,6 +63,10 @@ is the exact thing this team lost when it lost its managers.
 **Fastest path (manual, ~2–3 hrs):** follow [`build-checklist.md`](build-checklist.md) and
 import the CSVs in the order listed. Order matters — linked-record fields resolve by name, so
 `Plays` and `CSMs` must exist before `Accounts`.
+
+**Omni path:** [`omni-build-brief.md`](omni-build-brief.md) has the whole build as sequenced
+copy-paste prompts for Airtable Omni, with a verify-and-fix gate after each step for the things
+Omni tends to approximate (formulas, AI-field prompts).
 
 **Scripted path:** [`../scripts/`](../scripts/) creates the base and loads all data via the
 Airtable Web API. AI fields and interfaces still have to be added in the UI — the API doesn't

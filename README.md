@@ -34,6 +34,7 @@ relationship-led motion to a transformation-led one. That premise drives everyth
 | — | Operating model | [`docs/04-operating-model.md`](docs/04-operating-model.md) | How this runs across 15 CSMs — ownership boundaries, the skills matrix + pairing, rhythm, metrics, inspection, and how I'd develop the team. |
 | 2 | **Airtable build** | [`airtable-build/`](airtable-build/) | Schema, AI component specs, interface specs, build checklist, and seed data for all six accounts. |
 | — | Seed data | [`airtable-build/data/`](airtable-build/data/) | Import-ready CSVs — the six accounts pre-scored, 8 plays, stakeholders, signals, value narratives, CSM skills matrix. |
+| — | Build guides | [`airtable-build/build-checklist.md`](airtable-build/build-checklist.md) · [`omni-build-brief.md`](airtable-build/omni-build-brief.md) | Two ways to build it: human-in-UI steps, or copy-paste prompts for Airtable Omni. |
 | — | Build script | [`scripts/`](scripts/) | Optional: creates the base and loads the data via the Airtable API. |
 | 3 | **Live session** | [`session/`](session/) | 60-minute run of show and prepared answers to the pushback I expect. |
 | — | Appendix | [`appendix/`](appendix/) | Assumptions I'm making, and how I used AI to build this. |
