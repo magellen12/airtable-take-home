@@ -57,11 +57,18 @@ quarters gets two or three business outcomes *in the customer's language*, valid
 commercial conversations start. Renewals aren't decided by usage; they're decided by whether the
 economic buyer can repeat our number back. The same asset funds Corvus's expansion.
 
-**P3 · Rebuild the team's operating system — roles, rhythms, development (days 30–90).** Fifteen
-people who lost their manager layer need clarity and a system that develops them: a skills matrix
-(builder depth × executive presence × domain), deliberate **pairing of complements** — TrailLine's
-builder-CSM gets an exec-engagement partner for the kickoff, not a reassignment — a weekly review
-run from the base, and enablement built from the play library.
+**P3 · Rebuild the team's operating system — and lead it by developing people, not directing
+tasks (days 30–90).** Fifteen people who just lost their manager layer don't need a boss with a
+deck; they need clarity, development, and a reason to trust a new leader. The system: a **skills
+matrix** (builder depth × executive presence × domain) that drives deliberate **pairing of
+complements** — TrailLine's builder-CSM gets an exec-engagement partner for the kickoff, not a
+reassignment — so people grow into their gaps instead of being moved off accounts. The
+**diagnostic doubles as the coaching instrument**: I grade the account *with* the CSM, never the
+person, so every development conversation is anchored in real work rather than an abstraction
+about their skills. The path forward is visible — **leads surface through play authorship and
+diagnostic quality**, an earned route to the manager roles I fill on evidence at day 90, not on
+tenure. And trust I earn the only way it's available: by running the two hardest accounts' first
+plays myself, in front of the team, and letting them watch me get one wrong.
 
 *Deliberately not in the first 90 days:* hiring the manager layer (I want evidence first —
 leads surface through play authorship), re-cutting segmentation (a six-month distraction from
