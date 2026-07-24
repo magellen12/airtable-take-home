@@ -40,6 +40,12 @@ TABLES = [
             {"name": "Tenure (months)", "type": "number", "options": {"precision": 0}},
             {"name": "Strength Profile", "type": "multipleSelects",
              "options": SELECT("Relationship", "Technical/Builder", "Executive", "Commercial", "Governance")},
+            {"name": "Builder Depth", "type": "rating", "options": {"max": 5, "color": "blueBright", "icon": "star"}},
+            {"name": "Executive Presence", "type": "rating", "options": {"max": 5, "color": "blueBright", "icon": "star"}},
+            {"name": "Domain", "type": "rating", "options": {"max": 5, "color": "blueBright", "icon": "star"}},
+            # Self-link — created in the deferred pass. Populated in the UI, not by the loader
+            # (self-references can't resolve during a single-pass create); see SKIP below.
+            {"name": "Paired With", "type": "multipleRecordLinks", "options": {"linkedTableName": "CSMs"}},
             {"name": "Development Focus", "type": "singleLineText"},
             {"name": "Plays Authored", "type": "number", "options": {"precision": 0}},
         ],
@@ -50,11 +56,11 @@ TABLES = [
             {"name": "Play", "type": "singleLineText"},
             {"name": "Code", "type": "singleLineText"},
             {"name": "Clears Constraint", "type": "singleSelect",
-             "options": SELECT("Sponsorship", "Governance", "Capability", "Proof")},
+             "options": SELECT("Sponsorship", "Governance", "Adoption", "Value Evidence")},
             {"name": "Applies at Stage", "type": "singleLineText"},
             {"name": "CSM Owns", "type": "multilineText"},
             {"name": "Partner Leads", "type": "multipleSelects",
-             "options": SELECT("Solutions/SE", "Trust & Security", "Product", "AE", "Value Eng", "Support")},
+             "options": SELECT("Professional Services", "Trust & Security", "Product", "Sales", "Renewals", "Value Eng", "Support")},
             {"name": "Artifact Produced", "type": "multilineText"},
             {"name": "Definition of Done", "type": "multilineText"},
             {"name": "Typical Duration (wks)", "type": "number", "options": {"precision": 0}},
@@ -87,10 +93,10 @@ TABLES = [
             {"name": "Sponsorship Evidence", "type": "multilineText"},
             {"name": "Governance", "type": "rating", "options": {"max": 5, "color": "redBright", "icon": "star"}},
             {"name": "Governance Evidence", "type": "multilineText"},
-            {"name": "Capability", "type": "rating", "options": {"max": 5, "color": "redBright", "icon": "star"}},
-            {"name": "Capability Evidence", "type": "multilineText"},
-            {"name": "Proof", "type": "rating", "options": {"max": 5, "color": "redBright", "icon": "star"}},
-            {"name": "Proof Evidence", "type": "multilineText"},
+            {"name": "Adoption", "type": "rating", "options": {"max": 5, "color": "redBright", "icon": "star"}},
+            {"name": "Adoption Evidence", "type": "multilineText"},
+            {"name": "Value Evidence", "type": "rating", "options": {"max": 5, "color": "redBright", "icon": "star"}},
+            {"name": "Value Evidence Notes", "type": "multilineText"},
             {"name": "Session Notes", "type": "multilineText"},
             {"name": "Play Accepted", "type": "singleSelect", "options": SELECT("Accepted", "Overridden", "Pending")},
             {"name": "Override Reason", "type": "multilineText"},
@@ -152,7 +158,7 @@ TABLES = [
             {"name": "Play", "type": "multipleRecordLinks", "options": {"linkedTableName": "Plays"}},
             {"name": "Owner", "type": "multipleRecordLinks", "options": {"linkedTableName": "CSMs"}},
             {"name": "Partner Engaged", "type": "multipleSelects",
-             "options": SELECT("Solutions/SE", "Trust & Security", "Product", "AE", "Value Eng", "Support")},
+             "options": SELECT("Professional Services", "Trust & Security", "Product", "Sales", "Renewals", "Value Eng", "Support")},
             {"name": "Status", "type": "singleSelect",
              "options": SELECT("Not started", "In flight", "Blocked", "Done — DoD met", "Abandoned")},
             {"name": "Start Date", "type": "date", "options": {"dateFormat": {"name": "iso"}}},
@@ -176,7 +182,12 @@ LOADS = [
 ]
 
 NUMERIC = {"ARR", "Seats", "Quarters to Renewal", "Tenure (months)", "Plays Authored",
-           "Weight", "Typical Duration (wks)", "Sponsorship", "Governance", "Capability", "Proof"}
+           "Weight", "Typical Duration (wks)", "Sponsorship", "Governance", "Adoption",
+           "Value Evidence", "Builder Depth", "Executive Presence", "Domain"}
+
+# Columns present in a CSV but not sent to the API. "Paired With" is a self-referential link
+# that can't resolve during a single-pass create — set it in the UI (2 rows on seed data).
+SKIP = {"Paired With"}
 
 
 # ---------------------------------------------------------------- http
@@ -216,6 +227,8 @@ def build_fields(row, links, multis, index):
     """Turn a CSV row into an Airtable fields payload."""
     out = {}
     for col, raw in row.items():
+        if col in SKIP:
+            continue
         val = (raw or "").strip()
         if not val:
             continue
@@ -327,6 +340,7 @@ def main():
     print(f"\nDone — https://airtable.com/{base_id}")
     print("\nStill to do in the UI (not creatable via API):")
     print("  · formulas, lookups and rollups   → airtable-build/schema.md")
+    print("  · CSMs 'Paired With' self-links    (2 rows: Marcus ↔ Ben)")
     print("  · 3 AI fields + 1 agent           → airtable-build/ai-components.md")
     print("  · 3 automations                   → airtable-build/ai-components.md")
     print("  · 3 interfaces                    → airtable-build/interfaces.md")

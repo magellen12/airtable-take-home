@@ -28,7 +28,7 @@ The spine. One record per account.
 | `Current Diagnostic` | Link → `Diagnostics` | The latest one; set by automation A1 |
 | `Stage` | Lookup → `Current Diagnostic.Stage` | |
 | `Constraint` | Lookup → `Current Diagnostic.Constraint` | |
-| `Proof Score` | Lookup → `Current Diagnostic.Proof` | Surfaced on Accounts because it's the renewal predictor |
+| `Value Evidence Score` | Lookup → `Current Diagnostic.Value Evidence` | Surfaced on Accounts because it's the renewal predictor |
 | `Diagnostic Age (days)` | Formula | `DATETIME_DIFF(TODAY(), {Diagnostic Date}, 'days')` |
 | `Threads Mapped` | Count → `Stakeholders` | Multi-threading metric |
 | `Exec Sponsor Named` | Formula | See below |
@@ -44,9 +44,9 @@ The spine. One record per account.
 IF(COUNTA({Sponsor Roles}) = 0, "No", IF(FIND("Exec Sponsor", ARRAYJOIN({Sponsor Roles})) > 0, "Yes", "No"))
 ```
 
-**`ARR at Risk`** — ARR that renews inside three quarters without proof behind it.
+**`ARR at Risk`** — ARR that renews inside three quarters without value evidence behind it.
 ```
-IF(AND({Quarters to Renewal} <= 3, {Proof Score} <= 2), {ARR}, 0)
+IF(AND({Quarters to Renewal} <= 3, {Value Evidence Score} <= 2), {ARR}, 0)
 ```
 Deliberately binary rather than a weighted score. A probability-weighted number invites
 debate about the weighting; a hard "this dollar renews soon and we can't defend it" does not.
@@ -56,11 +56,11 @@ On seed data it totals **$3,110,000** — Floor & Board, Corvus, Voltaic.
 ```
 IF({Quarters to Renewal} > 4, "Not yet in cycle",
 IF(AND({Latest Value Story Status} = "Customer-validated", {Exec Sponsor Named} = "Yes"), "Ready",
-IF({Latest Value Story Status} = "Customer-validated", "Proof only — no sponsor",
-IF(OR({Latest Value Story Status} = BLANK(), {Latest Value Story Status} = "Stale"), "⚠️ No current proof", "In progress"))))
+IF({Latest Value Story Status} = "Customer-validated", "Value only — no sponsor",
+IF(OR({Latest Value Story Status} = BLANK(), {Latest Value Story Status} = "Stale"), "⚠️ No current value", "In progress"))))
 ```
 
-> Floor & Board, Voltaic and Corvus all evaluate to **⚠️ No current proof** on seed data. That
+> Floor & Board, Voltaic and Corvus all evaluate to **⚠️ No current value** on seed data. That
 > is the demo's opening screen — 61% of book ARR, flagged by a formula, two quarters early.
 
 ---
@@ -75,16 +75,16 @@ a new record rather than overwriting, so stage movement is visible over time.
 | `Account` | Link → `Accounts` | |
 | `Diagnostic Date` | Date | |
 | `Run By` | Link → `CSMs` | |
-| `Sponsorship` | Rating (1–5) | |
+| `Sponsorship` | Rating (1–5) | Sponsorship & multi-threading |
 | `Sponsorship Evidence` | Long text | **Required for a score of 4–5.** Validated by automation A3 |
-| `Governance` | Rating (1–5) | |
+| `Governance` | Rating (1–5) | Governance maturity |
 | `Governance Evidence` | Long text | |
-| `Capability` | Rating (1–5) | |
-| `Capability Evidence` | Long text | |
-| `Proof` | Rating (1–5) | |
-| `Proof Evidence` | Long text | |
-| `Average` | Formula | `ROUND(({Sponsorship}+{Governance}+{Capability}+{Proof})/4, 2)` — displayed *only* to demonstrate that it's the wrong number to manage by |
-| `Lowest Score` | Formula | `MIN({Sponsorship}, {Governance}, {Capability}, {Proof})` |
+| `Adoption` | Rating (1–5) | Adoption depth |
+| `Adoption Evidence` | Long text | |
+| `Value Evidence` | Rating (1–5) | Quantified outcome in the buyer's language |
+| `Value Evidence Notes` | Long text | |
+| `Average` | Formula | `ROUND(({Sponsorship}+{Governance}+{Adoption}+{Value Evidence})/4, 2)` — displayed *only* to demonstrate that it's the wrong number to manage by |
+| `Lowest Score` | Formula | `MIN({Sponsorship}, {Governance}, {Adoption}, {Value Evidence})` |
 | `Constraint` | Formula | The constraint rule. See below |
 | `Stage` | AI field | → [`ai-components.md`](ai-components.md#ai-1) |
 | `Stage Rationale` | AI field | Same call as Stage |
@@ -93,13 +93,17 @@ a new record rather than overwriting, so stage movement is visible over time.
 | `Override Reason` | Long text | Every override is training data for the next version of the prompt |
 | `Session Notes` | Long text | Raw notes from the customer session; input to the agent |
 
-**`Constraint`** — ladder order `Sponsorship → Capability → Proof → Governance`, with the
+**`Constraint`** — ladder order `Sponsorship → Adoption → Value Evidence → Governance`, with the
 Stage 0 exception applied by the AI field when it classifies stage.
 ```
 IF({Sponsorship} = {Lowest Score}, "Sponsorship",
-IF({Capability} = {Lowest Score}, "Capability",
-IF({Proof} = {Lowest Score}, "Proof", "Governance")))
+IF({Adoption} = {Lowest Score}, "Adoption",
+IF({Value Evidence} = {Lowest Score}, "Value Evidence", "Governance")))
 ```
+On seed data this yields: Floor & Board → Sponsorship, Meridian → **Value Evidence** (its lowest,
+at 2 — the review-board case is a value-evidence artifact for a governance audience), TrailLine →
+Adoption, Corvus → Value Evidence, Harbor Lane → Value Evidence (via the Stage 0 exception),
+Voltaic → Governance.
 
 ---
 
@@ -110,10 +114,10 @@ The library. 8 records, seeded from [`data/plays.csv`](data/plays.csv).
 |---|---|---|
 | `Play` | Single line text | Primary. "P4 · Quantify & Translate" |
 | `Code` | Single line text | `P4` |
-| `Clears Constraint` | Single select | `Sponsorship` · `Governance` · `Capability` · `Proof` |
+| `Clears Constraint` | Single select | `Sponsorship` · `Governance` · `Adoption` · `Value Evidence` |
 | `Applies at Stage` | Multiple select | `0`–`4` |
 | `CSM Owns` | Long text | |
-| `Partner Leads` | Multiple select | `Solutions/SE` · `Trust & Security` · `Product` · `AE` · `Value Eng` · `Support` |
+| `Partner Leads` | Multiple select | `Professional Services` · `Trust & Security` · `Product` · `Sales` · `Renewals` · `Value Eng` · `Support` |
 | `Artifact Produced` | Long text | |
 | `Definition of Done` | Long text | **Always customer behaviour, never our activity** |
 | `Typical Duration (wks)` | Number | Baseline for cycle-time measurement |
@@ -202,12 +206,21 @@ The team. Fifteen in production; six seeded here.
 | `Name` | Single line text | |
 | `Tenure (months)` | Number | |
 | `Strength Profile` | Multiple select | `Relationship` · `Technical/Builder` · `Executive` · `Commercial` · `Governance` |
+| `Builder Depth` | Rating (1–5) | **Skills-matrix axis** — can they build? |
+| `Executive Presence` | Rating (1–5) | **Skills-matrix axis** — credible across from a CFO? |
+| `Domain` | Rating (1–5) | **Skills-matrix axis** — depth in the customer's vertical |
+| `Paired With` | Link → `CSMs` (self-link) | The complement pairing — who covers this CSM's low axis on which account |
 | `Development Focus` | Single line text | What I'm coaching them on |
 | `Accounts` | Link → `Accounts` | |
 | `Book ARR` | Rollup → `Accounts.ARR` (SUM) | |
 | `Diagnostics Run` | Count → `Diagnostics` | |
 | `Plays Authored` | Number | **How leads surface** |
 | `DoD Hit Rate` | Formula / manual | % of plays closed at Definition of Done |
+
+The three rating axes are the **skills matrix**. A CSM low on `Executive Presence` on an account
+with hard executive dynamics is *paired*, not reassigned — the pairing is visible here so it's an
+inspectable decision, not a favour. Drives the pairing logic in
+[`../docs/04-operating-model.md`](../docs/04-operating-model.md#2--the-ownership-boundary-the-skills-matrix-and-pairing).
 
 ---
 

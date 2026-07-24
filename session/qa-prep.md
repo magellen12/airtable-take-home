@@ -12,42 +12,43 @@ my mind. Third part matters most.
 ## On the diagnosis
 
 **"Isn't this just a health score with extra steps?"**
-No — and the difference is the whole design. A health score produces one number, and a
-composite number would show Voltaic green: seats growing, usage high, product working. The
-constraint model refuses to average, so the 1 on governance is what you see. **The four
-dimensions fail independently and the lowest one is the only one that predicts anything.**
-Meridian averages 3.5 and produces nothing. That's the argument against averaging in one
-account.
+It *is* the health score — I'm just refusing to collapse it to one number. A single composite
+would show Voltaic green: seats growing, usage high, product working. Keeping it
+multidimensional means the 1 on governance and the 2 on value evidence stay visible instead of
+being averaged away by the 5 on adoption. **The four dimensions fail independently and the
+lowest one is the only one that predicts anything.** Meridian averages 3.5 and produces nothing.
+That's the argument against a one-number health score in a single account.
 
 **"You scored these from a one-paragraph snapshot. How much do you actually trust them?"**
 Not very much, and that's a design assumption rather than a caveat. The scores are a starting
 hypothesis a CSM corrects in front of the customer, which is why evidence is a required field
 and why the diagnostic is a working session rather than a form. Where I'd expect to be most
-wrong: Meridian's Proof at 2 — "mature deployment" may mean value was quantified years ago
-and nobody refreshed it, which is a different play. And TrailLine's Sponsorship at 3 could be
+wrong: Meridian's Value evidence at 2 — "mature deployment" may mean value was quantified years
+ago and nobody refreshed it, which is a different play. And TrailLine's Sponsorship at 3 could be
 generous; a COO who bought a vision without engaging their ops org may be a 2.
 
-**"Why is Proof the leading indicator and not usage?"**
+**"Why is Value evidence the leading indicator and not usage?"**
 Because in this book usage and outcome have already come apart. Corvus and Voltaic have the
-strongest adoption and the weakest commercial position. Usage tells you whether the product
-works. Proof tells you whether anyone who signs the check knows it. **The renewal is decided
-by the second one.**
+strongest adoption and the weakest commercial position. Adoption tells you whether the product
+works. Value evidence tells you whether anyone who signs the check knows it. **The renewal is
+decided by the second one.**
 
 **"Aren't you underweighting Meridian? It's $1.1M."**
 Deliberately, on timing rather than importance. It renews in four quarters and it has the one
-thing you can't manufacture — a committed exec sponsor pushing hard. It's a governance project
-with a long clock, and Trust/Security leads that work, not me. Floor & Board is $1.7M with no
-sponsor, no governance, no proof, and a renewal conversation in two quarters. **If Meridian
-still hasn't cleared its review board at day 60 I'd re-sequence**, because the sponsor's
-patience is the depreciating asset there.
+thing you can't manufacture — a committed exec sponsor pushing hard. Its binding constraint is
+value evidence, but the evidence its review board needs is a risk-and-controls case, and
+Trust/Security co-builds that with me, not alone. Floor & Board is $1.7M with no sponsor, no
+governance, no value evidence, and a renewal conversation in two quarters. **If Meridian still
+hasn't cleared its review board at day 60 I'd re-sequence**, because the sponsor's patience is
+the depreciating asset there.
 
 **"You've called Voltaic the trap. What if the RevOps team simply doesn't want us?"**
 Then I'm not going to relationship my way in, and I'd stop trying. But they told us the way in
 themselves — they volunteered that they have agents nobody owns and they're worried about cost.
 That's a problem building harder doesn't solve. **The offer isn't partnership, it's an agent
 inventory.** If they decline that, I'd change the goal from expansion to defending the price:
-get the AE in early with a multi-year construct while seats are still growing, and accept
-we're a tool at this account. Not every account gets to be a transformation account.
+get Sales in early with a multi-year construct while seats are still growing, and accept we're a
+tool at this account. Not every account gets to be a transformation account.
 
 ---
 
@@ -63,16 +64,18 @@ rather than nice to have, and it's part of why I want the day-90 evidence before
 **"The lowest-score rule is crude. Real accounts have two constraints."**
 Agreed, and it's crude on purpose. A weighted multi-factor model is more accurate and less
 usable, and a methodology fifteen people won't run is worth less than a blunt one they will.
-The system handles the real case by sequencing — Floor & Board is Sponsorship then Proof,
-Corvus is Proof then Capability. **What I'd watch is the override rate.** If CSMs override
+The system handles the real case by sequencing — Floor & Board is Sponsorship then a CoE,
+Corvus is Value evidence then Adoption. **What I'd watch is the override rate.** If CSMs override
 the recommendation more than about 20% of the time, the model is wrong, not them, and the
 override reasons are the data for fixing it. That field exists for exactly this challenge.
 
 **"Where did the four dimensions come from?"**
 They're the four things that have to be true for transformation to survive contact with a real
 organization, and each one visibly fails on its own in this book — Floor & Board on
-sponsorship, Meridian on governance, Harbor Lane on capability and awareness, Corvus on proof.
-I'd hold them loosely. If the book showed me a fifth independent failure mode — change
+sponsorship, Meridian on value evidence behind a governance gate, Harbor Lane on adoption and
+awareness, Corvus on value evidence. The labels also track what the function is measured on —
+adoption, sponsorship, governance, value realization. I'd hold them loosely: if the book showed
+me a fifth independent failure mode — change
 management capacity is my candidate — I'd add it. What I wouldn't do is let it reach seven,
 because at seven nobody scores honestly.
 
@@ -113,11 +116,29 @@ it. **Where I'd draw a hard line is diagnosis.** If someone can't tell the diffe
 Voltaic looking healthy and being healthy after two quarters of coaching, that's a role fit
 question, and it's not one the system solves.
 
+**"Pairing sounds nice, but isn't it just two people doing one person's job?"**
+It's two people doing the *parts* of one account that need different strengths, on the account's
+hardest moments, not permanently. TrailLine needs a builder on the ops floor and executive
+presence with the COO — that's genuinely two skills, and the alternative isn't one heroic CSM,
+it's the account failing on whichever half its CSM is weaker at. The pairing is time-boxed (two
+cycles on the COO thread), it's visible in the base so I can see if it's becoming a crutch, and
+the point is development: the builder-CSM is learning the exec motion by running it alongside
+someone, not being shielded from it. If a pair never un-pairs, that's a signal I read, not a
+steady state I accept.
+
+**"You made the team its own priority but you're not hiring managers. Isn't that a contradiction?"**
+No — the team priority is building the *system* the team runs on (matrix, pairing, rhythm,
+enablement), which is exactly what a team with no managers needs first. Hiring managers is a
+structural decision I want to make on evidence at day 90, not a reflex in week one. The operating
+system is what makes fifteen reports survivable *while* I gather that evidence — and it's what
+tells me who the managers should be, because leads surface through play authorship and diagnostic
+quality in the base rather than through tenure.
+
 **"What are the two or three metrics you'd actually be judged on?"**
 GRR and NRR are the outcome. But the one I'd volunteer to be measured on is **renewal
 surprises, target zero** — because a surprise at renewal is a diagnostic failure six months
 earlier, and it's the only lagging metric that indicts the system rather than the market.
-Leading, it's proof coverage; today it's 0 of 6.
+Leading, it's value coverage and stage progression QoQ; value coverage today is 0 of 6.
 
 **"You're the new director. Why would fifteen people who just lost their managers trust you?"**
 Not by arriving with a methodology. I'd run the two hardest first plays myself, in front of
@@ -132,7 +153,7 @@ evaluation one:** I never grade a person, I grade an account with them.
 
 **"What happens when the AI is confidently wrong in front of a customer?"**
 The design assumes it will be. Nothing AI-generated reaches a customer without a human status
-gate — a value story can't leave `Draft` without a traceable `Source of Truth`, and
+gate — a value narrative can't leave `Draft` without a traceable `Source of Truth`, and
 `Customer-validated` requires a named person who said the number back. The value narrative
 prompt is explicitly instructed to return `INSUFFICIENT EVIDENCE` rather than estimate, and on
 seed data it does exactly that on Floor & Board. **I'd rather it refuse six times than invent
@@ -151,9 +172,9 @@ nobody noticed Floor & Board's champion had left for three months.
 It is shallow, and I'd rather say that than perform expertise in front of the people who build
 it. The credibility a customer exec needs from me isn't product depth — it's whether I can
 diagnose their organization and tell them what usually fails. That I can do. For the product
-depth I'd pull Solutions in, which is the exact boundary the methodology draws for every CSM
-including me. **Ramp plan: build this base myself rather than spec it, run the two hardest
-accounts personally, and use the team's strongest builder as a reverse mentor.**
+depth I'd pull Professional Services in, which is the exact boundary the methodology draws for
+every CSM including me. **Ramp plan: build this base myself rather than spec it, run the two
+hardest accounts personally, and use the team's strongest builder as a reverse mentor.**
 
 **"If we gave you one more week on the build, what would you add?"**
 The discovery agent as the primary entry point rather than an accessory — pasting raw call
@@ -163,11 +184,12 @@ a real CSM. Second would be CRM sync on renewal dates and ARR, because static fi
 thing that will make this base stale by month two.
 
 **"What's the weakest part of this?"**
-Two, honestly. **One:** the value stories are mostly empty. Only Corvus has numbers and I
+Two, honestly. **One:** the value narratives are mostly empty. Only Corvus has numbers and I
 invented them, because the snapshot contains none — so the thing I've argued is most important
 is the thing I've least demonstrated. **Two:** the plays are specified but only three are
 templated, and a play without a template is a slogan. If I'd had another four hours it would
-have gone into templating P2 and P5, which are the two the largest accounts need first.
+have gone into templating P2 (Re-Sponsor) and P5 (Governance Case), which are the two the
+largest accounts need first.
 
 ---
 
@@ -183,7 +205,7 @@ answers would change the plan:
    I've assumed roughly half. If it's more like 12:3, P3 moves ahead of P2 because partner
    capacity becomes the binding constraint before methodology does.
 3. **Is CS carrying an expansion number, or influencing one?** It changes how hard the value
-   spine has to work and how the AE relationship is drawn.
+   engine has to work and how the Sales/Renewals relationship is drawn.
 4. **What happened to the manager layer?** Reorg, attrition, or performance — because the trust
    rebuild is genuinely different in each case, and I'd want to know before day one rather than
    find out in week three.

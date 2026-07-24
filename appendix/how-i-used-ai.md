@@ -55,13 +55,16 @@ fixed; both were the kind of error that gets found in the room, by the panel, no
 **Kept:** the constraint mechanic (lowest score picks the play, not the average). It survived
 being tested against all six accounts and produced the right answer on five.
 
-**Changed:** it produced the *wrong* answer on the sixth. On Harbor Lane the rule said "fix
+**Changed:** it produced the *wrong* answer on two accounts. On Harbor Lane the rule said "fix
 sponsorship" — go recruit an executive for a team that has never seen an AI capability. You
-can't sponsor an abstraction. That failure produced the second rule (*below Stage 1, Proof
-leads*), and I've deliberately left the failure documented in
+can't sponsor an abstraction. That failure produced the second rule (*below Stage 1, Value
+evidence leads*). On Meridian it wanted to route a value-evidence gap to a commercial value play,
+when the evidence a *review board* needs is a risk-and-controls case — same constraint, different
+audience — which produced the audience rule in the play recommender. I've deliberately left both
+failures documented in
 [`../docs/03-transformation-methodology.md`](../docs/03-transformation-methodology.md) rather
 than presenting the model as if it arrived clean. A methodology that has visibly been wrong
-once is more trustworthy than one that hasn't been tested.
+is more trustworthy than one that hasn't been tested.
 
 **Changed:** the first play library had fourteen plays. Cut to eight. A library nobody can
 hold in their head is a library nobody uses.
@@ -103,6 +106,9 @@ Board and tells the CSM what to go collect. **I'm demoing the refusal, not just 
       demo moment** — if it fabricates instead, tighten rule 3 and record the fix here.
 - [ ] Run **AI-2** on Harbor Lane. It must return **P1**, not a sponsorship play — that's the
       Stage 0 exception working.
+- [ ] Run **AI-2** on Meridian. It must return **P5 (Governance Case)**, not P4 — same
+      Value-evidence constraint, but a governance audience routes it to the risk-and-controls
+      case. That's the audience rule working.
 - [ ] Note anything Airtable's AI fields do differently from what these prompts assume (prompt
       length limits, output formatting, field-reference behaviour). Assumption 7 in
       [`assumptions.md`](assumptions.md) flags this as unverified on purpose.

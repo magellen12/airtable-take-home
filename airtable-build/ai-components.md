@@ -28,8 +28,8 @@ Classify this account's AI transformation stage using ONLY the scores and eviden
 Account: {Account}
 Sponsorship: {Sponsorship}/5 — {Sponsorship Evidence}
 Governance: {Governance}/5 — {Governance Evidence}
-Capability: {Capability}/5 — {Capability Evidence}
-Proof: {Proof}/5 — {Proof Evidence}
+Adoption: {Adoption}/5 — {Adoption Evidence}
+Value evidence: {Value Evidence}/5 — {Value Evidence Notes}
 
 STAGE DEFINITIONS
 0 Unaware — core product healthy, AI not on the agenda, nobody has asked.
@@ -41,7 +41,7 @@ STAGE DEFINITIONS
 
 CRITICAL RULE
 Stage 4 requires Governance >= 4. A customer building fast without governance is Stage 2
-regardless of how sophisticated they look. High capability with low governance is a risk
+regardless of how sophisticated they look. High adoption with low governance is a risk
 signal, not a maturity signal — say so explicitly in the rationale when you see it.
 
 Return exactly:
@@ -57,10 +57,10 @@ whether or not they'd have caught it themselves.
 
 **Example output on seed data** *(drafted against this prompt outside the product — re-run and
 verify in the AI field once it's live; see [`../appendix/how-i-used-ai.md`](../appendix/how-i-used-ai.md)):*
-> `STAGE: 2 Contained` — *"Voltaic has the highest build capability in the book but is
-> shipping agents its own team describes as poorly governed, with no executive sponsor and
-> declining QBR attendance. It presents as Compounding; the absence of governance and of any
-> CS-attributable outcome makes it Contained with elevated renewal risk."*
+> `STAGE: 2 Contained` — *"Voltaic has the highest adoption depth in the book but is shipping
+> agents its own team describes as poorly governed, with no executive sponsor and declining QBR
+> attendance. It presents as Compounding; the absence of governance and of any CS-attributable
+> outcome makes it Contained with elevated renewal risk."*
 
 ---
 
@@ -74,26 +74,29 @@ The CSM running this may be new to AI transformation work — be concrete and di
 Account: {Account} — {ARR} ARR, {Quarters to Renewal} quarters to renewal
 Stage: {Stage}
 Binding constraint: {Constraint}
-Scores — Sponsorship {Sponsorship}, Governance {Governance}, Capability {Capability}, Proof {Proof}
+Scores — Sponsorship {Sponsorship}, Governance {Governance}, Adoption {Adoption}, Value evidence {Value Evidence}
 Context: {Session Notes}
 
 THE PLAY LIBRARY
-P1 Prove One Thing — clears Proof, stage 0. Partner: Solutions/SE.
-P2 Re-Sponsor — clears Sponsorship, stage 1-2. Partner: AE.
-P3 Kickoff Re-Contract — clears Capability, stage 1. Partner: Solutions/SE.
-P4 Quantify & Translate — clears Proof, stage 2-3. Partner: Value Eng.
-P5 Governance Unblock — clears Governance, stage 3. Partner: Trust & Security + Product.
-P6 Governance Partner Insert — clears Governance, stage 2 fast-moving. Partner: Solutions + Trust.
-P7 Spread From the Pocket — clears Capability, stage 2. Partner: Solutions/SE.
-P8 Renewal Value Review — clears Proof, any stage at T-2 quarters. Partner: AE.
+P1 Prove One Thing — clears Value evidence, stage 0. Partner: Professional Services.
+P2 Re-Sponsor — clears Sponsorship, stage 1-2. Partner: Sales.
+P3 Kickoff Re-Contract — clears Adoption, stage 1. Partner: Professional Services.
+P4 Quantify & Translate — clears Value evidence for a COMMERCIAL audience (CFO/COO), stage 2-3. Partner: Value Eng.
+P5 Governance Case — clears Value evidence for a GOVERNANCE audience (a review board), stage 3. Partner: Trust & Security + Product.
+P6 Governance Partner Insert — clears Governance, stage 2 fast-moving. Partner: Professional Services + Trust.
+P7 Spread From the Pocket — clears Adoption / seeds a CoE, stage 2. Partner: Professional Services.
+P8 Renewal Value Review — clears Value evidence, any stage at T-2 quarters. Partner: Renewals.
 
 RULES
 1. Recommend the play that clears the BINDING CONSTRAINT, not the account's weakest-sounding
    narrative detail.
-2. Stage 0 exception: below Stage 1, Proof leads even if Sponsorship scores lower. You cannot
-   recruit a sponsor for something nobody has seen.
-3. If renewal is within 2 quarters and Proof <= 2, sequence P8 alongside the primary play.
-4. Never recommend a play whose partner requirement the CSM would have to fulfil alone.
+2. Stage 0 exception: below Stage 1, Value evidence leads even if Sponsorship scores lower. You
+   cannot recruit a sponsor for something nobody has seen.
+3. Value-evidence audience rule: if the constraint is Value evidence and a governance/review
+   board is the blocker (stage 3), recommend P5 (a risk-and-controls case), not P4. Otherwise
+   Value evidence → P4 (a commercial number).
+4. If renewal is within 2 quarters and Value evidence <= 2, sequence P8 alongside the primary play.
+5. Never recommend a play whose partner requirement the CSM would have to fulfil alone.
 
 Return exactly:
 PLAY: <code and name>
@@ -103,19 +106,22 @@ Monday morning, each naming who is involved>
 PARTNER TO PULL IN: <role, and what you are asking them for>
 ```
 
-**Rule 4 is the leverage test in a single line.** It stops the system recommending a
-CFO-level AI risk conversation to a CSM with no partner attached — which is how a
-relationship-led CSM ends up failing alone at something they were never equipped for.
+**Rule 5 is the leverage test in a single line.** It stops the system recommending a CFO-level
+AI risk conversation to a CSM with no partner attached — which is how a relationship-led CSM ends
+up failing alone at something they were never equipped for. **Rule 3 is what routes Meridian to
+P5 and Corvus to P4** even though both have Value evidence as the binding constraint — same
+constraint, different audience, different artifact.
 
 **Example output on Corvus** *(drafted against this prompt outside the product — verify in-field):*
 > `PLAY: P4 · Quantify & Translate`
-> `WHY:` Proof is the binding constraint at 1 — production AI adoption exists in the
+> `WHY:` Value evidence is the binding constraint at 1 — production AI adoption exists in the
 > Enterprise Ops BU but no artifact translates it into terms the CFO's office can buy from.
 > `FIRST THREE MOVES:` 1. 45-min working session with the BU champion to baseline the field
 > agent triage workflow (pre/post volume, handling time, headcount). 2. Pull Value Eng in to
 > validate the cost conversion before anything is written down. 3. Draft the narrative and
 > get the champion to confirm the numbers *before* procurement ever sees them.
-> `PARTNER TO PULL IN:` Value Eng — to validate the cost model. AE — to map the procurement path.
+> `PARTNER TO PULL IN:` Value Eng — to validate the cost model. Sales/Renewals — to map the
+> procurement path.
 
 ---
 
@@ -193,7 +199,7 @@ will review, correct and own. You are not the decision-maker.
 NOTES:
 {Session Notes}
 
-For each of Sponsorship, Governance, Capability and Proof, return:
+For each of Sponsorship, Governance, Adoption and Value evidence, return:
 - a score 1-5
 - the specific quote or observation from the notes that justifies it
 - CONFIDENCE: High / Medium / Low
@@ -208,8 +214,8 @@ Sponsorship 1 = nobody owns it or it lives with one person; 5 = named exec, 3+ t
   commitment to an outcome.
 Governance 1 = nothing or ungoverned shadow building; 5 = CoE + working review path + published
   standards.
-Capability 1 = nobody can build; 5 = self-sufficient, production agents.
-Proof 1 = nothing stated; 5 = customer-validated, dated, repeated back by the economic buyer.
+Adoption 1 = no AI adoption, unaware; 5 = AI in production across teams, self-sufficient builders.
+Value evidence 1 = nothing stated; 5 = customer-validated, dated, repeated back by the economic buyer.
 
 Bias toward the LOWER score when evidence is ambiguous. An inflated diagnostic produces a
 confident wrong play, which is worse than an honest gap.
@@ -228,7 +234,7 @@ That's the piece that scales me across fifteen people.
 **Actions:** set `Accounts.Current Diagnostic` → this record; mark prior diagnostics for that
 account `Superseded`.
 
-### A2 · Renewal proof alert — *the commercial one*
+### A2 · Renewal value alert — *the commercial one*
 **Trigger:** daily, at 07:00
 **Condition:** `Quarters to Renewal <= 2` **AND** (`Latest Value Story Status` is not
 `Customer-validated` **OR** `Freshness` = `Stale`)
@@ -236,8 +242,8 @@ account `Superseded`.
 Slack the owning CSM; flag the account on the Director Book Review.
 
 > On seed data this fires on **Floor & Board** and **Voltaic** the morning the base is stood
-> up. Both renew inside two quarters with no current proof. That's the automation earning its
-> place in the first five minutes.
+> up. Both renew inside two quarters with no current value narrative. That's the automation
+> earning its place in the first five minutes.
 
 ### A3 · Evidence enforcement
 **Trigger:** record updated in `Diagnostics`, any score field
@@ -256,5 +262,5 @@ Slack the owning CSM; flag the account on the Director Book Review.
 |---|---|
 | The constraint calculation | A deterministic formula. If a CSM can't reproduce why an account got its play, they won't defend it in front of a customer. |
 | Value story `Status` | Only a human can confirm a customer said the number back. |
-| Health scoring | Nothing here rolls the four dimensions into one number. A composite score is exactly what would have shown Voltaic green. |
+| Single composite health score | The four dimensions *are* the health read, kept multidimensional on purpose. Rolling them into one number is exactly what would have shown Voltaic green. |
 | Customer-facing sends | Everything AI-drafted stops at a human. No automation emails a customer. |

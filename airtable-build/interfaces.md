@@ -13,11 +13,11 @@ for a specific person — no general-purpose dashboards.
 
 | Account | ARR | Renewal | Stage | Constraint | Readiness |
 |---|---|---|---|---|---|
-| Floor & Board | $1.7M | 2Q | 2 ↓ | **Sponsorship** | ⚠️ No current proof |
-| Corvus | $890K | 3Q | 2 | **Proof** | ⚠️ No current proof |
-| Voltaic | $520K | 2Q | 2 *(presents 4)* | **Governance** | ⚠️ No current proof |
-| TrailLine | $540K | yr 1 | 1 | **Capability** | Not yet in cycle |
-| Harbor Lane | $310K | 5Q | 0 | **Proof** | Not yet in cycle |
+| Floor & Board | $1.7M | 2Q | 2 ↓ | **Sponsorship** | ⚠️ No current value |
+| Corvus | $890K | 3Q | 2 | **Value evidence** | ⚠️ No current value |
+| Voltaic | $520K | 2Q | 2 *(presents 4)* | **Governance** | ⚠️ No current value |
+| TrailLine | $540K | yr 1 | 1 | **Adoption** | Not yet in cycle |
+| Harbor Lane | $310K | 5Q | 0 | **Value evidence** | Not yet in cycle |
 
 Sorting by ARR at risk rather than by renewal date is deliberate: it puts the largest
 preventable loss at the top of the screen every morning.
@@ -32,9 +32,9 @@ language. `Diagnostic Age` in the corner — greys out past 90 days.
 The AI recommendation rendered as a card: play name, why, **first three moves**, partner to
 pull in. Two buttons: **Accept → creates the `Account Plays` record** · **Override → asks why.**
 
-**Block 3 · The proof position**
-Current value story with its status chip and age. If missing or stale: a **"Draft value story"**
-button that creates the record and runs AI-3.
+**Block 3 · The value position**
+Current value narrative with its status chip and age. If missing or stale: a **"Draft value
+narrative"** button that creates the record and runs AI-3.
 
 **Block 4 · Who we know**
 Stakeholder grid by role. Thread count against target of 3. Departed contacts struck through —
@@ -45,8 +45,9 @@ Floor & Board's departed champion is visible here on day one, which is the whole
 ### What a CSM actually does here
 > Monday, 9am. Opens the Cockpit. Floor & Board is top of the list. Sees: constraint =
 > Sponsorship, champion departed 3 months ago, one thread mapped against a target of three,
-> no value story, renewal conversation in two quarters. The recommended play is **P2
-> Re-Sponsor** with three moves and an AE named. They click Accept and the week has a shape.
+> no value narrative, renewal conversation in two quarters. The recommended play is **P2
+> Re-Sponsor** with three moves and Sales named as partner. They click Accept and the week has
+> a shape.
 >
 > No pattern recognition required. That's a CSM in month four running the same first move as
 > the best CSM on the team.
@@ -61,28 +62,33 @@ on Monday?* · **Type:** Dashboard
 
 | | | |
 |---|---|---|
-| **ARR at Risk** `$3.11M` — 61% of book | **Proof Coverage** `0 / 6` — 0% | **Sponsor Coverage** `1 / 6` — 17% |
-| **Diagnostic Currency** `6 / 6` — 100% | | |
+| **ARR at Risk** `$3.11M` — 61% of book | **Value Coverage** `0 / 6` — 0% | **Sponsor Coverage** `1 / 6` — 17% |
+| **% of Book Staged** `6 / 6` — 100% | **Stage Progression QoQ** `baseline` | |
 
-Proof Coverage sits in position two on purpose. It's the leading indicator I'd be judged on
+Value Coverage sits in position two on purpose. It's the leading indicator I'd be judged on
 in six months, and it starts at zero.
 
 ### Row 2 — the book on one screen
 - **Stage distribution** (bar) — 1 at Stage 0, 1 at Stage 1, 3 at Stage 2, 1 at Stage 3, none
   at 4. *No account in this book is compounding.*
-- **Book ARR by constraint** (bar) — Sponsorship $1.7M · Governance $1.62M · Proof $1.2M ·
-  Capability $540K. This is my resourcing argument in one chart: two thirds of the book is
-  blocked on sponsorship or governance, so I need Trust/Security and AE partnership more than
-  I need headcount.
+- **Book ARR by constraint** (bar) — Value evidence $2.3M · Sponsorship $1.7M · Adoption $540K ·
+  Governance $520K. This is my resourcing argument in one chart: **$2.3M of the book — 45% — is
+  blocked on value evidence**, which is the entire case for P2 (the value engine) and for
+  Value Eng + Trust/Security partner capacity ahead of more headcount.
 - **Renewal timeline** (timeline by `Quarters to Renewal`), each account coloured by
   `Renewal Readiness`.
 
-### Row 3 — the team
-Grid of CSMs: book ARR · diagnostics run · plays in flight · plays over cycle time · DoD hit
-rate · plays authored · development focus.
+### Row 3 — the team (the skills matrix)
+Grid of CSMs: book ARR · the three matrix axes (**builder depth · executive presence · domain**)
+· who they're **paired with** · plays in flight · plays over cycle time · DoD hit rate · plays
+authored · development focus.
 
-**`Plays Authored` is the column I watch for the manager-layer decision.** Not tenure, not
-book size — who is contributing judgment back to the rest of the team.
+This is the skills matrix and the staffing view in one place. The matrix axes are what drive
+pairing — Marcus (builder 5 / exec 2) is visibly paired with Ben (exec 5) on TrailLine, so the
+pairing is an inspectable decision rather than a favour I remember to do.
+
+**`Plays Authored` is the column I watch for the manager-layer decision.** Not tenure, not book
+size — who is contributing judgment back to the rest of the team.
 
 ### Row 4 — the inspection queue
 - Plays over cycle time

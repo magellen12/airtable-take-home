@@ -19,8 +19,10 @@ linked-record fields resolve by name, so referenced tables must exist first.
   8. [ ] `data/account-plays.csv` → **Account Plays**
 - [ ] Convert text columns to their real types per [`schema.md`](schema.md) — importing creates
       everything as text. Specifically: link fields (`Account`, `CSM`, `Play`, `Owner`),
-      ratings (the four score fields), currency (`ARR`), dates, single/multi selects.
+      ratings (the four score fields + the three CSM skills-matrix axes), currency (`ARR`),
+      dates, single/multi selects.
 - [ ] Set `Accounts.Current Diagnostic` → the July 2026 diagnostic for each account.
+- [ ] Set the `CSMs.Paired With` self-links (2 rows: Marcus ↔ Ben) — not loaded by the script.
 
 ## Phase 2 · Formulas (~30 min)
 
@@ -28,12 +30,14 @@ linked-record fields resolve by name, so referenced tables must exist first.
 - [ ] `Accounts.Diagnostic Age`, `.ARR at Risk`, `.Renewal Readiness`, `.Exec Sponsor Named`
 - [ ] `Value Stories.Age (days)`, `.Freshness`
 - [ ] `Account Plays.Cycle Time`, `.Over Cycle Time`
-- [ ] Lookups/rollups: `Accounts.Stage`, `.Constraint`, `.Proof Score`, `.Threads Mapped`,
-      `.Latest Value Story Status`; `CSMs.Book ARR`, `.Diagnostics Run`
+- [ ] Lookups/rollups: `Accounts.Stage`, `.Constraint`, `.Value Evidence Score`,
+      `.Threads Mapped`, `.Latest Value Story Status`; `CSMs.Book ARR`, `.Diagnostics Run`
 
-**Checkpoint —** `Accounts.Renewal Readiness` should read **⚠️ No current proof** on Floor &
+**Checkpoint —** `Accounts.Renewal Readiness` should read **⚠️ No current value** on Floor &
 Board, Corvus and Voltaic, and `ARR at Risk` should total **$3,110,000**. If it doesn't, the
-lookups aren't wired to the right diagnostic.
+lookups aren't wired to the right diagnostic. `Diagnostics.Constraint` should read **Value
+Evidence** for Meridian (its lowest score) — if it says Governance, the formula's referencing
+the wrong field.
 
 ## Phase 3 · AI (~45 min)
 
@@ -51,13 +55,15 @@ to insert each `{Field Name}` as a real field reference.
 - [ ] **AI-2 Play recommender** on `Diagnostics.Recommended Play`
 - [ ] Spot-check all six against the assignments in
       [`../docs/03-transformation-methodology.md`](../docs/03-transformation-methodology.md#4--the-play-library).
-      Harbor Lane is the one to watch — it must return **P1**, not a sponsorship play.
+      Two to watch: **Harbor Lane** must return **P1** (Stage 0 exception), not a sponsorship
+      play; **Meridian** must return **P5** (Governance Case), not P4 — same Value-evidence
+      constraint, but a governance audience routes it to the risk-and-controls case.
 - [ ] **AG-1 Discovery agent** — optional if time is short, but it's the best live-demo moment.
 
 ## Phase 4 · Automations (~20 min)
 
 - [ ] **A1** Current-diagnostic maintenance
-- [ ] **A2** Renewal proof alert — daily 07:00. *Test it: it should fire on Floor & Board and
+- [ ] **A2** Renewal value alert — daily 07:00. *Test it: it should fire on Floor & Board and
       Voltaic immediately.*
 - [ ] **A3** Evidence enforcement on scores ≥ 4
 

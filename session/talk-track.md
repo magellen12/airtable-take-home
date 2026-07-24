@@ -12,8 +12,9 @@ it in.* Not a pitch. A director briefing their leadership.
 Do not start with a methodology. Start with the number.
 
 > "Six accounts, $5.06 million. Sixty-one percent of that has a renewal conversation inside
-> three quarters. And on all three of those accounts, nobody — not the CSM, not the AE, not the
-> customer's own champion — can tell you in the buyer's language what they got for the money.
+> three quarters. And on all three of those accounts, nobody — not the CSM, not the account
+> team, not the customer's own champion — can tell you in the buyer's language what they got for
+> the money.
 >
 > That's not an adoption problem. Two of those three are adopting fine. It's the problem I'd
 > spend my first 90 days on."
@@ -29,13 +30,16 @@ Airtable. Push back whenever — I'd rather use the time on the argument than th
 
 Land three things:
 
-1. **"Capability averages 3.2. Proof averages 1.3."** In no account is the blocker "Airtable
-   can't do this." Every blocker is organizational. *So this function's job is organizational
-   change management with a platform attached, not feature adoption.*
+1. **"Adoption averages 3.2. Value evidence averages 1.3."** In no account is the blocker
+   "Airtable can't do this." Every blocker is organizational. *So this function's job is moving
+   from a relationship-led motion to a transformation-led one — organizational change management
+   with a platform attached, not feature adoption.*
 
-2. **Three structural patterns, not six account problems** — value never made legible (6 of 6),
-   transformation single-threaded on individuals (4 of 6), no readiness standard so the motion
-   is unsequenced. Give one account as evidence for each, not all six.
+2. **Three structural patterns, not six account problems** — (1) value realization isn't a
+   discipline: the renewal risk is an *evidence* problem, not an adoption one; (2) transformation
+   is person-dependent *on both sides of the table* — the customer's roadmap lives in one head,
+   and our outcomes track individual CSM strengths; (3) we engage with no readiness model. Give
+   one account as evidence for each, not all six.
 
 3. **The trap — spend real time here.** Voltaic. Walk it deliberately:
    > "If you ranked this book by usage, Voltaic and Corvus are your healthiest accounts.
@@ -53,17 +57,22 @@ Land three things:
 
 Two minutes each, and **lead with the reasoning, not the activity.**
 
-- **P1 · One diagnostic across the book, days 1–30.** "I have no manager layer, so I have no
-  inspection surface. I can't coach what I can't see. And it does double duty — how a CSM
-  scores and defends their own account tells me more about their depth in 45 minutes than a
-  month of skip-levels."
-- **P2 · The value spine, days 15–60.** "Proof is a 1 on 61% of the book that renews soonest.
-  Every one of those accounts has a customer-validated value story by day 60. Renewals aren't
-  decided by usage — they're decided by whether the economic buyer can repeat our number back
-  to us."
-- **P3 · Plays and partners replace personalities, days 30–90.** "I don't need fifteen CSMs who
-  can hold their own with a CFO on AI risk. I need fifteen who correctly diagnose that the
-  account needs that conversation and pull the right partner into it."
+- **P1 · Stand up the transformation methodology — diagnostic → stage → plays, days 1–30.** "I
+  have no manager layer, so no shared language and no inspection surface. I can't coach what I
+  can't see. And the diagnostic does double duty — how a CSM scores and defends their own account
+  tells me more about their depth in 45 minutes than a month of skip-levels. Governance and CoE
+  work is a *required* play in the library, not an aspiration — it's the one answer to Meridian,
+  Voltaic, and Floor & Board."
+- **P2 · The value-realization engine, pointed at the next three quarters of renewals, days
+  15–60.** "Value evidence is a 1 on 61% of the book that renews soonest. Baseline, instrument,
+  quantify, narrate — every one of those accounts has a customer-validated narrative by day 60.
+  Renewals aren't decided by usage; they're decided by whether the economic buyer can repeat our
+  number back. Same asset funds Corvus's expansion."
+- **P3 · Rebuild the team's operating system — roles, rhythms, development, days 30–90.** "Fifteen
+  people who lost their manager layer don't need a boss with a deck; they need a system that
+  develops them. A skills matrix, deliberate pairing of complements, a weekly review run from the
+  base. I don't need fifteen CSMs who can hold their own with a CFO on AI risk — I need fifteen
+  who diagnose that the account needs that conversation and pull the right partner in."
 
 **Then say what you're not doing, unprompted.** It's a prioritization-judgment signal and it
 pre-empts a question:
@@ -77,18 +86,20 @@ pre-empts a question:
 
 Only two ideas need to land, and they're both mechanics, not concepts:
 
-**The constraint picks the play, not the average.**
-> "Meridian has the highest average score in the book — 3.5 — and is producing nothing,
-> because governance is a gate and capability being a 4 doesn't open it. Corvus scores 2.25
-> and is one artifact away from a seven-figure expansion. Managing to the average gets both
-> of those exactly backwards."
+**Stage describes, constraint prescribes — the lowest dimension picks the play, not the average.**
+> "Meridian has the highest average score in the book — 3.5 — and is producing nothing, because
+> its value evidence is a 2 and a review board is the gate; sponsorship at 5 and adoption at 4
+> don't open it. Corvus scores 2.25 and is one artifact away from a seven-figure expansion.
+> Managing to the average gets both of those exactly backwards."
 
 **Where the model was wrong, and what I did about it.** Volunteer this. It reads as rigor and
 it's true:
 > "The first version told me to go recruit an executive sponsor at Harbor Lane. But nobody at
 > Harbor Lane has seen anything to sponsor — you can't sponsor an abstraction. So there's a
-> second rule: below Stage 1, proof leads. The model earned that rule by being wrong once,
-> and I'd expect the team to keep doing that to it."
+> second rule: below Stage 1, value evidence leads. And it made a subtler error I kept — it
+> wanted to route Meridian to a commercial value play, when the evidence a *review board* needs
+> is a risk-and-controls case, not a P&L line. Same constraint, different audience. The model
+> earned both corrections by being wrong once."
 
 ---
 
@@ -100,13 +111,13 @@ one that was clearly rehearsed into safety.
 
 | | Beat | What you say |
 |---|---|---|
-| 1 | **Director Book Review** | "This is my Monday. ARR at risk, proof coverage zero out of six, no account in the book compounding." |
+| 1 | **Director Book Review** | "This is my Monday. ARR at risk, value coverage zero out of six, no account in the book compounding. And the skills matrix — how I staff and pair the team — is on the same screen." |
 | 2 | **Switch to Dana's CSM Cockpit** | "Now the same base as a CSM. Floor & Board is top of her list — sorted by ARR at risk, not by renewal date, so the largest preventable loss is on screen every morning." |
 | 3 | **The diagnostic** | Four bars, constraint in red. "Sponsorship is a 1. Champion left three months ago, one thread mapped against a target of three." |
-| 4 | **The recommended play** | "P2 Re-Sponsor, three moves, AE named. That's a CSM in month four running the same first move as the best CSM on the team." |
+| 4 | **The recommended play** | "P2 Re-Sponsor, three moves, Sales named — and behind it, stand up a CoE so this doesn't happen again when the *next* champion leaves. That's a CSM in month four running the same first move as the best CSM on the team." |
 | 5 | **⭐ Run AI-3 live on Corvus** | Generate it in the room. "Production AI adoption, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write — and Value Eng validates the number before it moves out of Draft." |
 | 6 | **⭐ Run AI-3 live on Floor & Board** | It returns `INSUFFICIENT EVIDENCE`. **Do not skip this.** "That's the most useful thing this field does all day. The failure mode of an AI value generator is a plausible invented number walking into a CFO conversation. It refuses, and it tells the CSM what to go get." |
-| 7 | **Automation A2** | "Fired on Floor & Board and Voltaic the morning I stood this up. Renewal inside two quarters, no current proof. Two quarters of warning instead of two weeks." |
+| 7 | **Automation A2** | "Fired on Floor & Board and Voltaic the morning I stood this up. Renewal inside two quarters, no current value narrative. Two quarters of warning instead of two weeks." |
 
 **Close the demo on the leverage test before they ask it:**
 > "The newest CSM on the team gets the same diagnosis, the same play, and a first draft of an
@@ -152,4 +163,5 @@ Prepared answers: [`qa-prep.md`](qa-prep.md).
 - [ ] One AI generation held back to run **live** — not pre-generated
 - [ ] Floor & Board left in its `INSUFFICIENT EVIDENCE` state on purpose
 - [ ] Brief open in a second tab for the scoring table
-- [ ] Know the four numbers cold: **$5.06M · $3.11M · 61% · Proof 1.3 avg**
+- [ ] Know the four numbers cold: **$5.06M book · $3.11M at risk · 61% · Value evidence 1.3 avg
+      vs Adoption 3.2**

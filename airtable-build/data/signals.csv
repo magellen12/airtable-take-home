@@ -1,9 +1,9 @@
 Signal,Account,Type,Direction,Date,Detail,Weight
 Daily active use steady across all 4 teams,Floor & Board Furniture,Adoption,Positive,2026-07-15,"Core calendar and base in strong daily use. Adoption is genuinely healthy — this is why a usage-based health score would show this account green.",2
-Support mix shifted to basic how-to,Floor & Board Furniture,Support,Neutral,2026-07-01,"Ticket mix moved from advanced configuration to how-to after the champion left. Capability is draining with the person, not the platform.",2
+Support mix shifted to basic how-to,Floor & Board Furniture,Support,Neutral,2026-07-01,"Ticket mix moved from advanced configuration to how-to after the champion left. The know-how is draining with the person, not the platform.",2
 Cross-team automation break escalated,Floor & Board Furniture,Support,Negative,2026-07-12,"One cross-team automation broke and escalated. Support owns the fix — not CSM time in a renewal cycle.",1
-Sales flagged renewal risk,Floor & Board Furniture,Commercial,Negative,2026-07-05,"AE raised renewal risk ahead of the conversation in ~2 quarters.",3
-Zero value-realization conversations since kickoff,Floor & Board Furniture,Engagement,Negative,2026-07-20,"No value conversation in over a year. Proof = 1.",3
+Sales flagged renewal risk,Floor & Board Furniture,Commercial,Negative,2026-07-05,"Sales raised renewal risk ahead of the conversation in ~2 quarters.",3
+Zero value-realization conversations since kickoff,Floor & Board Furniture,Engagement,Negative,2026-07-20,"No value conversation in over a year. Value evidence = 1.",3
 AI use cases stalled in review >1 quarter,Meridian Health Systems,Governance,Negative,2026-07-10,"Every proposed AI use case has sat in the customer's security and data-governance review for over a quarter.",3
 Exec sponsor pushing for agent rollout,Meridian Health Systems,Engagement,Positive,2026-07-16,"Sponsor actively wants to move aggressively. Demand is not the problem.",3
 CoE running effectively,Meridian Health Systems,Governance,Positive,2026-07-14,"Established CoE functioning well within its remit.",2

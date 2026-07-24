@@ -1,7 +1,7 @@
-Name,Tenure (months),Strength Profile,Development Focus,Plays Authored
-Dana Whitfield,34,"Relationship,Commercial","Quantifying value. Has never built a business case from adoption data — Corvus is the coached rep.",0
-Priya Raghavan,52,"Relationship,Governance","Leading rather than relaying. Strong relationships, has drifted into order-taking at Meridian.",0
-Marcus Oyelaran,14,"Technical/Builder","Executive-level engagement. Strongest builder on the team, newer above the workflow layer.",0
-Sofia Restrepo,22,"Relationship","Creating demand where none exists. Harbor Lane is the unsupervised playbook test.",0
-Ben Achterberg,41,"Executive,Commercial","Depth on AI governance. Credible with execs, thin on the technical governance conversation.",0
-Yuki Tanabe,8,"Technical/Builder,Governance","Ramp. New — the clearest test of whether the diagnostic works without tenure behind it.",0
+Name,Tenure (months),Strength Profile,Builder Depth,Executive Presence,Domain,Paired With,Development Focus,Plays Authored
+Dana Whitfield,34,"Relationship,Commercial",2,4,3,,"Quantifying value. Has never built a business case from adoption data — Corvus is the coached rep.",0
+Priya Raghavan,52,"Relationship,Governance",3,4,4,,"Leading rather than relaying. Strong relationships, has drifted into order-taking at Meridian.",0
+Marcus Oyelaran,14,"Technical/Builder",5,2,3,Ben Achterberg,"Executive-level engagement. Strongest builder on the team, newer above the workflow layer. Paired with Ben for TrailLine's COO thread.",0
+Sofia Restrepo,22,"Relationship",2,3,3,,"Creating demand where none exists. Harbor Lane is the unsupervised playbook test.",0
+Ben Achterberg,41,"Executive,Commercial",2,5,3,Marcus Oyelaran,"Depth on AI governance. Credible with execs, thin on the technical governance conversation. Paired into TrailLine as exec-presence complement.",0
+Yuki Tanabe,8,"Technical/Builder,Governance",4,2,2,,"Ramp. New — the clearest test of whether the diagnostic works without tenure behind it.",0

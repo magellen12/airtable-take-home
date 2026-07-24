@@ -12,7 +12,7 @@ fields resolve by name, so referenced tables have to exist first.
 | 5 | `stakeholders.csv` | 19 | Stakeholders |
 | 6 | `signals.csv` | 24 | Signals |
 | 7 | `value-stories.csv` | 6 | Value Stories |
-| 8 | `account-plays.csv` | 8 | Account Plays |
+| 8 | `account-plays.csv` | 9 | Account Plays |
 
 ---
 
@@ -24,8 +24,11 @@ dynamics and CS-signals columns. The `Notes` field on `accounts.csv` is close to
 
 **Constructed by me, and clearly invented:**
 
-- **Diagnostic scores** — my judgment applied to the snapshot facts. The reasoning for every
-  score is in [`../../docs/02-book-diagnosis.md`](../../docs/02-book-diagnosis.md).
+- **Diagnostic scores** — my judgment applied to the snapshot facts, on the four dimensions
+  (Adoption depth, Sponsorship & multi-threading, Governance maturity, Value evidence). The
+  reasoning for every score is in [`../../docs/02-book-diagnosis.md`](../../docs/02-book-diagnosis.md).
+- **CSM skills-matrix ratings** (builder depth × executive presence × domain) and the pairings
+  in `csms.csv` — invented, but mapped to the snapshot's descriptions of each account's CSM.
 - **Stakeholder names.** The *roles* are drawn from the snapshot (the departed Sr. Director of
   Marketing Ops, the deputy, the COO, the review board chair, the BU champion); the names are
   invented. Records marked `GAP` in the notes are people the snapshot implies exist but who

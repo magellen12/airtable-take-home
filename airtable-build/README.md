@@ -10,10 +10,10 @@ Scoped deliberately: two priorities, well architected, demoable live — not the
 ## What it does
 
 ```
-   SIGNALS                DIAGNOSTIC              CONSTRAINT              PLAY                 VALUE STORY
+   SIGNALS                DIAGNOSTIC              CONSTRAINT              PLAY               VALUE NARRATIVE
    adoption, support,  →  4 dimensions      →     lowest score,     →    from the 8-play  →   AI-drafted in the
-   commercial, QBR        scored with the         auto-derived           library, with        buyer's language,
-   attendance             customer                                       partner named        human-validated
+   commercial, QBR        (adoption, sponsor,     auto-derived           library, with        buyer's language,
+   attendance             governance, value)                             partner named        human-validated
                                 ↓                                                                    ↓
                           AI: stage +                                                          renewal / expansion
                           rationale                                                            conversation
@@ -22,8 +22,8 @@ Scoped deliberately: two priorities, well architected, demoable live — not the
 A CSM opens their Cockpit and sees: **my accounts, ranked by ARR at risk · the binding
 constraint on each · the recommended play and its first three moves · what's due this week.**
 
-A Director opens the Book Review and sees: **stage distribution · proof coverage · ARR at risk
-by constraint · plays past cycle time · fifteen CSMs' judgment in one place.**
+A Director opens the Book Review and sees: **stage distribution · value coverage · ARR at risk
+by constraint · the skills matrix · plays past cycle time · fifteen CSMs' judgment in one place.**
 
 ---
 
@@ -34,10 +34,10 @@ by constraint · plays past cycle time · fifteen CSMs' judgment in one place.**
 | | Before | With the OS |
 |---|---|---|
 | **Newest CSM** | Applies the one play they know. Diagnosis quality depends on who trained them. | Same diagnostic, same constraint logic, same play, with the right partner named for them. Gets a first draft of an executive narrative they couldn't yet write. |
-| **Strong relationship CSM** *(Corvus)* | Never quantified an AI story; expansion stays unsubstantiated. | Base drafts the numbers, Solutions validates, they do the persuasion. Deployed, not fixed. |
-| **Strong builder CSM** *(TrailLine)* | Great in the workflow, thin above it. | Play names the exec moves explicitly and pairs them with a partner. |
+| **Strong relationship CSM** *(Corvus)* | Never quantified an AI story; expansion stays unsubstantiated. | Base drafts the numbers, Professional Services validates, they do the persuasion. Deployed, not fixed. |
+| **Strong builder CSM** *(TrailLine)* | Great in the workflow, thin above it. | Skills matrix pairs them with an exec-presence partner for the COO thread — they keep the account, not lose it. |
 | **Best CSM on the team** | Carries pattern recognition in their head; it benefits one book. | Time back on diagnosis and drafting. Authors plays that all 15 then run. Their judgment becomes shared infrastructure. |
-| **Director** | 15 opinions, no inspection surface, discovers problems at renewal. | One base. Grades 3 diagnostics/week. Sees a stale value story 2 quarters before it becomes a churn signal. |
+| **Director** | 15 opinions, no inspection surface, discovers problems at renewal. | One base. Grades 3 diagnostics/week. Sees a stale value narrative 2 quarters before it becomes a churn signal. |
 
 **The single sentence:** the system carries the pattern recognition, so a CSM doesn't have to
 have fifteen years of it — and it makes fifteen people's judgment visible in one place, which
@@ -53,7 +53,7 @@ is the exact thing this team lost when it lost its managers.
 | [`ai-components.md`](ai-components.md) | The 3 AI fields, 1 agent, and 3 automations — with copy-pasteable prompts |
 | [`interfaces.md`](interfaces.md) | CSM Cockpit, Director Book Review, and the live diagnostic session view |
 | [`build-checklist.md`](build-checklist.md) | Ordered build steps — roughly 2–3 hours in the product |
-| [`data/`](data/) | Import-ready CSVs: 6 accounts pre-scored, 8 plays, 18 stakeholders, 24 signals, 6 value stories |
+| [`data/`](data/) | Import-ready CSVs: 6 accounts pre-scored, 8 plays, 19 stakeholders, 24 signals, 6 value stories, 6 CSMs w/ skills matrix |
 
 ---
 
@@ -73,8 +73,9 @@ create those.
 
 Naming the cut lines matters as much as the build.
 
-- **No forecasting or health-score model.** A composite health score is exactly the kind of
-  number that hides Voltaic. The constraint is the signal.
+- **No *single-number* health score.** The four-dimension diagnostic is the health read, kept
+  multidimensional on purpose — a composite that averages the dimensions is exactly the kind of
+  number that hides Voltaic. The binding constraint is the signal, not an average.
 - **No CRM sync.** Real deployment reads renewal dates and ARR from Salesforce; here they're
   static fields. Assumed, not solved.
 - **No full stakeholder relationship graph.** Stakeholders are flat, tagged by role. Enough to
