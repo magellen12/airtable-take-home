@@ -37,7 +37,8 @@ relationship-led motion to a transformation-led one. That premise drives everyth
 | — | Build guides | [`airtable-build/build-checklist.md`](airtable-build/build-checklist.md) · [`omni-build-brief.md`](airtable-build/omni-build-brief.md) | Two ways to build it: human-in-UI steps, or copy-paste prompts for Airtable Omni. |
 | — | Build script | [`scripts/`](scripts/) | Optional: creates the base and loads the data via the Airtable API. |
 | 3 | **Live session** | [`session/`](session/) | 60-minute run of show and prepared answers to the pushback I expect. |
-| — | Appendix | [`appendix/`](appendix/) | Assumptions I'm making, and how I used AI to build this. |
+| — | Appendix | [`appendix/`](appendix/) | Assumptions, how I used AI, and the [reconciliation](appendix/reconciliation.md) of two independent strategy drafts. |
+| — | Changelog | [`CHANGELOG.md`](CHANGELOG.md) | How this evolved, revision by revision — what I kept, changed, and verified. |
 
 ---
 
