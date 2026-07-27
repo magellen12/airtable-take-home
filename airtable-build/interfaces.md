@@ -74,7 +74,7 @@ in six months, and it starts at zero.
 - **Book ARR by constraint** (bar) — Value evidence $2.3M · Sponsorship $1.7M · Adoption $540K ·
   Governance $520K. This is my resourcing argument in one chart: **$2.3M of the book — 45% — is
   blocked on value evidence**, which is the entire case for P2 (the value engine) and for
-  Value Eng + Trust/Security partner capacity ahead of more headcount.
+  Value Validation + Security & Risk partner capacity ahead of more headcount.
 - **Renewal timeline** (timeline by `Quarters to Renewal`), each account coloured by
   `Renewal Readiness`.
 

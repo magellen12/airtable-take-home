@@ -115,7 +115,7 @@ one that was clearly rehearsed into safety.
 | 2 | **Switch to Dana's CSM Cockpit** | "Now the same base as a CSM. Floor & Board is top of her list — sorted by ARR at risk, not by renewal date, so the largest preventable loss is on screen every morning." |
 | 3 | **The diagnostic** | Four bars, constraint in red. "Sponsorship is a 1. Champion left three months ago, one thread mapped against a target of three." |
 | 4 | **The recommended play** | "P2 Re-Sponsor, three moves, Sales named — and behind it, stand up a CoE so this doesn't happen again when the *next* champion leaves. That's a CSM in month four running the same first move as the best CSM on the team." |
-| 5 | **⭐ Run AI-3 live on Corvus** | Generate it in the room. "Production AI adoption, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write — and Value Eng validates the number before it moves out of Draft." |
+| 5 | **⭐ Run AI-3 live on Corvus** | Generate it in the room. "Production AI adoption, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write — and Value Validation validates the number before it moves out of Draft." |
 | 6 | **⭐ Run AI-3 live on Floor & Board** | It returns `INSUFFICIENT EVIDENCE`. **Do not skip this.** "That's the most useful thing this field does all day. The failure mode of an AI value generator is a plausible invented number walking into a CFO conversation. It refuses, and it tells the CSM what to go get." |
 | 7 | **Automation A2** | "Fired on Floor & Board and Voltaic the morning I stood this up. Renewal inside two quarters, no current value narrative. Two quarters of warning instead of two weeks." |
 

@@ -100,7 +100,7 @@ TABLE 3 — "Plays" (primary field: Play)
 - Clears Constraint: single select — options: Sponsorship, Governance, Adoption, Value Evidence
 - Applies at Stage: multiple select — options: 0, 1, 2, 3, 4
 - CSM Owns: long text
-- Partner Leads: multiple select — options: Professional Services, Trust & Security, Product, Sales, Renewals, Value Eng, Support
+- Partner Leads: multiple select — options: Professional Services, Security & Risk, Product, Sales, Renewals, Value Validation, Support
 - Artifact Produced: long text
 - Definition of Done: long text
 - Typical Duration (wks): number, integer
@@ -111,7 +111,7 @@ TABLE 4 — "Account Plays" (primary field: Name)
 - Account: link to Accounts
 - Play: link to Plays
 - Owner: link to CSMs
-- Partner Engaged: multiple select — options: Professional Services, Trust & Security, Product, Sales, Renewals, Value Eng, Support
+- Partner Engaged: multiple select — options: Professional Services, Security & Risk, Product, Sales, Renewals, Value Validation, Support
 - Status: single select — options: Not started, In flight, Blocked, Done — DoD met, Abandoned
 - Start Date: date
 - Target Date: date

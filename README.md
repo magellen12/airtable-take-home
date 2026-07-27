@@ -32,6 +32,7 @@ relationship-led motion to a transformation-led one. That premise drives everyth
 | — | Book diagnosis | [`docs/02-book-diagnosis.md`](docs/02-book-diagnosis.md) | The scored analysis behind the brief — all six accounts, dimension by dimension, with the play each one gets. |
 | — | Methodology | [`docs/03-transformation-methodology.md`](docs/03-transformation-methodology.md) | The repeatable motion: maturity ladder, constraint rule, the governance through-line, and the 8-play library. |
 | — | Operating model | [`docs/04-operating-model.md`](docs/04-operating-model.md) | How this runs across 15 CSMs — ownership boundaries, the skills matrix + pairing, rhythm, metrics, inspection, and how I'd develop the team. |
+| — | Play library | [`docs/05-play-library.md`](docs/05-play-library.md) | The eight plays in full — each split into **the standard** (global consistency) and **the latitude** (local customization), plus what's deliberately *not* a play. |
 | 2 | **Airtable build** | [`airtable-build/`](airtable-build/) | Schema, AI component specs, interface specs, build checklist, and seed data for all six accounts. |
 | — | Seed data | [`airtable-build/data/`](airtable-build/data/) | Import-ready CSVs — the six accounts pre-scored, 8 plays, stakeholders, signals, value narratives, CSM skills matrix. |
 | — | Build guides | [`airtable-build/build-checklist.md`](airtable-build/build-checklist.md) · [`omni-build-brief.md`](airtable-build/omni-build-brief.md) | Two ways to build it: human-in-UI steps, or copy-paste prompts for Airtable Omni. |

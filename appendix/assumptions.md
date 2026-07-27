@@ -14,21 +14,34 @@ Sales, P2 drops to third and the first 90 days go to enablement and coverage ins
 *Confidence: high — the brief says targets are "increasingly tied to demonstrable, AI-driven
 business outcomes."*
 
-**2 · A Professional Services / Solutions or equivalent technical partner function exists and
-has capacity.**
-The ownership boundary — CSMs never have to be the smartest technical person in the room — is
-the load-bearing beam of the whole operating model, and the JD names Professional Services as a
-cross-functional partner. If there's no partner function, or it's oversubscribed, then the depth
-gap is a hiring and training problem, not a staffing one, and the 90 days look completely
-different.
-*Confidence: medium. This is the assumption I'd most want checked on day one.*
+**2 · Professional Services has the capacity to take the technical load these plays put on it.**
+The ownership boundary — CSMs never have to be the smartest technical person in the room — is the
+load-bearing beam of the whole operating model. *That the function exists isn't an assumption:* the
+role names Professional Services among its cross-functional partners. **Its capacity is.** Four of
+eight plays route technical delivery to it, and if it's oversubscribed then the depth gap is a
+hiring and training problem rather than a staffing one, and the 90 days look completely different.
+*Confidence: medium on capacity. This is the assumption I'd most want checked on day one.*
 
-**3 · There's a Trust/Security function that can produce customer-facing AI risk and controls
-artifacts.**
-P5 (Meridian) assumes I'm orchestrating an artifact rather than authoring one from nothing.
-If it doesn't exist, Meridian is a two-quarter project rather than a two-month one and I'd
-have to say so to that sponsor early.
-*Confidence: medium-low for AI-specific governance content specifically.*
+**3 · Two partner capabilities exist in some form — and I've named them by what they produce,
+not by a team I'm claiming exists.**
+Beyond the partners the role explicitly names (Renewals, Support, Professional Services, Product,
+Sales), two plays depend on capabilities I couldn't verify the shape of, so I've described them
+functionally rather than guessing at an org chart:
+
+- **Security & Risk** — whoever can produce customer-facing AI risk and controls artifacts. P5
+  assumes I'm *orchestrating* that artifact rather than authoring one from nothing. If that
+  capability doesn't exist in customer-facing form, Meridian is a two-quarter project rather than
+  a two-month one, and I'd have to tell that sponsor early rather than discover it at week six.
+- **Value Validation** — whoever can stand behind a quantitative value claim before it reaches a
+  customer's CFO. P4 assumes someone other than the CSM is accountable for the number's integrity.
+  If nobody is, then either CS owns quantitative validation itself — which is a capability and
+  headcount question, not a process one — or every value narrative carries more risk than the
+  status gate implies.
+
+Wherever these actually sit, that's who the plays mean. **Mapping both to real owners is a day-one
+question**, and it's the first thing I'd ask about the operating model.
+*Confidence: medium-low, and lowest for AI-specific governance content specifically. These are the
+two places I'm most likely to be wrong about how the company is arranged.*
 
 **4 · These six accounts are representative of the wider book of ~15 CSMs' worth of accounts.**
 I'm generalizing structural patterns from six. The brief says "your job is the book, not any

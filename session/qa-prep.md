@@ -37,7 +37,7 @@ decided by the second one.**
 Deliberately, on timing rather than importance. It renews in four quarters and it has the one
 thing you can't manufacture — a committed exec sponsor pushing hard. Its binding constraint is
 value evidence, but the evidence its review board needs is a risk-and-controls case, and
-Trust/Security co-builds that with me, not alone. Floor & Board is $1.7M with no sponsor, no
+Security & Risk co-builds that with me, not alone. Floor & Board is $1.7M with no sponsor, no
 governance, no value evidence, and a renewal conversation in two quarters. **If Meridian still
 hasn't cleared its review board at day 60 I'd re-sequence**, because the sponsor's patience is
 the depreciating asset there.
@@ -110,7 +110,7 @@ team that just lost its managers.
 I stop trying to make them, and I'd say that to them directly. The ownership rule is that a CSM
 must own the diagnosis and the narrative and must never have to be the smartest technical
 person in the room. Corvus is the live case: excellent relationships, no technical depth, and
-the expansion needs a quantified CFO story. The base drafts the numbers, Value Eng validates
+the expansion needs a quantified CFO story. The base drafts the numbers, Value Validation validates
 them, and the CSM does the part they're genuinely best at — getting the CFO's office to believe
 it. **Where I'd draw a hard line is diagnosis.** If someone can't tell the difference between
 Voltaic looking healthy and being healthy after two quarters of coaching, that's a role fit
@@ -186,10 +186,11 @@ thing that will make this base stale by month two.
 **"What's the weakest part of this?"**
 Two, honestly. **One:** the value narratives are mostly empty. Only Corvus has numbers and I
 invented them, because the snapshot contains none — so the thing I've argued is most important
-is the thing I've least demonstrated. **Two:** the plays are specified but only three are
-templated, and a play without a template is a slogan. If I'd had another four hours it would
-have gone into templating P2 (Re-Sponsor) and P5 (Governance Case), which are the two the
-largest accounts need first.
+is the thing I've least demonstrated. **Two:** all eight plays are specified in full, but only
+five carry a built artifact template — P3, P5 and P7 don't — and a play without a template still
+makes the CSM start from a blank page, which is the tax the library exists to remove. If I'd had
+another four hours it would have gone into templating **P5 (Governance Case)**, which the
+second-largest account needs now and nobody on the team has run before, then P7.
 
 ---
 
@@ -198,7 +199,7 @@ largest accounts need first.
 Being asked "what questions do you have" is part of the assessment. These are real ones whose
 answers would change the plan:
 
-1. **Who owns AI governance content today** — is there a Trust/Security function producing
+1. **Who owns AI governance content today** — is there a Security & Risk function producing
    customer-facing risk and controls artifacts, or would P5 be the first time anyone's built
    one? That's the difference between orchestrating and creating, and it changes my day-30 plan.
 2. **What's the actual ratio of relationship-led to technically-deep CSMs across the fifteen?**

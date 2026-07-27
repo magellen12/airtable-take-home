@@ -13,6 +13,80 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v2.5] — 2026-07-27 · `66a6c12` — Name partner *capabilities*, not teams I can't verify exist
+*13 files*
+
+A self-audit of invented content, prompted by asking where each partner name actually came from.
+
+- **Verified against the sources first.** The assessment names no Airtable-side partner functions
+  at all; the JD names exactly five — *"partner closely with Renewals, Support, Professional
+  Services, Product, and Sales."* Anything outside that list was mine.
+- **The problem:** `Value Eng`, `Trust & Security`, `Deal Desk` and `Solutions` were org-chart
+  names I'd invented and then used as if they were given. `Value Eng` wasn't even flagged in the
+  assumptions.
+- **Renamed repo-wide** to describe what has to be produced and who stands behind it —
+  `Value Eng` → **Value Validation** (stands behind a quantitative claim before it reaches a
+  customer's CFO), `Trust & Security` → **Security & Risk** (produces customer-facing risk and
+  controls artifacts), `Deal Desk` → *whoever owns contracting*, and `Professional Services /
+  Solutions` → **Professional Services**, which the JD does name. Touches the base schema's select
+  options, the seed script, both play CSVs, `docs/02–05`, the AI component prompts, interfaces, the
+  Omni brief, the talk track and the Q&A.
+- **Kept, because they're grounded:** every customer-side name — Marketing Ops, RevOps, the IT
+  Security & Data Governance Review Board, the CFO's office, procurement — is verbatim from the
+  account snapshot, and the audit confirmed each one rather than assuming it.
+- **Stated the rule rather than just applying it:** `docs/05` gains *"A note on partner names"* and
+  `docs/04` makes the split explicit — named functions keep their names, unverifiable ones are
+  described by capability, and **mapping them to real owners is a day-one question.**
+  `appendix/assumptions.md` §3 now covers both capabilities and what breaks if either is missing.
+- **Removed two unsupported claims about customer behavior.** P5's "most of what we are guessing at
+  is written down somewhere" became *ask whether the criteria exist in writing — if they don't,
+  that itself tells you how the board decides.* P6's "they already know they have agents nobody
+  owns" became *run it where the customer has already raised the concern.* Voltaic's version stays,
+  because they volunteered it in the snapshot — the generalization to all accounts was the part
+  without support.
+- **Fixed two internal inconsistencies:** the Q&A claimed only three plays were templated and named
+  P2 as the next gap, but the base marks five templated (P1, P2, P4, P6, P8) — the real gap is P5
+  then P7. And `docs/04`'s Corvus example had Professional Services validating value numbers while
+  every other document said otherwise.
+- **Verified:** seed dry-run passes, all link references resolve, and a full-repo sweep confirms
+  every Airtable-side function named is one of the JD's five or an explicitly-labeled capability.
+
+## [v2.4] — 2026-07-27 · `bcd7616` — Add the full play library
+*3 files · +440*
+
+- **Added** [`docs/05-play-library.md`](docs/05-play-library.md): all eight plays written out in
+  full, where previously they existed only as a one-row-per-play table in `docs/03` and a CSV.
+- **The organizing principle is the brief's** *global consistency, local customization*: each play
+  splits into **the standard** — constraint, trigger, partner, artifact, signal, changed in the
+  monthly retro rather than in the field — and **the latitude**, which is sequencing, framing, who
+  to approach and what to say. Sequences are explicitly labeled *a default, not a mandate*.
+- **Changed how "done" is written.** Definitions of done are now phrased as **signals we look for
+  on the customer's side**, not as predictions of customer behavior or commitments made on their
+  behalf, with a short section up front stating the distinction. A play can be run well and still
+  not reach its signal — that's information for the retro, not a failed CSM.
+- **Also added:** what's deliberately *not* a play (the QBR, the exec dinner, the training webinar,
+  "increase adoption", the health-score save); how the library is added to and retired, including
+  the override-rate check on the mechanism itself; and the honest gaps — 5 of 8 plays have a built
+  artifact template, and the bars are demanding enough that I'd expect to revise one within two
+  quarters.
+- Account specifics were kept light and consolidated into a single summary table, so the plays read
+  as reusable rather than bespoke to these six accounts.
+
+## [v2.3] — 2026-07-24 · `e810f33` — Human review pass on the brief (PR [#1](https://github.com/magellen12/airtable-take-home/pull/1))
+*1 file · +74 / −79 — three review commits, merged with history preserved.*
+
+Run as a pull request on purpose: the agent-drafted vs. human-edited diff is itself an artifact of
+how I work with AI.
+
+- **`beea6a1`** — agent-proposed revision applying a people-manager lens to priority 3, flagged as
+  proposed rather than adopted.
+- **`1e6ee98`** — my round-2 additions: the team-engagement lens; the observation that **the team
+  has the book's own pathology** (fifteen tenured CSMs "connected on the org chart, not in
+  practice"); and the **global consistency, local customization** principle — *consistency is the
+  floor, not the ceiling.*
+- **`fd117b4`** — trimmed 1,315 → 1,030 words to hold the ~1.75-page target. Cut hedges and
+  redundant examples, kept every concept.
+
 ## [v2.2] — 2026-07-24 · `9bedf3b` — Tighten the brief to 1–2 pages
 *2 files · +85 / −193*
 

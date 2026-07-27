@@ -81,9 +81,9 @@ THE PLAY LIBRARY
 P1 Prove One Thing — clears Value evidence, stage 0. Partner: Professional Services.
 P2 Re-Sponsor — clears Sponsorship, stage 1-2. Partner: Sales.
 P3 Kickoff Re-Contract — clears Adoption, stage 1. Partner: Professional Services.
-P4 Quantify & Translate — clears Value evidence for a COMMERCIAL audience (CFO/COO), stage 2-3. Partner: Value Eng.
-P5 Governance Case — clears Value evidence for a GOVERNANCE audience (a review board), stage 3. Partner: Trust & Security + Product.
-P6 Governance Partner Insert — clears Governance, stage 2 fast-moving. Partner: Professional Services + Trust.
+P4 Quantify & Translate — clears Value evidence for a COMMERCIAL audience (CFO/COO), stage 2-3. Partner: Value Validation.
+P5 Governance Case — clears Value evidence for a GOVERNANCE audience (a review board), stage 3. Partner: Security & Risk + Product.
+P6 Governance Partner Insert — clears Governance, stage 2 fast-moving. Partner: Professional Services + Security & Risk.
 P7 Spread From the Pocket — clears Adoption / seeds a CoE, stage 2. Partner: Professional Services.
 P8 Renewal Value Review — clears Value evidence, any stage at T-2 quarters. Partner: Renewals.
 
@@ -117,10 +117,10 @@ constraint, different audience, different artifact.
 > `WHY:` Value evidence is the binding constraint at 1 — production AI adoption exists in the
 > Enterprise Ops BU but no artifact translates it into terms the CFO's office can buy from.
 > `FIRST THREE MOVES:` 1. 45-min working session with the BU champion to baseline the field
-> agent triage workflow (pre/post volume, handling time, headcount). 2. Pull Value Eng in to
+> agent triage workflow (pre/post volume, handling time, headcount). 2. Pull the value-validation partner in to
 > validate the cost conversion before anything is written down. 3. Draft the narrative and
 > get the champion to confirm the numbers *before* procurement ever sees them.
-> `PARTNER TO PULL IN:` Value Eng — to validate the cost model. Sales/Renewals — to map the
+> `PARTNER TO PULL IN:` Value Validation — to validate the cost model. Sales/Renewals — to map the
 > procurement path.
 
 ---
