@@ -10,7 +10,7 @@ falls over if the assumption is wrong** — that seems more useful than a flat l
 **1 · CS influences or carries a renewal and expansion number.**
 The entire value-realization priority assumes CS is measured on commercial outcomes rather than
 satisfaction or adoption. If CS is a pure adoption function and renewals sit entirely with
-Sales, P2 drops to third and the first 90 days go to enablement and coverage instead.
+Sales, priority 2 drops to third and the first 90 days go to enablement and coverage instead.
 *Confidence: high — the brief says targets are "increasingly tied to demonstrable, AI-driven
 business outcomes."*
 
@@ -46,7 +46,7 @@ two places I'm most likely to be wrong about how the company is arranged.*
 **4 · These six accounts are representative of the wider book of ~15 CSMs' worth of accounts.**
 I'm generalizing structural patterns from six. The brief says "your job is the book, not any
 one account," which implies they're a fair sample, but six is six. If Value evidence is genuinely
-a 1 across the full book, P2 (the value engine) is right. If these six were selected as the
+a 1 across the full book, priority 2 (the value engine) is right. If these six were selected as the
 interesting ones, the real book may skew toward Harbor Lane — quiet, healthy, unrealized — and
 the priority shifts toward demand creation.
 *Confidence: medium.*
@@ -74,7 +74,7 @@ the session if I've got it wrong** — I'd rather find out in the room than have
 **8 · The 15 CSMs skew relationship-led over technically deep, roughly half and half.**
 Drawn from the brief's description, and the input to the skills matrix. If it's more like 12:3,
 partner and pairing capacity becomes the binding constraint before methodology does — I'd pull
-the team operating system (P3) forward and lean harder on partners than on pairing, since you
+the team operating system (priority 3) forward and lean harder on partners than on pairing, since you
 can't pair your way out of having only three technical CSMs.
 
 **9 · "AI transformation" here means workflow automation, AI fields and agents inside Airtable

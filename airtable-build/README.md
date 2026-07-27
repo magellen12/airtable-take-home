@@ -1,7 +1,7 @@
 # HTCS Transformation OS — Airtable build
 
-The system the team runs the book in. Implements **P1 (one diagnostic across the book)** and
-**P2 (the value-realization spine)** from the [strategic brief](../docs/01-strategic-brief.md).
+The system the team runs the book in. Implements **priority 1 (one diagnostic across the book)** and
+**priority 2 (the value-realization spine)** from the [strategic brief](../docs/01-strategic-brief.md).
 
 Scoped deliberately: two priorities, well architected, demoable live — not the whole system.
 
@@ -85,7 +85,7 @@ Naming the cut lines matters as much as the build.
   static fields. Assumed, not solved.
 - **No full stakeholder relationship graph.** Stakeholders are flat, tagged by role. Enough to
   measure multi-threading, which is the metric that matters.
-- **Only three of the eight plays have full artifact templates** (P1, P4, P6). The rest are
+- **Five of the eight plays have full artifact templates** (P1, P2, P4, P6, P8); P3, P5 and P7 are
   specified but not templated — the team authors those at the monthly retro, and that's the
   point.
 - **Access control is deferred.** Real deployment restricts CSMs to their own book; the demo

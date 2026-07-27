@@ -13,6 +13,35 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v2.7] — 2026-07-27 — Make the brief readable to someone who hasn't seen the assessment
+*7 files*
+
+- **Added an orienting header to the brief.** It opened with *"the working is in `02`, `03`, `04`"* —
+  insider shorthand that tells a reader nothing. It now says plainly what the document is (the 1–2
+  page brief the assessment asks for), what it deliberately isn't (a comprehensive plan), and where
+  each piece of supporting detail lives, including the play library.
+- **Anchored two passages to what was actually asked** — *"the job is the book, not any one
+  account"* ahead of the three patterns, and the **leverage test** framed as the assessment's own
+  question (*does this make all fifteen CSMs better, not just me?*) rather than a phrase of mine.
+- **Renamed the brief's priorities `P1/P2/P3` → `Priority 1/2/3`.** They collided with the play
+  codes `P1`–`P8`: `assumptions.md` said "P2 drops to third" (a priority) two documents away from
+  "Play P2 · Re-Sponsor". Updated across the brief, assumptions, Q&A, talk track, and the build's
+  README and interfaces.
+- **Replaced arrow shorthand with English** — *"Baseline → instrument → quantify → narrate"* became
+  *baseline the workflow, measure it, convert it into the buyer's terms, tell it back to them*;
+  *"diagnostic → stage → plays"* became *diagnose, stage, then run a play*. Spelled out
+  Center of Excellence on first use.
+- **Fixed a third instance of the templated-play error:** `airtable-build/README.md` still claimed
+  three of eight plays have artifact templates and named the wrong three. It's five — P1, P2, P4,
+  P6, P8 — per `plays.csv`. The same wrong claim was corrected in the Q&A in v2.5; this was the
+  copy that got missed.
+- **Then cut the fluff back out.** The additions took the brief to ~1,140 words; a trim pass —
+  hedges, parenthetical lists, redundant qualifiers, never concepts — brought the body back to
+  **~1,025 words**, the original target, with the ~60-word orienting header on top. Every
+  load-bearing number, both required threads (people-manager lens, global consistency / local
+  customization) and all five internal links verified intact afterward. `AGENTS.md` records the
+  measurement and the priority-vs-play naming rule so neither drifts back.
+
 ## [v2.6] — 2026-07-27 — Add `AGENTS.md`; record the audit in how-I-used-AI
 *4 files*
 

@@ -203,7 +203,7 @@ answers would change the plan:
    customer-facing risk and controls artifacts, or would P5 be the first time anyone's built
    one? That's the difference between orchestrating and creating, and it changes my day-30 plan.
 2. **What's the actual ratio of relationship-led to technically-deep CSMs across the fifteen?**
-   I've assumed roughly half. If it's more like 12:3, P3 moves ahead of P2 because partner
+   I've assumed roughly half. If it's more like 12:3, priority 3 moves ahead of priority 2 because partner
    capacity becomes the binding constraint before methodology does.
 3. **Is CS carrying an expansion number, or influencing one?** It changes how hard the value
    engine has to work and how the Sales/Renewals relationship is drawn.

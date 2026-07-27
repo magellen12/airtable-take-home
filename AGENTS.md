@@ -55,12 +55,20 @@ not a mandate."* Keep that split in any new play.
 
 ## 4 · Keep the brief at 1–2 pages
 
-[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece and targets
-**~1,030 words / ~1.75 pages**. Depth belongs in `docs/02–05`. When trimming, cut hedges,
-parentheticals and redundant examples — never concepts. Two threads must survive any edit: the
+[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece: a **~1,025-word
+body plus a ~60-word orienting header**, ~1,090 total, ~1.75 pages. Depth belongs in `docs/02–05`.
+When trimming, cut hedges, parentheticals and redundant examples — never concepts. Two threads
+must survive any edit: the
 **people-manager lens** (develop people rather than direct tasks; the diagnostic as a coaching
 instrument; leads surface through play authorship) and **global consistency, local customization**
 (*consistency is the floor, not the ceiling*).
+
+**The brief's three priorities are "Priority 1/2/3" — never "P1/P2/P3".** `P1`–`P8` are play codes,
+and the two collided badly enough that a reader couldn't tell whether "P2" meant *Re-Sponsor* or
+*build the value engine*. Keep them distinct in every document.
+
+**Write for a reader who hasn't seen the source material.** No insider shorthand — "the working is
+in `02`" became plain English for this reason — and spell out an abbreviation on first use.
 
 ## 5 · Numbers are verified, not remembered
 
