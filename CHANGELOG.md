@@ -35,8 +35,12 @@ The deeper story behind the biggest revision (v2) is in
   three of eight plays have artifact templates and named the wrong three. It's five — P1, P2, P4,
   P6, P8 — per `plays.csv`. The same wrong claim was corrected in the Q&A in v2.5; this was the
   copy that got missed.
-- Brief grew ~1,030 → ~1,140 words, still inside the 1–2 page ask; `AGENTS.md` records the new
-  target and the priority-vs-play naming rule so neither drifts back.
+- **Then cut the fluff back out.** The additions took the brief to ~1,140 words; a trim pass —
+  hedges, parenthetical lists, redundant qualifiers, never concepts — brought the body back to
+  **~1,025 words**, the original target, with the ~60-word orienting header on top. Every
+  load-bearing number, both required threads (people-manager lens, global consistency / local
+  customization) and all five internal links verified intact afterward. `AGENTS.md` records the
+  measurement and the priority-vs-play naming rule so neither drifts back.
 
 ## [v2.6] — 2026-07-27 — Add `AGENTS.md`; record the audit in how-I-used-AI
 *4 files*

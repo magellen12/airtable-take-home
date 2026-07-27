@@ -55,10 +55,10 @@ not a mandate."* Keep that split in any new play.
 
 ## 4 · Keep the brief at 1–2 pages
 
-[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece and targets
-**~1,140 words / just under 2 pages** (it was ~1,030 before the orienting header was added).
-Depth belongs in `docs/02–05`. When trimming, cut hedges, parentheticals and redundant
-examples — never concepts. Two threads must survive any edit: the
+[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece: a **~1,025-word
+body plus a ~60-word orienting header**, ~1,090 total, ~1.75 pages. Depth belongs in `docs/02–05`.
+When trimming, cut hedges, parentheticals and redundant examples — never concepts. Two threads
+must survive any edit: the
 **people-manager lens** (develop people rather than direct tasks; the diagnostic as a coaching
 instrument; leads surface through play authorship) and **global consistency, local customization**
 (*consistency is the floor, not the ceiling*).
