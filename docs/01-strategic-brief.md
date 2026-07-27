@@ -1,106 +1,101 @@
 # Strategic Brief — High Touch Customer Success
 **Director, AI Transformation & Customer Success · First 90 days**
 
-*A point of view, not a full plan. The working behind every claim here is in
-[`02-book-diagnosis.md`](02-book-diagnosis.md), [`03-transformation-methodology.md`](03-transformation-methodology.md),
-[`04-operating-model.md`](04-operating-model.md), and the Airtable build.*
+*A point of view, not a full plan; the working is in [`02`](02-book-diagnosis.md),
+[`03`](03-transformation-methodology.md), [`04`](04-operating-model.md) and the Airtable build.*
 
 ---
 
 ## The read
 
-Six accounts, **$5.06M**. **61% ($3.11M) has a renewal conversation inside three quarters** —
-Floor & Board, Voltaic, Corvus — and all three score **1 of 5 on value evidence**: nobody can
-state, in the buyer's language, what the customer got for the money.
-
-I scored the book on four dimensions. **Adoption averages 3.2; value evidence averages 1.3;
-governance 1.5.** In no account is the blocker "Airtable can't do this." Every blocker is
-organizational. **The platform is working; the operating model around it isn't** — and the
-mandate is exactly that shift, from a relationship-led motion to a transformation-led one.
+Six accounts, **$5.06M**. **61% ($3.11M) renews inside three quarters** — Floor & Board, Voltaic,
+Corvus — and all three score **1 of 5 on value evidence**: nobody can say, in the buyer's
+language, what the customer got for the money. Book-wide, adoption averages **3.2**, value
+evidence **1.3**, governance **1.5**. Nothing is blocked because "Airtable can't do this"; every
+blocker is organizational. **The platform works; the operating model around it doesn't** — the
+mandate is that shift, from a relationship-led motion to a transformation-led one.
 
 Three structural patterns, not six account problems:
 
-1. **Value realization isn't a discipline.** Where value *is* being created — Corvus (agents in
-   production), Voltaic (self-built workflows) — we can't speak to it; where it isn't — Floor &
-   Board, Harbor Lane — nobody noticed until Sales flagged risk. **The renewal risk is an
-   evidence problem, not an adoption one.**
+1. **Value realization isn't a discipline.** Where value *is* created — Corvus, Voltaic — we can't
+   speak to it; where it isn't — Floor & Board, Harbor Lane — no one noticed until Sales flagged
+   risk. **The renewal risk is an evidence problem, not an adoption one.**
 2. **Transformation is person-dependent — on both sides of the table.** The customer's roadmap
-   dies with one champion (Floor & Board, Corvus); on our side, outcomes track individual CSM
-   strengths, not a common motion. Anything living in one head is a standing risk on a
-   multi-year contract. The function's job is to institutionalize — and with the manager layer
-   gone, we have no inspection surface to institutionalize anything.
+   dies with one champion; and on our side, fifteen CSMs sit on the same team but run in parallel —
+   **connected on the org chart, not in practice.** No common motion, no connective tissue, so
+   outcomes track individual strengths, not a shared standard — and with the manager layer gone, no
+   surface to see it on.
 3. **We engage with no readiness model.** TrailLine got an exec vision sale before frontline
-   buy-in; Harbor Lane got nothing because no one has a play for "healthy but dormant"; Voltaic
-   outgrew quarterly check-ins we kept scheduling; Meridian is ready but blocked at governance
-   and we brought no governance case.
+   buy-in; Harbor Lane gets nothing for want of a play for "healthy but dormant"; Voltaic outgrew
+   the check-ins we kept scheduling; Meridian is ready but stuck at a governance gate we brought no
+   case to.
 
-**The trap:** Voltaic looks like the most advanced account and is the most dangerous — building
-fast, growing seats, no governance, no CS seat, renewing in two quarters into a pricing
-negotiation we won't be in. Seat growth without CS influence isn't health; it's a customer that
-has priced us as a tool.
+**The trap:** Voltaic looks most advanced and is most dangerous — growing seats, no governance, no
+CS seat, renewing in two quarters we won't be in the room for. Seat growth without CS influence
+isn't health; it's a customer that's priced us as a tool.
 
 ---
 
 ## Three priorities for the first 90 days
 
-**P1 · Stand up the transformation methodology — diagnostic → stage → plays (days 1–30).** Every
-account staged on one shared readiness diagnostic; the stage describes where they are and the
-*binding constraint* — the lowest dimension — prescribes the next play from a defined library,
-each play with a clear CSM-owns-vs-partners boundary. I start here because with no manager layer
-I have no shared language and no inspection surface, and the diagnostic doubles as a team
-assessment. **Governance/CoE work is a required play, not an aspiration** — it's the single
-answer to Meridian, Voltaic, and Floor & Board.
+**P1 · Stand up the methodology — diagnostic → stage → plays (days 1–30).** Every account staged
+on one shared diagnostic; the stage describes where they are, the *binding constraint* (the lowest
+dimension) prescribes the next play, each with a clear CSM-owns-vs-partners line. With no manager
+layer I have no shared language and no inspection surface — and scoring an account is how I read
+the CSM. **Governance/CoE work is a required play, not an aspiration:** the one answer to Meridian,
+Voltaic, and Floor & Board.
 
-**P2 · Build the value-realization engine, pointed at the next three quarters of renewals (days
-15–60).** Baseline → instrument → quantify → narrate. Every account renewing inside three
-quarters gets two or three business outcomes *in the customer's language*, validated before
-commercial conversations start. Renewals aren't decided by usage; they're decided by whether the
-economic buyer can repeat our number back. The same asset funds Corvus's expansion.
+**P2 · Build the value-realization engine, aimed at the next three quarters of renewals (days
+15–60).** Baseline → instrument → quantify → narrate: every account renewing inside three quarters
+gets two or three outcomes *in the customer's language*, validated before commercial talks start.
+Renewals aren't decided by usage but by whether the economic buyer can repeat our number back —
+the same asset funds Corvus's expansion.
 
-**P3 · Rebuild the team's operating system — roles, rhythms, development (days 30–90).** Fifteen
-people who lost their manager layer need clarity and a system that develops them: a skills matrix
-(builder depth × executive presence × domain), deliberate **pairing of complements** — TrailLine's
-builder-CSM gets an exec-engagement partner for the kickoff, not a reassignment — a weekly review
-run from the base, and enablement built from the play library.
+**P3 · Lead the team by developing people, not directing tasks (days 30–90).** Fifteen people who
+just lost their manager layer need clarity, development, and a reason to trust a new leader. A
+**skills matrix** (builder depth × executive presence × domain) drives deliberate **pairing of
+complements** — TrailLine's builder-CSM gets an exec partner, not a reassignment — so people grow
+into gaps instead of being moved off accounts. The **diagnostic doubles as the coaching
+instrument**: I grade the account *with* the CSM, never the person. And **leads surface through
+play authorship and diagnostic quality** — an earned path to the manager roles I fill on evidence
+at day 90, not tenure.
 
-*Deliberately not in the first 90 days:* hiring the manager layer (I want evidence first —
-leads surface through play authorship), re-cutting segmentation (a six-month distraction from
-three near-term renewals), or a formal enablement curriculum (it rides on the plays).
+*Not in the first 90 days:* hiring the manager layer (evidence first), re-cutting segmentation (a
+distraction from three near-term renewals), or an enablement curriculum (it rides on the plays).
 
 ---
 
-## Why the methodology holds, and how it makes money
+## Why it holds, and how it makes money
 
-**Stage describes; the binding constraint prescribes.** The play is set by the *lowest*
-dimension, not the average — which is why Meridian (avg 3.5, blocked on value evidence behind a
-governance gate) is stuck while Corvus (avg 2.25) is one artifact from an expansion. That's what
-lets a mid-tenure CSM reach the right next move without fifteen years of pattern recognition.
+**Stage describes; the constraint prescribes** — the play follows the *lowest* dimension, not the
+average, which is why Meridian (avg 3.5, stuck on value evidence behind a governance gate) is
+blocked while Corvus (avg 2.25) is one artifact from an expansion. The commercial linkage is a
+**dated value narrative, not a conversation**: one older than a quarter on a near-term renewal is
+a churn risk, because it is one.
 
-The commercial linkage is a **dated value narrative, not a conversation**: signals → quantified
-outcome → buyer-language narrative → customer-validated → carried into renewal. A narrative
-older than a quarter on an account renewing within two is flagged as a risk beside the churn
-signals, because it is one.
-
-**Operationalizing across 15 CSMs** rests on one rule: *a CSM must own knowing what their account
-needs, and must never have to be the smartest technical person in the room.* Depth is bought with
-partners (Professional Services, Trust/Security, Sales/Renewals) and covered by pairing; judgment
-can't be, so judgment is what I coach and inspect. **What I measure, weekly from the base:** %
-of book staged, stage progression QoQ, sponsor coverage (today 1/6), value coverage (today 0/6),
-governance body in place; and lagging, GRR/NRR, expansion influence, and **renewal surprises,
-target zero** — because a surprise at renewal is a diagnostic failure six months earlier.
+This is **the most tenured team in the company** — they know their customers better than I will —
+so the principle is **global consistency, local customization**: *what* we do as a team is standard
+(the diagnostic, the plays, the rhythm, the definition of done); *how* each CSM runs it is theirs —
+their read on the customer, their creative spin. I build the frameworks and we set the standards
+together; they keep the latitude where their expertise is the asset — **consistency is the floor,
+not the ceiling.** One rule underneath: *a CSM must own knowing what their account needs, and never
+have to be the smartest technical person in the room.* Depth is bought with partners and pairing;
+judgment is what I coach and inspect — weekly, from the base: % staged, stage progression QoQ,
+sponsor coverage (1/6), value coverage (0/6); and lagging, NRR and **renewal surprises, target
+zero** — a surprise at renewal is a diagnostic failure six months earlier.
 
 ---
 
 ## The system the team runs it in
 
-A methodology in a doc dies the way Floor & Board's backlog did. The Airtable build
-([`../airtable-build/`](../airtable-build/)) is the methodology made operational and the
-inspection layer in one: accounts carry their scores and signals; AI classifies the stage,
-recommends the play, and drafts the value narrative in the buyer's language; an automation flags
-stale value ahead of renewal. **The leverage test** — the newest CSM's account gets the same
-diagnostic rigor and a *drafted* transformation plan as the strongest CSM's; senior judgment goes
-into running plays, not formatting updates; and I get one place to inspect instead of fifteen
-opinions, which is the specific thing this team lost when it lost its managers.
+A methodology in a doc dies the way Floor & Board's backlog did. The Airtable build is the
+methodology made operational and the inspection layer in one: accounts carry scores and signals;
+AI classifies the stage, recommends the play, and drafts the value narrative; an automation flags
+stale value ahead of renewal. It's also the **connective tissue the team lacks** — the weekly book
+review and peer-authored play library are where fifteen people who otherwise run in parallel engage
+with each other's accounts. **The leverage test:** the newest CSM's account gets the same rigor and
+a *drafted* plan as the strongest's; senior judgment goes into running plays, not formatting
+updates; and I inspect one base, not fifteen opinions — the thing this team lost when it lost its
+managers.
 
-*Assumptions this depends on — and which would change my priorities if wrong — are in
-[`../appendix/assumptions.md`](../appendix/assumptions.md).*
+*Assumptions are in [`../appendix/assumptions.md`](../appendix/assumptions.md).*
