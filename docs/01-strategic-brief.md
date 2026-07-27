@@ -1,8 +1,13 @@
 # Strategic Brief — High Touch Customer Success
 **Director, AI Transformation & Customer Success · First 90 days**
 
-*A point of view, not a full plan; the working is in [`02`](02-book-diagnosis.md),
-[`03`](03-transformation-methodology.md), [`04`](04-operating-model.md) and the Airtable build.*
+> **What this is:** the 1–2 page brief the assessment asks for — my top priorities for the first 90
+> days and the reasoning behind them, written as a point of view rather than a full plan.
+>
+> **Where the detail sits:** account-by-account scoring in [`02`](02-book-diagnosis.md), the
+> methodology in [`03`](03-transformation-methodology.md), the operating model across fifteen CSMs
+> in [`04`](04-operating-model.md), and the plays in [`05`](05-play-library.md). The Airtable build
+> is the second deliverable — the system the team would run this in.
 
 ---
 
@@ -15,7 +20,7 @@ evidence **1.3**, governance **1.5**. Nothing is blocked because "Airtable can't
 blocker is organizational. **The platform works; the operating model around it doesn't** — the
 mandate is that shift, from a relationship-led motion to a transformation-led one.
 
-Three structural patterns, not six account problems:
+The job is the book, not any one account. Three structural patterns, not six rescue plans:
 
 1. **Value realization isn't a discipline.** Where value *is* created — Corvus, Voltaic — we can't
    speak to it; where it isn't — Floor & Board, Harbor Lane — no one noticed until Sales flagged
@@ -38,20 +43,21 @@ isn't health; it's a customer that's priced us as a tool.
 
 ## Three priorities for the first 90 days
 
-**P1 · Stand up the methodology — diagnostic → stage → plays (days 1–30).** Every account staged
+**Priority 1 · Stand up the methodology — diagnose, stage, then run a play (days 1–30).** Every account staged
 on one shared diagnostic; the stage describes where they are, the *binding constraint* (the lowest
 dimension) prescribes the next play, each with a clear CSM-owns-vs-partners line. With no manager
 layer I have no shared language and no inspection surface — and scoring an account is how I read
-the CSM. **Governance/CoE work is a required play, not an aspiration:** the one answer to Meridian,
-Voltaic, and Floor & Board.
+the CSM. **Governance and Center-of-Excellence work is a required play, not an aspiration:** the
+one answer to Meridian, Voltaic, and Floor & Board.
 
-**P2 · Build the value-realization engine, aimed at the next three quarters of renewals (days
-15–60).** Baseline → instrument → quantify → narrate: every account renewing inside three quarters
-gets two or three outcomes *in the customer's language*, validated before commercial talks start.
+**Priority 2 · Build the value-realization engine, aimed at the next three quarters of renewals
+(days 15–60).** Baseline the workflow, measure it, convert it into the buyer's terms, tell it back
+to them: every account renewing inside three quarters gets two or three outcomes *in the customer's
+language*, validated before commercial talks start.
 Renewals aren't decided by usage but by whether the economic buyer can repeat our number back —
 the same asset funds Corvus's expansion.
 
-**P3 · Lead the team by developing people, not directing tasks (days 30–90).** Fifteen people who
+**Priority 3 · Lead the team by developing people, not directing tasks (days 30–90).** Fifteen people who
 just lost their manager layer need clarity, development, and a reason to trust a new leader. A
 **skills matrix** (builder depth × executive presence × domain) drives deliberate **pairing of
 complements** — TrailLine's builder-CSM gets an exec partner, not a reassignment — so people grow
@@ -77,8 +83,8 @@ This is **the most tenured team in the company** — they know their customers b
 so the principle is **global consistency, local customization**: *what* we do as a team is standard
 (the diagnostic, the plays, the rhythm, the definition of done); *how* each CSM runs it is theirs —
 their read on the customer, their creative spin. I build the frameworks and we set the standards
-together; they keep the latitude where their expertise is the asset — **consistency is the floor,
-not the ceiling.** One rule underneath: *a CSM must own knowing what their account needs, and never
+together — **consistency is the floor, not the ceiling.** One rule underneath: *a CSM must own
+knowing what their account needs, and never
 have to be the smartest technical person in the room.* Depth is bought with partners and pairing;
 judgment is what I coach and inspect — weekly, from the base: % staged, stage progression QoQ,
 sponsor coverage (1/6), value coverage (0/6); and lagging, NRR and **renewal surprises, target
@@ -93,9 +99,10 @@ methodology made operational and the inspection layer in one: accounts carry sco
 AI classifies the stage, recommends the play, and drafts the value narrative; an automation flags
 stale value ahead of renewal. It's also the **connective tissue the team lacks** — the weekly book
 review and peer-authored play library are where fifteen people who otherwise run in parallel engage
-with each other's accounts. **The leverage test:** the newest CSM's account gets the same rigor and
-a *drafted* plan as the strongest's; senior judgment goes into running plays, not formatting
-updates; and I inspect one base, not fifteen opinions — the thing this team lost when it lost its
-managers.
+with each other's accounts. **On the leverage test the assessment sets — does this make all fifteen
+CSMs better, not just me?** The newest CSM's account gets the same rigor and a *drafted* plan as
+the strongest's; senior judgment goes into running plays, not formatting updates; and I inspect one
+base, not fifteen opinions — the thing this team lost when it lost its managers.
 
-*Assumptions are in [`../appendix/assumptions.md`](../appendix/assumptions.md).*
+*The assumptions this rests on — including the ones I'd most want corrected — are listed in
+[`../appendix/assumptions.md`](../appendix/assumptions.md).*

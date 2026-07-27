@@ -57,18 +57,18 @@ Land three things:
 
 Two minutes each, and **lead with the reasoning, not the activity.**
 
-- **P1 · Stand up the transformation methodology — diagnostic → stage → plays, days 1–30.** "I
+- **Priority 1 · Stand up the transformation methodology — diagnostic → stage → plays, days 1–30.** "I
   have no manager layer, so no shared language and no inspection surface. I can't coach what I
   can't see. And the diagnostic does double duty — how a CSM scores and defends their own account
   tells me more about their depth in 45 minutes than a month of skip-levels. Governance and CoE
   work is a *required* play in the library, not an aspiration — it's the one answer to Meridian,
   Voltaic, and Floor & Board."
-- **P2 · The value-realization engine, pointed at the next three quarters of renewals, days
+- **Priority 2 · The value-realization engine, pointed at the next three quarters of renewals, days
   15–60.** "Value evidence is a 1 on 61% of the book that renews soonest. Baseline, instrument,
   quantify, narrate — every one of those accounts has a customer-validated narrative by day 60.
   Renewals aren't decided by usage; they're decided by whether the economic buyer can repeat our
   number back. Same asset funds Corvus's expansion."
-- **P3 · Rebuild the team's operating system — roles, rhythms, development, days 30–90.** "Fifteen
+- **Priority 3 · Rebuild the team's operating system — roles, rhythms, development, days 30–90.** "Fifteen
   people who lost their manager layer don't need a boss with a deck; they need a system that
   develops them. A skills matrix, deliberate pairing of complements, a weekly review run from the
   base. I don't need fifteen CSMs who can hold their own with a CFO on AI risk — I need fifteen
