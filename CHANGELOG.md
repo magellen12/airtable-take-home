@@ -13,6 +13,35 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v2.5] — 2026-07-27 · `66a6c12` — Name partner *capabilities*, not teams I can't verify exist
+*13 files*
+
+A self-audit of invented content, prompted by asking where each partner name actually came from.
+
+- **The problem:** `Value Eng` and `Trust & Security` were org-chart names I'd invented. The role
+  names **Renewals, Support, Professional Services, Product and Sales** as its cross-functional
+  partners; it doesn't name those two, and I have no basis for asserting they exist.
+- **Renamed repo-wide** to describe what has to be produced and who stands behind it —
+  `Value Eng` → **Value Validation** (stands behind a quantitative claim before it reaches a
+  customer's CFO) and `Trust & Security` → **Security & Risk** (produces customer-facing risk and
+  controls artifacts). Touches the base schema's select options, the seed script, both play CSVs,
+  `docs/02–05`, the AI component prompts, interfaces, the Omni brief, the talk track and the Q&A.
+- **Stated the rule rather than just applying it:** `docs/05` gains *"A note on partner names"* and
+  `docs/04` makes the split explicit — named functions keep their names, unverifiable ones are
+  described by capability, and **mapping them to real owners is a day-one question.**
+  `appendix/assumptions.md` §3 now covers both capabilities and what breaks if either is missing.
+- **Removed two unsupported claims about customer behavior.** P5's "most of what we are guessing at
+  is written down somewhere" became *ask whether the criteria exist in writing — if they don't,
+  that itself tells you how the board decides.* P6's "they already know they have agents nobody
+  owns" became *run it where the customer has already raised the concern.* Voltaic's version stays,
+  because they volunteered it in the snapshot — the generalization to all accounts was the part
+  without support.
+- **Fixed two internal inconsistencies:** the Q&A claimed only three plays were templated and named
+  P2 as the next gap, but the base marks five templated (P1, P2, P4, P6, P8) — the real gap is P5
+  then P7. And `docs/04`'s Corvus example had Professional Services validating value numbers while
+  every other document said otherwise.
+- **Verified:** seed dry-run passes, all link references resolve, no invented team name remains.
+
 ## [v2.4] — 2026-07-27 · `bcd7616` — Add the full play library
 *3 files · +440*
 
