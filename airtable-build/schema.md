@@ -117,7 +117,7 @@ The library. 8 records, seeded from [`data/plays.csv`](data/plays.csv).
 | `Clears Constraint` | Single select | `Sponsorship` · `Governance` · `Adoption` · `Value Evidence` |
 | `Applies at Stage` | Multiple select | `0`–`4` |
 | `CSM Owns` | Long text | |
-| `Partner Leads` | Multiple select | `Professional Services` · `Trust & Security` · `Product` · `Sales` · `Renewals` · `Value Eng` · `Support` |
+| `Partner Leads` | Multiple select | `Professional Services` · `Security & Risk` · `Product` · `Sales` · `Renewals` · `Value Validation` · `Support` |
 | `Artifact Produced` | Long text | |
 | `Definition of Done` | Long text | **Always customer behaviour, never our activity** |
 | `Typical Duration (wks)` | Number | Baseline for cycle-time measurement |

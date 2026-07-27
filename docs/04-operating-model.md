@@ -28,14 +28,23 @@ accounts.
 | CSM always owns | Partner leads, CSM orchestrates | Never the CSM |
 |---|---|---|
 | The diagnostic and its evidence | AI solution architecture, agent design — **Professional Services / Solutions** | Break/fix and technical escalation — **Support** |
-| The stakeholder and sponsor map | Governance, risk, security artifacts — **Trust + Product** | Contract paper and legal — **Deal Desk** |
+| The stakeholder and sponsor map | Governance, risk, security artifacts — **Security & Risk + Product** | Contract paper and legal — **Deal Desk** |
 | The value narrative and executive story | Commercial construct, renewal & procurement path — **Sales + Renewals** | |
-| The customer's operating rhythm | Quantitative validation of value claims — **Value Eng** | |
+| The customer's operating rhythm | Quantitative validation of value claims — **Value Validation** | |
 | The transformation plan and its sequencing | | |
 
-The partner list maps to the cross-functional partners the role owns the relationship with —
-**Renewals, Support, Professional Services, Product, and Sales** — so "pull in a partner" always
-names a real function, never a favour.
+**Renewals, Support, Professional Services, Product and Sales** are the cross-functional partners
+the role names, so "pull in a partner" always points at a real function rather than a favour.
+
+**The last two are capabilities, not org-chart claims.** I don't know how this organization is
+arranged, so where I couldn't verify a team I've named **what has to be produced and who has to
+stand behind it**: *Security & Risk* is whoever produces customer-facing risk and controls
+artifacts, and *Value Validation* is whoever can stand behind a quantitative claim before it
+reaches a customer's CFO. Both may be dedicated functions, corners of an existing one, or nobody
+yet. **Mapping them to real owners is a day-one question**, and both are live assumptions rather
+than details — if the security-and-risk capability doesn't exist in customer-facing form, P5 is a
+materially longer play than it looks (see
+[`../appendix/assumptions.md`](../appendix/assumptions.md)).
 
 ### The skills matrix — the artifact that makes pairing systematic
 
@@ -61,8 +70,8 @@ threads that need it, and they keep the account and grow. Two worked examples fr
   exec-presence partner for the COO thread through the first two cycles. I sit in early, but the
   system is the pairing, not me being the hero.
 - **Corvus.** The CSM has excellent instincts and relationships and lighter technical depth
-  (executive presence 4, builder depth 2). The base drafts the numbers, Professional Services
-  validates them, and the CSM does what they're best at — getting the CFO's office to believe it.
+  (executive presence 4, builder depth 2). The base drafts the numbers, the value-validation
+  partner checks them, and the CSM does what they're best at — getting the CFO's office to believe it.
   Not asked to become a solutions architect.
 
 Neither person is being fixed. Both are being deployed — and the pairing is visible in the base,
@@ -188,7 +197,7 @@ get one wrong.
 | **15–30** | Every CSM stages their own book. I sit in on fifteen first sessions (this populates the skills matrix). Pairings set. **TrailLine kickoff re-contract ships — it's in 3 weeks and won't wait.** | % of book staged = 100%; I have a real read on team depth |
 | **31–45** | Value narratives started on every account renewing within 3Q — Floor & Board, Voltaic, Corvus. Play library v1 published. Weekly book review begins. | Day 45 leadership readout, from the base |
 | **46–60** | Value narratives customer-validated on the three near-term renewals. Floor & Board re-sponsor play in flight (CoE seeded behind it). Voltaic governance insert in flight. | Value coverage 100% on near-term renewals |
-| **61–90** | Meridian governance case with Trust/Product. Corvus expansion narrative to the CFO's office. First monthly play retro with CSM-authored plays. Manager-layer recommendation. | Day 90 readout; a book that runs without me in every room |
+| **61–90** | Meridian governance case with Security & Risk / Product. Corvus expansion narrative to the CFO's office. First monthly play retro with CSM-authored plays. Manager-layer recommendation. | Day 90 readout; a book that runs without me in every room |
 
 **The forcing dates that drive this ordering**, not my preference: TrailLine's kickoff is in
 three weeks. Voltaic renews in two quarters. Floor & Board's renewal conversation starts in

@@ -43,6 +43,28 @@ worked*, not as a commitment anyone has made to us.
 
 ---
 
+## A note on partner names
+
+Every play names a partner, because **"pull in a partner" has to mean a real function rather than a
+favour** — that's the whole point of the ownership boundary. But I don't know how this organization
+is actually arranged, so the plays name **the capability the play needs**, not an org chart I'd be
+guessing at.
+
+- Where the role's cross-functional partners are named — **Professional Services, Product, Sales,
+  Renewals, Support** — I use those names.
+- Where I don't know who owns something, I describe **what has to be produced and who has to stand
+  behind it**. Two plays need this: **value validation** (whoever can stand behind a quantitative
+  claim before it reaches a customer's CFO) and **security & risk** (whoever produces
+  customer-facing risk and controls artifacts). Wherever those sit here — a dedicated function, a
+  corner of Product, an individual — that's who the play means.
+
+**Mapping those two to real owners is a day-one question**, and it's a live assumption rather than
+a detail (see [`../appendix/assumptions.md`](../appendix/assumptions.md)). If the security-and-risk
+capability doesn't exist in a customer-facing form, P5 is a materially longer play than it looks
+here, and I'd want to know that before promising a timeline to a sponsor.
+
+---
+
 ## The library at a glance
 
 Eight plays, four constraints, two-to-three plays each. **The library is sized to the failure
@@ -173,13 +195,13 @@ them.
 ## P4 · Quantify & Translate
 
 > Real value exists and nobody who signs the check can describe it. You baseline the workflow with
-> the champion, have Value Engineering validate the conversion *before* anything is written down,
-> and get the champion to confirm the numbers before procurement or a CFO's office ever sees them.
+> the champion, have the number independently validated *before* anything is written down, and get
+> the champion to confirm it before procurement or a CFO's office ever sees it.
 
 **The standard.** Clears **value evidence** where the audience is **commercial** — a CFO,
-procurement, a P&L owner. **Stages 2–3**. Partner: **Value Engineering** validates. Artifact: a
-value narrative in the economic buyer's language plus a traceable evidence pack. Typical
-**3–4 weeks**.
+procurement, a P&L owner. **Stages 2–3**. Partner: **whoever owns value validation** — the function
+that can stand behind a quantitative claim externally. Artifact: a value narrative in the economic
+buyer's language plus a traceable evidence pack. Typical **3–4 weeks**.
 
 **Signal we're looking for:** the economic buyer uses our number as their own. That's also the
 definition of *value coverage*, a leading metric I'd own — and the book currently sits at zero.
@@ -187,13 +209,13 @@ definition of *value coverage*, a leading metric I'd own — and the book curren
 **The latitude.** Which workflow to baseline, which metric to convert into, how to sequence the
 champion and the buyer, and how much of the narrative the CSM writes themselves versus drafts from
 the base and edits. A CSM whose strength is executive presence rather than build depth should lean
-on the base and Value Engineering for the numbers and spend their own effort on the room — that's
-deployment, not a gap being covered.
+on the base and the validation partner for the numbers and spend their own effort on the room —
+that's deployment, not a gap being covered.
 
 **A default sequence, not a mandate.**
 1. A working session with the champion to baseline the workflow — volume, cycle time, headcount
    touched.
-2. Value Engineering validates the conversion into the buyer's metric *before* it's written
+2. The validation partner checks the conversion into the buyer's metric *before* it's written
    anywhere. A number that leaves our building unvalidated is a liability.
 3. The champion confirms the numbers explicitly, in their own words.
 4. Executive readout, delivered *with* the champion rather than about them.
@@ -216,7 +238,7 @@ that specific mistake structurally difficult rather than merely discouraged.
 > criteria rather than sending a generic security packet.
 
 **The standard.** Clears **value evidence** where the audience is a **governance body**.
-**Stage 3**. Partners: **Trust & Security, Product**. Artifact: an AI risk-and-controls case, a
+**Stage 3**. Partners: **whoever owns security and risk artifacts**, plus **Product**. Artifact: an AI risk-and-controls case, a
 reference architecture, and answers to the body's stated objections. Typical **6–10 weeks**.
 
 **Signal we're looking for:** a review body clears at least one use case. Not submission, and not
@@ -230,10 +252,10 @@ customer.
 **A default sequence, not a mandate.**
 1. Ask the sponsor for direct time with the review body. Relaying loses the objection's actual
    wording, which is usually the only part that matters.
-2. Get the evaluation criteria in writing. A surprising amount of what we tend to guess at is
-   already documented somewhere.
-3. Trust & Security and Product build the case and reference architecture against those specific
-   criteria.
+2. Ask whether the evaluation criteria exist in writing. If they do, that beats inferring them
+   from relayed objections; if they don't, that itself tells you how the board actually decides.
+3. The security-and-risk partner and Product build the case and reference architecture against
+   those specific criteria.
 4. Throughout: keep the sponsor warm. **Sponsor patience is the depreciating asset in this play.**
 
 **The distinguishing signal.** A sponsor pushing hard while nothing moves is almost never a
@@ -256,7 +278,7 @@ silently.
 
 **The standard.** Clears **governance** at **Stage 2, fast-moving** — high adoption, high build
 velocity, no structure. **This is the play for the account that looks best in a QBR deck.**
-Partners: **Professional Services, Trust & Security**. Artifact: an agent inventory, a governance
+Partners: **Professional Services**, plus **whoever owns security and risk artifacts**. Artifact: an agent inventory, a governance
 standard the customer adopts, and a cost-and-sprawl view. Typical **4–6 weeks**.
 
 **Signal we're looking for:** a standard gets adopted *and* we're consulted on new builds. Adoption
@@ -264,7 +286,7 @@ of a document alone isn't it — the test is whether the next thing they build h
 room.
 
 **The latitude.** How to price and position the inventory, how lightweight the standard should be,
-whether to bring Trust & Security in early or after the sprawl view lands, and how to time the
+whether to bring the security-and-risk partner in early or after the sprawl view lands, and how to time the
 executive re-entry relative to any commercial conversation. Customers vary enormously in how much
 governance they'll tolerate from a vendor; that read is local.
 
@@ -278,8 +300,9 @@ governance they'll tolerate from a vendor; that read is local.
 4. Use that seat to re-enter at executive level, ahead of pricing.
 
 **Wait for them to volunteer the problem.** Unrequested governance from a vendor can read as a land
-grab. The opening usually exists — most fast-building organizations already know they have things
-in production nobody owns — but it's better surfaced by them than asserted by us.
+grab. Where a customer has already raised ownership or cost of their own AI sprawl, that's the
+opening and the play is straightforward. Where they haven't, I wouldn't assume the concern exists —
+the first move is finding out whether it does, not asserting that it should.
 
 **How it fails.** We mistake the inventory for the play and stop after delivering a nice artifact.
 The inventory is the wedge, the standard is the play, the seat is the point. And if a customer

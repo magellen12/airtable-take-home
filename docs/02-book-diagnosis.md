@@ -99,7 +99,7 @@ its own success criteria and built for it.
 **Constraint: Value evidence** → **Play P5 · Governance Case**. This is the nuance that makes the
 model honest: value evidence isn't always a dollar figure. For a commercial buyer it's a
 cost-or-cycle-time number (that's P4); for a governance board it's a risk-and-controls case (P5).
-Same constraint, different audience, different artifact. Trust/Security and Product co-build the
+Same constraint, different audience, different artifact. Security & Risk and Product co-build the
 case; the CSM owns the relationship with the review board and the sequencing. This is also the
 first of the three **governance through-line** plays (see below).
 
