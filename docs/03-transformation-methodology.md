@@ -93,6 +93,11 @@ Eight plays. Each is keyed to a **constraint**, not to an account, and each has 
 partner, an artifact, and a definition of done. Deliberately small — a library of thirty plays is
 a library nobody uses.
 
+**The full library is [`05-play-library.md`](05-play-library.md)** — every play written in two
+parts, *the standard* (global consistency: constraint, trigger, partner, artifact, signal) and
+*the latitude* (local customization: what each CSM decides for their own customer). The table
+below is the index.
+
 | # | Play | Clears | Stage | CSM owns | Partner leads | Artifact produced | Definition of done | Typical |
 |---|---|---|---|---|---|---|---|---|
 | **P1** | **Prove One Thing** | Value evidence | 0 | Use-case scoping, session, outcome capture | Professional Services (builds it) | Before/after on one existing workflow + one number | Customer states the result in their own words | 4–6 wks |
