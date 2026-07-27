@@ -14,14 +14,13 @@ Sales, P2 drops to third and the first 90 days go to enablement and coverage ins
 *Confidence: high — the brief says targets are "increasingly tied to demonstrable, AI-driven
 business outcomes."*
 
-**2 · A Professional Services / Solutions or equivalent technical partner function exists and
-has capacity.**
-The ownership boundary — CSMs never have to be the smartest technical person in the room — is
-the load-bearing beam of the whole operating model, and the JD names Professional Services as a
-cross-functional partner. If there's no partner function, or it's oversubscribed, then the depth
-gap is a hiring and training problem, not a staffing one, and the 90 days look completely
-different.
-*Confidence: medium. This is the assumption I'd most want checked on day one.*
+**2 · Professional Services has the capacity to take the technical load these plays put on it.**
+The ownership boundary — CSMs never have to be the smartest technical person in the room — is the
+load-bearing beam of the whole operating model. *That the function exists isn't an assumption:* the
+role names Professional Services among its cross-functional partners. **Its capacity is.** Four of
+eight plays route technical delivery to it, and if it's oversubscribed then the depth gap is a
+hiring and training problem rather than a staffing one, and the 90 days look completely different.
+*Confidence: medium on capacity. This is the assumption I'd most want checked on day one.*
 
 **3 · Two partner capabilities exist in some form — and I've named them by what they produce,
 not by a team I'm claiming exists.**

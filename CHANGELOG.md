@@ -18,14 +18,22 @@ The deeper story behind the biggest revision (v2) is in
 
 A self-audit of invented content, prompted by asking where each partner name actually came from.
 
-- **The problem:** `Value Eng` and `Trust & Security` were org-chart names I'd invented. The role
-  names **Renewals, Support, Professional Services, Product and Sales** as its cross-functional
-  partners; it doesn't name those two, and I have no basis for asserting they exist.
+- **Verified against the sources first.** The assessment names no Airtable-side partner functions
+  at all; the JD names exactly five — *"partner closely with Renewals, Support, Professional
+  Services, Product, and Sales."* Anything outside that list was mine.
+- **The problem:** `Value Eng`, `Trust & Security`, `Deal Desk` and `Solutions` were org-chart
+  names I'd invented and then used as if they were given. `Value Eng` wasn't even flagged in the
+  assumptions.
 - **Renamed repo-wide** to describe what has to be produced and who stands behind it —
   `Value Eng` → **Value Validation** (stands behind a quantitative claim before it reaches a
-  customer's CFO) and `Trust & Security` → **Security & Risk** (produces customer-facing risk and
-  controls artifacts). Touches the base schema's select options, the seed script, both play CSVs,
-  `docs/02–05`, the AI component prompts, interfaces, the Omni brief, the talk track and the Q&A.
+  customer's CFO), `Trust & Security` → **Security & Risk** (produces customer-facing risk and
+  controls artifacts), `Deal Desk` → *whoever owns contracting*, and `Professional Services /
+  Solutions` → **Professional Services**, which the JD does name. Touches the base schema's select
+  options, the seed script, both play CSVs, `docs/02–05`, the AI component prompts, interfaces, the
+  Omni brief, the talk track and the Q&A.
+- **Kept, because they're grounded:** every customer-side name — Marketing Ops, RevOps, the IT
+  Security & Data Governance Review Board, the CFO's office, procurement — is verbatim from the
+  account snapshot, and the audit confirmed each one rather than assuming it.
 - **Stated the rule rather than just applying it:** `docs/05` gains *"A note on partner names"* and
   `docs/04` makes the split explicit — named functions keep their names, unverifiable ones are
   described by capability, and **mapping them to real owners is a day-one question.**
@@ -40,7 +48,8 @@ A self-audit of invented content, prompted by asking where each partner name act
   P2 as the next gap, but the base marks five templated (P1, P2, P4, P6, P8) — the real gap is P5
   then P7. And `docs/04`'s Corvus example had Professional Services validating value numbers while
   every other document said otherwise.
-- **Verified:** seed dry-run passes, all link references resolve, no invented team name remains.
+- **Verified:** seed dry-run passes, all link references resolve, and a full-repo sweep confirms
+  every Airtable-side function named is one of the JD's five or an explicitly-labeled capability.
 
 ## [v2.4] — 2026-07-27 · `bcd7616` — Add the full play library
 *3 files · +440*

@@ -27,24 +27,33 @@ accounts.
 
 | CSM always owns | Partner leads, CSM orchestrates | Never the CSM |
 |---|---|---|
-| The diagnostic and its evidence | AI solution architecture, agent design — **Professional Services / Solutions** | Break/fix and technical escalation — **Support** |
-| The stakeholder and sponsor map | Governance, risk, security artifacts — **Security & Risk + Product** | Contract paper and legal — **Deal Desk** |
+| The diagnostic and its evidence | AI solution architecture, agent design — **Professional Services** | Break/fix and technical escalation — **Support** |
+| The stakeholder and sponsor map | Governance, risk, security artifacts — **Security & Risk** + **Product** | Contract paper and legal — *whoever owns contracting* |
 | The value narrative and executive story | Commercial construct, renewal & procurement path — **Sales + Renewals** | |
 | The customer's operating rhythm | Quantitative validation of value claims — **Value Validation** | |
 | The transformation plan and its sequencing | | |
 
-**Renewals, Support, Professional Services, Product and Sales** are the cross-functional partners
-the role names, so "pull in a partner" always points at a real function rather than a favour.
+**Bold names are the five partners the role explicitly names** — *"partner closely with Renewals,
+Support, Professional Services, Product, and Sales"* — so "pull in a partner" points at a function
+I can actually point to, never a favour.
 
-**The last two are capabilities, not org-chart claims.** I don't know how this organization is
-arranged, so where I couldn't verify a team I've named **what has to be produced and who has to
-stand behind it**: *Security & Risk* is whoever produces customer-facing risk and controls
-artifacts, and *Value Validation* is whoever can stand behind a quantitative claim before it
-reaches a customer's CFO. Both may be dedicated functions, corners of an existing one, or nobody
-yet. **Mapping them to real owners is a day-one question**, and both are live assumptions rather
-than details — if the security-and-risk capability doesn't exist in customer-facing form, P5 is a
-materially longer play than it looks (see
-[`../appendix/assumptions.md`](../appendix/assumptions.md)).
+**Everything in italics is a capability, not an org-chart claim.** I don't know how this company is
+arranged beyond those five, so rather than invent teams I've named **what has to be produced and
+who has to stand behind it**:
+
+| Capability | What it means here |
+|---|---|
+| *Security & Risk* | Whoever produces customer-facing AI risk and controls artifacts — the P5 dependency |
+| *Value Validation* | Whoever can stand behind a quantitative claim before it reaches a customer's CFO — the P4 dependency |
+| *Contracting* | Whoever owns contract paper and legal review |
+
+Each may be a dedicated function, a corner of an existing one, or nobody yet. **Mapping them to
+real owners is a day-one question**, and the first two are live assumptions rather than details:
+if the security-and-risk capability doesn't exist in customer-facing form, P5 is a materially
+longer play than it looks (see [`../appendix/assumptions.md`](../appendix/assumptions.md)).
+
+I'd rather name a capability I can defend than a team I'd be guessing at — and the same discipline
+applies to the plays, which is why [`05-play-library.md`](05-play-library.md) carries the same note.
 
 ### The skills matrix — the artifact that makes pairing systematic
 

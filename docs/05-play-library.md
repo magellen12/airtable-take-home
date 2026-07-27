@@ -50,8 +50,8 @@ favour** — that's the whole point of the ownership boundary. But I don't know 
 is actually arranged, so the plays name **the capability the play needs**, not an org chart I'd be
 guessing at.
 
-- Where the role's cross-functional partners are named — **Professional Services, Product, Sales,
-  Renewals, Support** — I use those names.
+- **Five partners the role names, so I use their names:** *"partner closely with Renewals, Support,
+  Professional Services, Product, and Sales."* Those five I can point to.
 - Where I don't know who owns something, I describe **what has to be produced and who has to stand
   behind it**. Two plays need this: **value validation** (whoever can stand behind a quantitative
   claim before it reaches a customer's CFO) and **security & risk** (whoever produces
