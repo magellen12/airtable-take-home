@@ -10,12 +10,15 @@ The brief says: *"we'd love to hear how you used them — what you kept, changed
 
 ## The setup
 
-**Claude Code (Opus 4.8)** in the terminal, working directly in this repo, for the analysis
-and the artifacts. Airtable's own AI fields for the components inside the build.
+**Claude Code (Opus 4.8, later Opus 5)** in the terminal, working directly in this repo, for the
+analysis and the artifacts. Airtable's own AI fields for the components inside the build.
 
 Deliberately not a chat-and-paste workflow. Working in the repo meant the model could read the
 seed CSVs it had written, validate its own link references, and catch its own inconsistencies —
-which it did, twice, both times on numbers I'd have shipped wrong.
+which it did, twice, both times on numbers I'd have shipped wrong. It also meant the review could
+be run as pull requests, so the agent-drafted vs. human-edited diff is itself a visible artifact
+(PRs [#1](https://github.com/magellen12/airtable-take-home/pull/1) and
+[#2](https://github.com/magellen12/airtable-take-home/pull/2)) rather than a claim.
 
 ---
 
@@ -78,7 +81,7 @@ one number. Cut it entirely. **A composite score is exactly what would show Volt
 it would reintroduce the failure the whole model exists to prevent.
 
 **Verified:** the seed CSVs are machine-validated. `scripts/seed_airtable.py --dry-run` parses
-all 8 files, resolves every linked-record reference across 83 records, and reports failures by
+all 8 files, resolves every linked-record reference across 84 records, and reports failures by
 row. It passes. That's real verification, not a read-through.
 
 ### 5 · The AI field prompts
@@ -94,6 +97,44 @@ walking in with nothing.
 Rule 3 (`Do NOT estimate, extrapolate, annualize or invent a figure`) plus the
 `INSUFFICIENT EVIDENCE` escape hatch were added in response. The field now refuses on Floor &
 Board and tells the CSM what to go collect. **I'm demoing the refusal, not just the success.**
+
+### 6 · The audit pass — the failure mode I didn't expect
+
+Late on, writing the full play library, I asked a question I should have asked much earlier:
+**where did the name "Value Engineering" come from?**
+
+Nowhere. I'd invented it. So had I invented `Trust & Security`, `Deal Desk`, and a `Solutions`
+function. The model had proposed them early as plausible cross-functional partners, I hadn't
+challenged them, and from that point on **they were used perfectly consistently** — in the play
+library, the base schema's select options, the seed data, the AI component prompts, the talk
+track. That consistency is exactly what made them invisible. Nothing ever contradicted anything.
+
+**Verified against the sources rather than my memory of them.** The assessment names no
+Airtable-side partner function at all. The job description names exactly five: *"partner closely
+with Renewals, Support, Professional Services, Product, and Sales."* Everything outside that list
+was mine.
+
+**Changed:** rather than swap in different team names — which would have been the same mistake
+with better cover — the unverifiable ones are now described by **what has to be produced and who
+has to stand behind it**: *Value Validation* is whoever can stand behind a quantitative claim
+before it reaches a customer's CFO; *Security & Risk* is whoever produces customer-facing risk and
+controls artifacts. `docs/04` marks the split visually, bold for named partners and italics for
+capabilities, and mapping the capabilities to real owners is on the day-one question list.
+
+**Kept:** every customer-side name — Marketing Ops, RevOps, the IT Security & Data Governance
+Review Board, the CFO's office, procurement — because a sweep confirmed each one is verbatim from
+the account snapshot. The audit was about separating the two, not about deleting specifics.
+
+The same pass caught two unsupported claims about customer behavior ("*they already know they have
+agents nobody owns*") and rewrote every definition of done as **a signal we look for** rather than
+a prediction of what a customer will do.
+
+**What I'd take from it:** the earlier errors were wrong *numbers*, and numbers get checked. This
+one was a wrong *premise*, applied consistently — which is the harder failure to see, because
+internal consistency reads as correctness. The control isn't more careful reading; it's asking
+"what's the source for this?" of things that have stopped looking like claims. That's a habit I'd
+want on a team shipping AI-drafted customer-facing material, and it's why the value narrative
+carries a `Source of Truth` field rather than just a status.
 
 ---
 
@@ -119,8 +160,10 @@ Board and tells the CSM what to go collect. **I'm demoing the refusal, not just 
 
 **AI was fast at structure and wrong about judgment.** It gave me a maturity model in minutes
 and then scored the most dangerous account in the book as the healthiest. It drafted a
-convincing value narrative for a customer with no measurements at all. Both were plausible,
-well-formed, and would have cost me the two things I most needed to get right.
+convincing value narrative for a customer with no measurements at all. It invented an org chart
+and then used it flawlessly across nine files. All three were plausible, well-formed, and would
+have cost me the things I most needed to get right — and the third is the one I'd warn a team
+about, because it never looked like an error.
 
 What it genuinely bought me: I spent my hours on the diagnosis and the judgment calls instead
 of on schema design, CSV wrangling and formula syntax. And the two places it was wrong turned

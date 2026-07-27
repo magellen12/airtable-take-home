@@ -40,6 +40,7 @@ relationship-led motion to a transformation-led one. That premise drives everyth
 | 3 | **Live session** | [`session/`](session/) | 60-minute run of show and prepared answers to the pushback I expect. |
 | — | Appendix | [`appendix/`](appendix/) | Assumptions, how I used AI, and the [reconciliation](appendix/reconciliation.md) of two independent strategy drafts. |
 | — | Changelog | [`CHANGELOG.md`](CHANGELOG.md) | How this evolved, revision by revision — what I kept, changed, and verified. |
+| — | Working conventions | [`AGENTS.md`](AGENTS.md) | The rules this repo is edited under — what may be named, what must be verified, why changes go through PRs. |
 
 ---
 
@@ -61,9 +62,19 @@ Build details → [`airtable-build/README.md`](airtable-build/README.md)
 
 ---
 
-## Assumptions
+## Assumptions, and what I invented
 
 I've listed everything I assumed about Airtable's business and the HTCS function in
 [`appendix/assumptions.md`](appendix/assumptions.md), flagged by how much the argument
 depends on each one. Several are probably wrong; the brief notes which ones would change my
 priorities if they are.
+
+**One discipline worth calling out, because it changed the deliverable.** Late in the build I
+audited every organizational name in this repo against the source material. The assessment names
+no Airtable-side partner function; the role names exactly five — *Renewals, Support, Professional
+Services, Product, Sales.* Several others I'd been using were invented and then applied so
+consistently that nothing ever contradicted them. They're now described by **capability** —
+*whoever can stand behind a quantitative claim before it reaches a customer's CFO* — rather than by
+a team name I'd be guessing at. Customer-side specifics all trace to the account snapshot. The
+story is in [`appendix/how-i-used-ai.md`](appendix/how-i-used-ai.md) §6, and the working
+conventions are in [`AGENTS.md`](AGENTS.md).

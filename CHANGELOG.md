@@ -13,6 +13,29 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v2.6] — 2026-07-27 — Add `AGENTS.md`; record the audit in how-I-used-AI
+*4 files*
+
+- **Added** [`AGENTS.md`](AGENTS.md) — the conventions this repo is edited under, written so the
+  v2.5 audit can't quietly regress: the complete list of Airtable-side functions that may be named,
+  the capability descriptions that replace the invented ones, the rule that definitions of done are
+  signals rather than predictions, the standard-vs-latitude split, the verified load-bearing
+  numbers, and the PR-and-changelog workflow. Most of its rules exist because something went wrong
+  once, and each says which.
+- **Added** §6 to [`appendix/how-i-used-ai.md`](appendix/how-i-used-ai.md) — *the failure mode I
+  didn't expect.* The earlier AI errors were wrong **numbers**, and numbers get checked. This one
+  was a wrong **premise** applied consistently across nine files, which is harder to see because
+  internal consistency reads as correctness. The control isn't more careful reading; it's asking
+  "what's the source for this?" of things that have stopped looking like claims.
+- **Fixed a number that had been wrong since v1.0:** the seed record count was stated as 83 in
+  three places (`how-i-used-ai.md`, `scripts/README.md`, and the v2.0 entry below). The dry-run
+  reports **84** across 8 CSVs, and recounting at the v2.0 commit confirms it was 84 then too — so
+  that entry's "verified" claim was itself unverified. All three corrected. A stale number in a
+  deliverable arguing for value evidence is a bad look, and this one had been recited three times
+  without being recomputed once.
+- **Corrected:** the tooling note said Opus 4.8; later revisions ran on Opus 5.
+- **Verified:** seed dry-run passes, all link references resolve.
+
 ## [v2.5] — 2026-07-27 · `66a6c12` — Name partner *capabilities*, not teams I can't verify exist
 *13 files*
 
@@ -129,7 +152,7 @@ sharpen-and-merge, not a rewrite. Grounded against the [Director JD](https://job
 - **Fixed:** Meridian's binding constraint was labeled Governance but its lowest score is Value
   evidence — corrected so the formula and the prose agree (a sharper diagnosis, not just a
   cleanup).
-- **Verified:** seed dry-run passes (83 records, all links resolve); ARR-at-risk recomputed to
+- **Verified:** seed dry-run passes (84 records, all links resolve); ARR-at-risk recomputed to
   $3,110,000; all six constraints derive correctly.
 
 ## [v1.0] — 2026-07-23 · `67bd569` — Initial artifact set
