@@ -20,11 +20,20 @@ Done via API on 2026-07-28 and verified live — no action needed:
 | `Plays.Applies at Stage` → **multi-select `0`–`4`** | Was `singleLineText` holding ranges (`1-2`, `0-4`); expanded per record |
 | `Diagnostics.Constraint Override Reason` added + populated | Records *why* Harbor Lane's constraint was overridden — see §9 |
 
-**Two manual cleanups first — the API cannot delete fields:**
+**Manual steps first — the API cannot delete fields or change a field's type:**
 
-1. `Plays` → delete **`zz Applies at Stage (retired text — delete in UI)`**
-2. `CSMs` → hide **`From field: Paired With`** (auto-generated reciprocal; hide, don't delete)
-3. `Accounts` → hide **`Diagnostic (from Current Diagnostic)`** (stray lookup, unused)
+1. **`Account Plays` → change `Name` (the primary field) from Single line text to Formula:**
+   ```
+   {Account Name} & " — " & {Play Code}
+   ```
+   It is currently **blank on all 9 records**. `Account Name` and `Play Code` were added via API on
+   2026-07-28 and are populated — only the type conversion is left. **Do this before building
+   Block 2:** the Accept button (beat 4) and automation A2 (beat 7) both *create* `Account Plays`
+   records, and with a blank primary every newly created record renders as unnamed in the exact two
+   moments you are demoing creation. Renders as `Floor & Board Furniture — P2`.
+2. `Plays` → delete **`zz Applies at Stage (retired text — delete in UI)`**
+3. `CSMs` → hide **`From field: Paired With`** (auto-generated reciprocal; hide, don't delete)
+4. `Accounts` → hide **`Diagnostic (from Current Diagnostic)`** (stray lookup, unused)
 
 **Field names are case-sensitive.** It is `ARR at Risk` (lowercase *at*), not `ARR At Risk`.
 
