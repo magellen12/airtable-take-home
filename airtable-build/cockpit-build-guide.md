@@ -1,8 +1,17 @@
 # Interface 1 · CSM Cockpit — build guide
 
-Click-by-click for Airtable Interface Designer. Implements
-[`interfaces.md` §1](interfaces.md). **Airtable exposes no interface API** — every step here is
-manual in the UI. Roughly 45–60 minutes.
+Implements [`interfaces.md` §1](interfaces.md). **Airtable exposes no interface API** — every step
+here is manual in the UI. Roughly 45–60 minutes.
+
+> **What this guide is and isn't.** Every **field name, value and number** below was verified
+> against the live API on 2026-07-28 — if it says Floor & Board's `Sponsorship` is 1, it is 1, and
+> if it names a field, that field exists on the table stated. The **click paths and element names**
+> are written from the Interface Designer model, not from a session driving the UI, so menu wording
+> may differ from your build. Trust the *what* and *why*; adapt the *where*.
+>
+> **The one rule that governs everything:** a field element binds only to fields on the page's
+> **source table**. It cannot follow a link. Anything living on `Diagnostics` needs a lookup on
+> `Accounts` first — §0 adds the six that Blocks 1 and 2 need.
 
 Base **`appFGgbrUOs62IndE`** → https://airtable.com/appFGgbrUOs62IndE
 
@@ -14,6 +23,7 @@ Done via API on 2026-07-28 and verified live — no action needed:
 
 | Change | Why |
 |---|---|
+| **`Accounts` lookups added: `Adoption`, `Sponsorship`, `Governance`, `Stage Rationale`, `Recommended Play`, `Constraint Override Reason`** | **Blocks 1 and 2 could not be built without these.** A field element binds only to fields on the page's source table — it can't traverse `Current Diagnostic` to reach `Diagnostics`. All six now exist on `Accounts` |
 | `Accounts.Stage Label` → renamed **`Stage`** | Interface configs bind by field name; `schema.md` says `Stage` |
 | `Diagnostics.Diagnostic Age` (formula) added | Block 1 corner; `DATETIME_DIFF(TODAY(), {Diagnostic Date}, 'days')` |
 | `Accounts.Diagnostic Age` (lookup) added | Same value on the account record, via `Current Diagnostic` |
@@ -95,23 +105,41 @@ Rows 1–3 carry the $3,110,000. Rows 4–6 carry $0 at risk.
 
 ## 3 · Block 1 — Where this account is
 
+> **Read this first.** An Interface Designer **field element binds only to fields that exist on the
+> page's source table.** It cannot follow a link and pick a field off `Diagnostics`. Everything
+> below is now a real lookup **on `Accounts`** — added via API 2026-07-28 — so all of it appears in
+> the field picker. If a field name here isn't in the picker, the page's source table is wrong, not
+> the field.
+
 Header text element: **Where this account is**
 
-| Element | Config |
-|---|---|
-| Field | `Stage` — add a **Text** element beside it reading `AI read` |
-| Field ×4 | `Adoption`, `Sponsorship`, `Governance`, `Value Evidence` from `Current Diagnostic` |
-| Field | `Diagnostic Age`, top-right corner |
-| Field | the `Stage` rationale — see below |
+| Element | Bind to (all on `Accounts`) | Relabel the element as |
+|---|---|---|
+| Field | `Stage` | Stage |
+| Field | `Adoption` | Adoption |
+| Field | `Sponsorship` | Sponsorship |
+| Field | `Governance` | Governance |
+| Field | `Value Evidence Score` | **Value evidence** |
+| Field | `Diagnostic Age` | top-right corner |
+| Field | `Stage Rationale` | **Why this stage** + an `AI read` chip |
+| Field | `Constraint Override Reason` | conditional — see §9 |
 
-**The four dimension bars.** The spec says "bars"; the source fields are `rating` type, which
-Interface Designer renders as filled dots, not bars. Accept the dots — they read the same at a
-glance and cost nothing. Do not convert the rating fields to number to chase the visual; the rating
-type is what makes the 1–5 anchors enforceable in Interface 3.
+**`Value Evidence Score` is the odd name.** It's the pre-existing lookup of
+`Diagnostics.Value Evidence` and `ARR at Risk` depends on it, so it wasn't renamed. **Relabel the
+element to "Value evidence"** — interface elements carry a display label independent of the field
+name. Don't rename the field.
 
-**The rationale.** `Diagnostics.Stage` holds both lines (`STAGE:` and `RATIONALE:`). Add a
-**Text** element labelled **Why this stage** with an `AI read` chip, bound to `Stage`. It will show
-the `STAGE:` prefix too — acceptable, and it reinforces that the whole block is one model output.
+**The four dimension bars.** The spec says "bars"; the sources are `rating` fields, which render as
+filled dots. Accept the dots. Don't convert them to number to chase the visual — the rating type is
+what makes the 1–5 anchors enforceable in Interface 3.
+
+**The rationale.** `Stage Rationale` is the full AI-1 output and holds both lines (`STAGE:` and
+`RATIONALE:`). It will show the `STAGE:` prefix — acceptable, and it reinforces that the whole
+element is one model output. Note this is a *different* field from `Stage`, which is the short
+label (`2 Contained`) the left rail uses.
+
+**`Constraint Override Reason`** — set conditional visibility so it shows only when non-empty. It's
+populated on Harbor Lane only.
 
 **`Diagnostic Age`** — conditional formatting, grey when `> 90`.
 **This will not fire.** All six diagnostics are dated 2026-07-20 (age 8 days) because the book was
@@ -125,10 +153,11 @@ drops into the Director's inspection queue."* Do **not** backdate a record to li
 
 Header: **Your next play**
 
-1. **Text** element, top of block:
-   `Binding constraint (computed): ` + field `Constraint`
-   Subtitle, smaller: *Lowest score selects the play.*
-2. **Field** → `Recommended Play` from `Current Diagnostic`. Renders the full AI-2 output:
+1. **Field** → `Constraint` (on `Accounts`), **relabelled** `Binding constraint (computed)`.
+   *"Binding constraint" is a display label you type, not a field — the field is `Constraint`.*
+   Add a **Text** element under it: *Lowest score selects the play.*
+2. **Field** → `Recommended Play` (on `Accounts` — the lookup added 2026-07-28, not the
+   `Diagnostics` field of the same name). Renders the full AI-2 output:
    `PLAY:` / `WHY:` / `FIRST THREE MOVES:` / `PARTNER TO PULL IN:` / `ALSO SEQUENCE:`
 3. **Button** → **Accept** → action **Run automation** → creates the `Account Plays` record
 4. **Button** → **Override** → action **Open record** → `Diagnostics`, focused on `Override Reason`
