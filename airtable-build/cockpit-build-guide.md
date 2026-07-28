@@ -1,279 +1,494 @@
 # Interface 1 · CSM Cockpit — build guide
 
-Implements [`interfaces.md` §1](interfaces.md). **Airtable exposes no interface API** — every step
-here is manual in the UI. Roughly 45–60 minutes.
+## What you are building
 
-> **What this guide is and isn't.** Every **field name, value and number** below was verified
-> against the live API on 2026-07-28 — if it says Floor & Board's `Sponsorship` is 1, it is 1, and
-> if it names a field, that field exists on the table stated. The **click paths and element names**
-> are written from the Interface Designer model, not from a session driving the UI, so menu wording
-> may differ from your build. Trust the *what* and *why*; adapt the *where*.
->
-> **The one rule that governs everything:** a field element binds only to fields on the page's
-> **source table**. It cannot follow a link. Anything living on `Diagnostics` needs a lookup on
-> `Accounts` first — §0 adds the six that Blocks 1 and 2 need.
+One screen with two halves.
 
-Base **`appFGgbrUOs62IndE`** → https://airtable.com/appFGgbrUOs62IndE
+**The left half** is a list of the six accounts in the book. It's always visible. It's sorted so the
+account with the most money at risk sits at the top.
 
----
+**The right half** shows everything about whichever account you clicked in that list. Click a
+different account, the right half changes. That right half is broken into five stacked sections:
+where the account stands, what to do next, whether there's any proof of value, who we know there,
+and what's happened recently.
 
-## 0 · Prerequisites
+Time: about an hour. Every step is done by hand in the Airtable web app. There is no way to script
+this — Airtable has an API for building tables and fields, but none for building interfaces.
 
-Done via API on 2026-07-28 and verified live — no action needed:
-
-| Change | Why |
-|---|---|
-| **`Accounts` lookups added: `Adoption`, `Sponsorship`, `Governance`, `Stage Rationale`, `Recommended Play`, `Constraint Override Reason`** | **Blocks 1 and 2 could not be built without these.** A field element binds only to fields on the page's source table — it can't traverse `Current Diagnostic` to reach `Diagnostics`. All six now exist on `Accounts` |
-| `Accounts.Stage Label` → renamed **`Stage`** | Interface configs bind by field name; `schema.md` says `Stage` |
-| `Diagnostics.Diagnostic Age` (formula) added | Block 1 corner; `DATETIME_DIFF(TODAY(), {Diagnostic Date}, 'days')` |
-| `Accounts.Diagnostic Age` (lookup) added | Same value on the account record, via `Current Diagnostic` |
-| `Plays.Applies at Stage` → **multi-select `0`–`4`** | Was `singleLineText` holding ranges (`1-2`, `0-4`); expanded per record |
-| `Diagnostics.Constraint Override Reason` added + populated | Records *why* Harbor Lane's constraint was overridden — see §9 |
-
-**Manual steps first — the API cannot delete fields or change a field's type:**
-
-1. **`Account Plays` → change `Name` (the primary field) from Single line text to Formula:**
-   ```
-   {Account Name} & " — " & {Play Code}
-   ```
-   It is currently **blank on all 9 records**. `Account Name` and `Play Code` were added via API on
-   2026-07-28 and are populated — only the type conversion is left. **Do this before building
-   Block 2:** the Accept button (beat 4) and automation A2 (beat 7) both *create* `Account Plays`
-   records, and with a blank primary every newly created record renders as unnamed in the exact two
-   moments you are demoing creation. Renders as `Floor & Board Furniture — P2`.
-2. `Plays` → delete **`zz Applies at Stage (retired text — delete in UI)`**
-3. `CSMs` → hide **`From field: Paired With`** (auto-generated reciprocal; hide, don't delete)
-4. `Accounts` → hide **`Diagnostic (from Current Diagnostic)`** (stray lookup, unused)
-
-**Field names are case-sensitive.** It is `ARR at Risk` (lowercase *at*), not `ARR At Risk`.
+Your base: https://airtable.com/appFGgbrUOs62IndE
 
 ---
 
-## 1 · Create the interface
+## Read this before you start — it explains most of the confusion
 
-1. **Interfaces** → **Create interface** → start from **Blank**
-2. Layout: **Record review**
-3. Name it **CSM Cockpit**
-4. Source table: **Accounts**
+### Vocabulary
 
-Record review gives you the left list + main detail panel the spec calls for. Don't use Dashboard
-here — it can't do per-record detail.
+**Table** — a spreadsheet-like grid of records. You have eight of them: Accounts, Diagnostics,
+Plays, CSMs, Stakeholders, Signals, Value Stories, Account Plays.
+
+**Field** — a column on a table. `ARR` is a field on the Accounts table.
+
+**Lookup field** — a special kind of field that pulls a value in from a *different* table. For
+example, the four diagnostic scores really live on the Diagnostics table, but Accounts has lookup
+fields that copy them across so they show up on an account too.
+
+**Interface** — a built page for people to use, separate from the raw tables.
+
+**Element** — one thing you drag onto an interface page. A field element shows one field. A text
+element shows words you type. A button element does something when clicked. A grid element shows a
+list of records.
+
+**Label** — the words displayed above an element on screen. This is *not* the same as the field's
+name in the table. You can show the field `Value Evidence Score` but label it "Value evidence." The
+underlying field keeps its real name.
+
+### The rule that trips everyone up
+
+When you add a field element to an interface page, the picker only offers you **fields that exist on
+the table the page was built on.** This page is built on **Accounts**, so it only offers Accounts
+fields.
+
+That's a problem, because a lot of what this screen needs to display doesn't live on Accounts. The
+four scores, the AI's stage explanation, and the AI's recommended play all live on the
+**Diagnostics** table. The interface cannot reach across and grab them.
+
+The fix is to copy them onto Accounts as lookup fields first. **This has already been done for you.**
+Six lookup fields were added to Accounts on 2026-07-28:
+
+`Adoption` · `Sponsorship` · `Governance` · `Stage Rationale` · `Recommended Play` ·
+`Constraint Override Reason`
+
+So when this guide says "add a field called `Adoption`," it will be in your picker. If it isn't,
+the most likely cause is that your page got built on the wrong table. Check that first before
+hunting for the field.
+
+### What's trustworthy in this guide, and what isn't
+
+Every **field name, value and number** here was checked against the live base on 2026-07-28. If this
+guide says Floor & Board's Sponsorship score is 1, it is 1.
+
+The **click paths and menu names** were written from how Interface Designer is structured, not by
+someone sitting and clicking through it. Airtable renames menu items between releases. If a menu on
+your screen is worded differently from what's written here, trust your screen. The *what* and the
+*why* are reliable; the exact *where* may drift.
 
 ---
 
-## 2 · Left rail — my book
+## Step 1 · Three fixes to make in the base first
 
-**Sort:** `ARR at Risk` **descending**. This is deliberate and worth saying out loud in the demo:
-sorting by ARR at risk rather than renewal date puts the largest preventable loss at the top of the
-screen every morning.
+Do these in the tables, before you touch Interfaces. None of them can be done through the API, which
+is why they're left to you.
 
-**Filter (demo):** none — show all six.
-**Filter (real deployment):** `CSM` **is** *current user*. Build it, then switch it off for the
-demo so the whole book is visible. Access control is deliberately deferred (see
-[`README.md`](README.md)).
+### 1a. Give the Account Plays table a working name column
 
-**Fields to show, in order:**
+Open the **Account Plays** table. Look at the first column — it's called `Name` and every single row
+is blank.
 
-| Field | Note |
-|---|---|
-| `Account` | |
-| `ARR` | currency |
-| `Quarters to Renewal` | |
-| `Stage` | the lookup — renders `2 Contained` |
-| `Constraint` | label this column **Binding constraint** (see §8) |
-| `Renewal Readiness` | |
+That column is the record's title. It's blank because it was supposed to be built as a formula and
+never was.
 
-### ⚠ The spec table in `interfaces.md` is missing a row
+Click the `Name` field header, choose to edit the field, change its type from **Single line text**
+to **Formula**, and paste this in:
 
-`interfaces.md:14–20` lists **five** accounts. The book has **six** — **Meridian Health Systems
-($1.1M, Stage 3, Value evidence, ⚠️ No current value)** is absent. It sorts last on `ARR at Risk`
-($0, renews in 4 quarters), which is almost certainly how it got dropped when that table was typed
-by hand. **Build six rows.** Live values, verified 2026-07-28:
+```
+{Account Name} & " — " & {Play Code}
+```
+
+Save it. All nine rows should immediately fill in, reading like `Floor & Board Furniture — P2` and
+`Voltaic Software — P6`.
+
+**Do this before anything else.** Two moments in your demo create Account Plays records live — the
+Accept button on this screen, and the automation in the last beat. If this column is still blank,
+every record created in front of your audience appears with no name on it, at exactly the moment
+you're showing off record creation.
+
+### 1b. Delete a leftover field
+
+Go to the **Plays** table. There's a field called `zz Applies at Stage (retired text — delete in
+UI)`. Delete it.
+
+It's a stale copy. The real field, `Applies at Stage`, was rebuilt properly as a multi-select and
+sits alongside it. The old one couldn't be deleted through the API, which is why it's still there
+with an ugly name flagging it for removal.
+
+### 1c. Hide two clutter fields
+
+These two aren't broken, they're just noise that Airtable generated automatically. Hide them, don't
+delete them — deleting could break the links underneath.
+
+- In **CSMs**, hide the field `From field: Paired With`
+- In **Accounts**, hide the field `Diagnostic (from Current Diagnostic)`
+
+---
+
+## Step 2 · Create the interface
+
+1. In your base, click **Interfaces** in the top navigation.
+2. Click **Create interface**.
+3. When it offers you templates or a blank start, choose **Blank**.
+4. It will ask you to pick a layout. Choose **Record review**.
+5. Name it **CSM Cockpit**.
+6. It will ask which table the page draws from. Choose **Accounts**.
+
+**Why Record review specifically.** It's the layout that gives you a list on one side and a detail
+panel on the other, with the detail panel updating as you click through the list. That's exactly the
+shape described above. The other layouts won't do this — Dashboard shows aggregate charts with no
+per-record detail, and a blank page gives you no list-plus-detail wiring at all.
+
+Once created, you should see a mostly empty page with a list of accounts down the left side. The
+right side is where you'll spend the rest of this guide.
+
+---
+
+## Step 3 · Set up the list on the left
+
+Click on the list to select it, and find its settings panel.
+
+### Sorting
+
+Set the sort to **`ARR at Risk`, descending** (largest first).
+
+This is a deliberate design decision and it's worth saying out loud during the demo. Most CS tools
+sort a book by renewal date. Sorting by money-at-risk instead means the largest preventable loss is
+physically at the top of the screen every morning, without anyone having to think about it.
+
+### Filtering
+
+Leave the filter **off** for the demo, so that all six accounts are visible and your audience can
+see the whole book.
+
+In a real deployment you'd add a filter of `CSM is current user`, so each CSM only sees their own
+accounts. It's worth building that filter once so you can show it exists, then switching it off
+before you present. Restricting access is deliberately out of scope here — the demo shows everything
+so the whole model is visible.
+
+### Columns
+
+Set the list to show these six fields, in this order:
+
+1. `Account`
+2. `ARR`
+3. `Quarters to Renewal`
+4. `Stage`
+5. `Constraint` — but change the displayed label to **Binding constraint**
+6. `Renewal Readiness`
+
+### Important: you should end up with six rows, not five
+
+The written spec in `interfaces.md` shows a table with only five accounts in it. That table is
+incomplete. **Meridian Health Systems is missing from it**, and Meridian is the second-largest
+account in the entire book at $1.1M.
+
+It was almost certainly dropped by accident. Meridian shows $0 in the ARR-at-risk column, so when
+sorted by that column it falls to the very bottom, where it's easy to overlook.
+
+This is what your list should look like once configured:
 
 | Account | ARR | Renewal | Stage | Binding constraint | Readiness |
 |---|---|---|---|---|---|
-| Floor & Board Furniture | $1,700,000 | 2Q | 2 Contained | Sponsorship | ⚠️ No current value |
-| Corvus Financial Group | $890,000 | 3Q | 2 Contained | Value Evidence | ⚠️ No current value |
-| Voltaic Software | $520,000 | 2Q | 2 Contained | Governance | ⚠️ No current value |
-| TrailLine Logistics | $540,000 | 7Q | 1 Sponsored | Adoption | Not yet in cycle |
-| Harbor Lane Retail | $310,000 | 5Q | 0 Unaware | Value Evidence | Not yet in cycle |
-| Meridian Health Systems | $1,100,000 | 4Q | 3 Governed | Value Evidence | ⚠️ No current value |
+| Floor & Board Furniture | $1,700,000 | 2 qtrs | 2 Contained | Sponsorship | ⚠️ No current value |
+| Corvus Financial Group | $890,000 | 3 qtrs | 2 Contained | Value Evidence | ⚠️ No current value |
+| Voltaic Software | $520,000 | 2 qtrs | 2 Contained | Governance | ⚠️ No current value |
+| TrailLine Logistics | $540,000 | 7 qtrs | 1 Sponsored | Adoption | Not yet in cycle |
+| Harbor Lane Retail | $310,000 | 5 qtrs | 0 Unaware | Value Evidence | Not yet in cycle |
+| Meridian Health Systems | $1,100,000 | 4 qtrs | 3 Governed | Value Evidence | ⚠️ No current value |
 
-Rows 1–3 carry the $3,110,000. Rows 4–6 carry $0 at risk.
+The top three rows are the accounts carrying real risk, and they add up to $3,110,000. The bottom
+three each contribute $0 to that figure.
 
 ---
 
-## 3 · Block 1 — Where this account is
+## Step 4 · Block 1 — where this account stands
 
-> **Read this first.** An Interface Designer **field element binds only to fields that exist on the
-> page's source table.** It cannot follow a link and pick a field off `Diagnostics`. Everything
-> below is now a real lookup **on `Accounts`** — added via API 2026-07-28 — so all of it appears in
-> the field picker. If a field name here isn't in the picker, the page's source table is wrong, not
-> the field.
+This is the top section of the right-hand panel. It answers: *how healthy is this account, really?*
 
-Header text element: **Where this account is**
+Start by adding a **text element** at the top of the panel and typing the heading:
+**Where this account is**
 
-| Element | Bind to (all on `Accounts`) | Relabel the element as |
+Then add a field element for each row in the table below. For each one you'll pick the field from
+the picker, then set its display label separately.
+
+| Pick this field | Set the label to | Where to put it |
 |---|---|---|
-| Field | `Stage` | Stage |
-| Field | `Adoption` | Adoption |
-| Field | `Sponsorship` | Sponsorship |
-| Field | `Governance` | Governance |
-| Field | `Value Evidence Score` | **Value evidence** |
-| Field | `Diagnostic Age` | top-right corner |
-| Field | `Stage Rationale` | **Why this stage** + an `AI read` chip |
-| Field | `Constraint Override Reason` | conditional — see §9 |
+| `Stage` | Stage | Top of the block |
+| `Adoption` | Adoption | Grouped together as a set of four |
+| `Sponsorship` | Sponsorship | " |
+| `Governance` | Governance | " |
+| `Value Evidence Score` | **Value evidence** | " |
+| `Diagnostic Age` | Diagnostic age | Top-right corner |
+| `Stage Rationale` | **Why this stage** | Below the four scores |
+| `Constraint Override Reason` | Why this was overridden | Below that — see Step 9 |
 
-**`Value Evidence Score` is the odd name.** It's the pre-existing lookup of
-`Diagnostics.Value Evidence` and `ARR at Risk` depends on it, so it wasn't renamed. **Relabel the
-element to "Value evidence"** — interface elements carry a display label independent of the field
-name. Don't rename the field.
+### Things about that list that will otherwise confuse you
 
-**The four dimension bars.** The spec says "bars"; the sources are `rating` fields, which render as
-filled dots. Accept the dots. Don't convert them to number to chase the visual — the rating type is
-what makes the 1–5 anchors enforceable in Interface 3.
+**`Value Evidence Score` has an inconsistent name, and that's intentional.** The other three scores
+are just called `Adoption`, `Sponsorship`, `Governance`. This one has "Score" tacked on because it
+was created earlier under that name, and the `ARR at Risk` formula depends on it. Renaming it risks
+breaking that formula, and `ARR at Risk` is one of your headline numbers. So leave the field alone
+and just set the *label* to "Value evidence." On screen nobody will know the difference.
 
-**The rationale.** `Stage Rationale` is the full AI-1 output and holds both lines (`STAGE:` and
-`RATIONALE:`). It will show the `STAGE:` prefix — acceptable, and it reinforces that the whole
-element is one model output. Note this is a *different* field from `Stage`, which is the short
-label (`2 Contained`) the left rail uses.
+**`Stage` and `Stage Rationale` are two genuinely different fields and you want both.**
+`Stage` is short — it reads `2 Contained`. That's what the left-hand list uses, and what you want at
+the top of this block. `Stage Rationale` is the full paragraph the AI wrote explaining *why* the
+account is at that stage. Put the short one at the top and the paragraph lower down.
 
-**`Constraint Override Reason`** — set conditional visibility so it shows only when non-empty. It's
-populated on Harbor Lane only.
+**The rationale will include a `STAGE:` line at the start.** The AI writes its answer as two labelled
+lines, `STAGE:` and `RATIONALE:`, and the field holds both. That's fine — leave it. It actually helps,
+because it makes clear that the whole block is one piece of AI output rather than something assembled
+from parts.
 
-**`Diagnostic Age`** — conditional formatting, grey when `> 90`.
-**This will not fire.** All six diagnostics are dated 2026-07-20 (age 8 days) because the book was
-swept at once. Build the rule anyway and leave it dormant; the line in the room is *"every
-diagnostic here is eight days old because we just ran the sweep — at 90 days this greys out and
-drops into the Director's inspection queue."* Do **not** backdate a record to light it up.
+**The four scores will display as filled dots, not bars.** The spec asks for bars. These are rating
+fields, and Airtable draws rating fields as dots. Leave it alone. They communicate the same thing at
+a glance, and converting them to plain numbers to get bars would break the 1-to-5 scale that the
+diagnostic session interface relies on later.
 
----
+### Diagnostic age
 
-## 4 · Block 2 — Your next play
+Set conditional formatting on the `Diagnostic Age` element so it greys out when the value is over 90.
 
-Header: **Your next play**
+**It will never actually grey out, and that's fine.** Every diagnostic in the base is dated
+2026-07-20, so they're all 8 days old. The whole book was assessed in one sweep.
 
-1. **Field** → `Constraint` (on `Accounts`), **relabelled** `Binding constraint (computed)`.
-   *"Binding constraint" is a display label you type, not a field — the field is `Constraint`.*
-   Add a **Text** element under it: *Lowest score selects the play.*
-2. **Field** → `Recommended Play` (on `Accounts` — the lookup added 2026-07-28, not the
-   `Diagnostics` field of the same name). Renders the full AI-2 output:
-   `PLAY:` / `WHY:` / `FIRST THREE MOVES:` / `PARTNER TO PULL IN:` / `ALSO SEQUENCE:`
-3. **Button** → **Accept** → action **Run automation** → creates the `Account Plays` record
-4. **Button** → **Override** → action **Open record** → `Diagnostics`, focused on `Override Reason`
+Build the rule anyway, and handle it with a sentence in the room: *"everything here is eight days old
+because we just ran the sweep across the whole book. At ninety days this greys out and the account
+drops into my inspection queue."*
 
-**Getting the constraint red.** Interface Designer can't conditionally colour a *lookup* field.
-Two options — pick the first:
-
-- **Recommended:** place four pre-styled Text elements (`Sponsorship` / `Governance` / `Adoption` /
-  `Value Evidence`), each red, each with **conditional visibility** on `Constraint`. Exactly one
-  shows. Five minutes, no schema change.
-- Convert `Diagnostics.Constraint` to a single-select written by automation. More faithful colouring,
-  but it makes the constraint mutable state instead of a derived value — **don't**, it breaks the
-  "the formula picks the play" story.
+**Do not backdate a record to make the grey state appear.** It would contradict the story you're
+telling — that this is a brand new operating model and the book was just assessed. A manufactured
+stale record buys you a visual effect and costs you the narrative.
 
 ---
 
-## 5 · Block 3 — The value position
+## Step 5 · Block 2 — the recommended play
 
-| Element | Config |
-|---|---|
-| Field | `Latest Value Story Status` (rollup on `Accounts`) |
-| Grid | `Value Stories` filtered to this account — show `Value Story`, `Business Metric`, `Status`, `Narrative` |
-| Button | **Draft value narrative** → Run automation → creates a `Value Stories` record and triggers AI-3 |
+This section answers: *so what do I actually do about it?*
 
-All six accounts read **`Draft`** — value coverage is **0 / 6**, and that is the point of the whole
-brief. Floor & Board has **two** value stories; the rollup uses `ARRAYUNIQUE` so it still reads
-`Draft` rather than `Draft, Draft`.
+Add a text element as a heading: **Your next play**
+
+Then build these five things in order:
+
+**1. Add a field element for `Constraint`.** Set its label to **Binding constraint (computed)**.
+
+To be completely clear, because this caused confusion already: "Binding constraint" is text you type
+into the label box. There is no field called "Binding constraint." The field you pick from the picker
+is called `Constraint`.
+
+**2. Add a text element directly underneath it** reading: *Lowest score selects the play.*
+
+This one line does a lot of work. It tells the reader that this isn't a judgement call, it's the
+mechanical result of taking whichever of the four scores is lowest.
+
+**3. Add a field element for `Recommended Play`.**
+
+This prints the AI's full recommendation. It comes out as five labelled parts: the play name, why
+that play was chosen, the first three moves to make, which partner team to bring in, and whether a
+follow-on play should be queued behind it. It's several paragraphs, so give it room.
+
+**4. Add a button element labelled "Accept."** Configure it to run an automation that creates a new
+record in the `Account Plays` table for this account and this play.
+
+**5. Add a button element labelled "Override."** Configure it to open the related `Diagnostics`
+record, so the CSM can type into the `Override Reason` field and explain why they're not taking the
+recommendation.
+
+That override path matters more than it looks. Every override is a signal that the model got
+something wrong, and the Director's screen has a queue that collects them for review. It's how the
+recommendations get better over time.
+
+### Making the constraint appear in red
+
+The spec asks for the binding constraint to be called out in red. Airtable won't let you apply
+conditional colour to a lookup field, which is what `Constraint` is.
+
+The workaround takes about five minutes. Create four separate text elements, one for each possible
+constraint — "Sponsorship", "Governance", "Adoption", "Value Evidence". Style all four in red. Then
+set conditional visibility on each one so it only appears when `Constraint` equals that value.
+
+Only one of the four will ever be visible at a time, so on screen it looks like a single red field
+that changes as you click between accounts.
+
+There's a second approach — converting `Constraint` from a formula into a single-select that an
+automation writes into. **Don't do that.** It would turn a derived value into stored data that can
+drift out of sync, and it breaks the thing you're demonstrating, which is that the constraint is
+computed rather than chosen.
 
 ---
 
-## 6 · Block 4 — Who we know
+## Step 6 · Block 3 — the value position
 
-| Element | Config |
-|---|---|
-| Grid | `Stakeholders`, filtered to this account |
-| Fields | `Name`, `Title`, `Role`, `Sentiment`, `Status`, `Last Touch` |
-| Text | `Sponsor Roles` rollup + thread count against target of **3** |
+This section answers: *can we prove this account is getting value?*
 
-**Departed contacts struck through** — Interface Designer has no strikethrough. Use `Status` as a
-visible coloured column instead, and sort `Status` ascending so departed/unengaged sort to the top.
-Floor & Board's departed champion is then the first row a CSM sees, which is the whole point of the
-block.
+Add a heading: **The value position**
+
+**1. Add a field element for `Latest Value Story Status`.** This shows whether the most recent value
+story has been drafted, reviewed, or validated by the customer.
+
+**2. Add a grid element showing `Value Stories` filtered to this account.** Show these columns:
+`Value Story`, `Business Metric`, `Status`, `Narrative`.
+
+**3. Add a button labelled "Draft value narrative."** Configure it to run an automation that creates a
+new Value Stories record and generates the AI narrative for it.
+
+**What you'll see, and why it's correct:** every account reads `Draft`. Not one has a customer-validated
+value story. That means value coverage across the book is 0 out of 6.
+
+That is not missing data — it's the central finding of the whole strategic brief. The platform is
+working and people are using it, but nobody has ever proved the value to the person who signs the
+renewal. Leave it exactly as it is.
+
+One detail if you look closely: Floor & Board has two value stories rather than one. The status field
+handles that correctly and still reads `Draft` rather than `Draft, Draft`.
 
 ---
 
-## 7 · Block 5 — Signals
+## Step 7 · Block 4 — who we know
 
-Grid → `Signals`, filtered to this account, sorted `Date` **descending**, **limit 8**.
-Colour by `Direction`. Show `Signal`, `Type`, `Direction`, `Date`, `Detail`.
+This section answers: *who are our people at this account, and is that enough?*
+
+Add a heading: **Who we know**
+
+**1. Add a grid element showing `Stakeholders` filtered to this account.** Show these columns:
+`Name`, `Title`, `Role`, `Sentiment`, `Status`, `Last Touch`.
+
+**2. Sort that grid by `Status`, ascending.** This pushes departed and unengaged contacts to the top
+of the list rather than burying them.
+
+**3. Add a field element for `Sponsor Roles`,** and add a text element next to it noting that the
+target is three mapped threads.
+
+**About the strikethrough.** The spec asks for departed contacts to appear with a line through their
+name. Interface Designer has no strikethrough formatting, so you can't do that literally.
+
+Sorting by Status gets you the same outcome by a different route. On Floor & Board, the departed
+champion becomes the first row in the block. That's the entire point — the demo narrative is that a
+CSM opening this screen on day one immediately sees that their main contact left three months ago.
+Position achieves that just as well as a line through the text.
 
 ---
 
-## 8 · The labelling decision — constraint vs. rationale
+## Step 8 · Block 5 — signals
 
-`Constraint` (formula) and AI-1's stage rationale answer **different questions** and disagree on
-**four of six accounts**. Both are correct. The screen must not read as a contradiction.
+This section answers: *what's actually been happening on this account lately?*
 
-| Account | `Constraint` → picks the play | AI-1 → explains the stage | |
+Add a heading: **Signals**
+
+Add a grid element showing `Signals` filtered to this account. Configure it to:
+
+- Sort by `Date`, newest first
+- Show only the most recent 8
+- Colour rows by `Direction`, so positive and negative signals are visually distinct
+- Display these columns: `Signal`, `Type`, `Direction`, `Date`, `Detail`
+
+---
+
+## Step 9 · Why two things on this screen disagree with each other
+
+This is the part of the build that needs a decision, so read it before you finalise the labels.
+
+This screen displays two things that look like they're answering the same question, and **on four of
+the six accounts they give different answers.** Both are correct. They're answering different
+questions.
+
+**`Constraint`** is a formula. It looks at the four scores, finds the lowest, and names it. Its
+entire job is to **choose which play to run**.
+
+**`Stage Rationale`** is the AI explaining **why the account sits at the maturity stage it does**.
+That's a different question, and it can have a different answer.
+
+Here's exactly where they agree and disagree:
+
+| Account | Constraint says | The AI says | Same? |
 |---|---|---|---|
-| Floor & Board | Sponsorship | governance | ✗ |
-| Corvus | Value Evidence | governance | ✗ |
-| TrailLine | Adoption | sponsorship structure | ✗ |
-| Harbor Lane | Value Evidence *(override)* | sponsorship | ✗ |
-| Voltaic | Governance | governance | ✓ |
-| Meridian | Value Evidence | value evidence | ✓ |
+| Floor & Board | Sponsorship | governance | no |
+| Corvus | Value Evidence | governance | no |
+| TrailLine | Adoption | sponsorship | no |
+| Harbor Lane | Value Evidence | sponsorship | no |
+| Voltaic | Governance | governance | yes |
+| Meridian | Value Evidence | value evidence | yes |
 
-**The resolution — layer two kinds of label:**
+If you put these next to each other with no explanation, a CSM reads a contradiction and loses trust
+in both.
 
-- **Block headers are function-first** — *Where this account is* / *Your next play*. This is what a
-  CSM navigates by, and the premise of the Cockpit is that no pattern recognition is required.
-- **Provenance chips appear only at the point of collision** — `AI read` on the rationale,
-  `(computed)` on the binding constraint. A CSM who never notices the chips still reads the screen
-  correctly; one who hits the Floor & Board disagreement has the answer four words away.
+### How to label it so it reads clearly
 
-**Say in the room, don't put on screen:** *the constraint picks the play, the rationale explains the
-stage* — or the `AGENTS.md` form, *stage describes, the binding constraint prescribes.* Right
-sentence spoken, too abstract in a UI.
+**Keep the block headings plain.** *Where this account is* and *Your next play*. That's how a CSM
+navigates the screen, and it's what they care about. Don't clutter the headings with explanation.
+
+**Then add a small tag to only the two elements that clash:**
+
+- Tag the AI paragraph with **AI read**
+- Tag the constraint with **(computed)**
+
+The reason for doing it this way: someone who never notices the tags still reads the screen correctly,
+because the headings tell them what each section is for. Someone who *does* spot the disagreement
+finds the explanation sitting four words away. You get clarity without making the whole screen about
+provenance.
+
+**Keep this line for speaking, not for the screen:** *the constraint picks the play, the rationale
+explains the stage.* It's the right sentence out loud and too abstract printed in a UI.
+
+### Harbor Lane and Floor & Board have identical scores but different constraints
+
+Expect to be asked about this, because both rows sit on the same screen a few lines apart.
+
+Both accounts score 1 on sponsorship, 1 on governance, and 1 on value evidence. Identical. Yet they
+show different binding constraints.
+
+**Floor & Board shows Sponsorship.** When several scores tie for lowest, the formula picks between
+them in a fixed order, and Sponsorship comes first in that order.
+
+**Harbor Lane shows Value Evidence,** because a human overrode the formula. The reasoning came from
+the assessment document itself, which says the team *"would need a clear value demonstration tied to
+an existing use case to engage."* Sponsorship is certainly missing at Harbor Lane too — but it isn't
+what's blocking progress, because there's nothing yet worth sponsoring. You need a proof point before
+you can go find an executive to back it.
+
+That reasoning is now stored in the base, in a field called `Constraint Override Reason`. **Add that
+field to Block 1 with conditional visibility so it only appears when it has content.** Right now
+Harbor Lane is the only account with anything in it.
+
+**Treat this as a feature, not an awkward question.** The formula said sponsorship. The AI,
+independently, also said sponsorship. A human looked at both, disagreed, overrode them, and wrote down
+their reasoning where anyone can inspect it. That's the human-in-the-loop story told with a real
+artifact instead of a claim. Open the field and talk about it.
 
 ---
 
-## 9 · Harbor Lane and Floor & Board — the identical-scores question
+## Step 10 · Check your work
 
-Both score **sponsorship 1 / governance 1 / value evidence 1**, adoption higher. They resolve to
-**different** constraints. Expect to be asked; both rows are on the same screen.
+Go through these on screen before you call it finished:
 
-- **Floor & Board** → `Sponsorship`. The formula's tie-break precedence
-  (Sponsorship → Adoption → Value Evidence → Governance) picks it.
-- **Harbor Lane** → `Value Evidence`, via `Constraint Override`. Grounded in the assessment's own
-  account snapshot: the team *"would need a clear value demonstration tied to an existing use case
-  to engage."* Sponsorship is absent, but it isn't what's blocking movement — there is no proof
-  point to sponsor.
+- [ ] The left list shows **six** accounts, with Floor & Board first and Meridian present
+- [ ] The ARR column across all six adds up to **$5,060,000**
+- [ ] The top three rows add up to **$3,110,000**
+- [ ] Voltaic shows **Stage 2** even though its adoption score is **5** — this is the account that
+      looks far healthier than it is, and it's the sharpest thing in the demo
+- [ ] Floor & Board shows constraint **Sponsorship** while its AI paragraph says **governance**, and
+      the two tags make that legible rather than confusing
+- [ ] Harbor Lane displays its override reason; the other five accounts don't
+- [ ] Clicking through all six gives recommended plays **P2, P4, P6, P3, P5 and P1**
+- [ ] Only **Floor & Board and Voltaic** mention a follow-on play (P8)
+- [ ] Every value story across all six accounts reads **Draft**
+- [ ] The **Accept** button and the **Draft value narrative** button both fire
 
-The reasoning now lives in **`Diagnostics.Constraint Override Reason`**, in the base, not just in
-the deck. **Surface that field in Block 1**, directly under the constraint chip, visible only when
-`Constraint Override` is set.
-
-This is the strongest human-in-the-loop beat in the build: the formula said Sponsorship, AI-1
-independently said sponsorship, a human overrode **both** and wrote down why — and the screen shows
-all three. Don't hide it; open it.
+If any of these come out differently, it's a build configuration problem rather than a data problem.
+All ten were verified directly against the live base on 2026-07-28.
 
 ---
 
-## 10 · Verification gates
+## What to say when you demo this screen
 
-Before calling this done, check on screen:
+You arrive here from the Director's screen, so open by naming the switch in perspective.
 
-- [ ] Left rail shows **six** accounts, Floor & Board first, Meridian present
-- [ ] Left-rail ARR sums to **$5,060,000**; rows 1–3 carry **$3,110,000** (61%)
-- [ ] Voltaic reads **Stage 2 Contained** despite adoption 5 — *the trap*
-- [ ] Floor & Board shows constraint **Sponsorship** and rationale saying **governance**, and the
-      chips make that legible rather than confusing
-- [ ] Harbor Lane shows the override reason
-- [ ] `Recommended Play` renders P2 / P4 / P6 / P3 / P5 / P1 across the six
-- [ ] `ALSO SEQUENCE: P8` appears on Floor & Board and Voltaic **only**
-- [ ] Value position reads `Draft` on all six — value coverage **0 / 6**
-- [ ] Accept and Draft-value-narrative buttons both fire
-
-Anything that fails here is a build error, not a data error — all ten were verified against the API
-on 2026-07-28.
+> "This is the same base, now as a CSM sees it. Floor & Board is at the top of Dana's list — sorted
+> by money at risk rather than by renewal date, so the largest preventable loss is on her screen
+> every single morning.
+>
+> Sponsorship scores a 1. Her champion left three months ago. One thread mapped against a target of
+> three. No value narrative at all. And the renewal conversation is two quarters out.
+>
+> The recommended play is P2, Re-Sponsor — with three specific moves and Sales named as the partner
+> to bring in. She clicks Accept and her week has a shape.
+>
+> No pattern recognition required. That's a CSM in month four running the same first move as the
+> best CSM on the team."
