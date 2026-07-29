@@ -247,11 +247,12 @@ diagnostic session interface relies on later.
 Set conditional formatting on the `Diagnostic Age` element so it greys out when the value is over 90.
 
 **It will never actually grey out, and that's fine.** Every diagnostic in the base is dated
-2026-07-20, so they're all 8 days old. The whole book was assessed in one sweep.
+2026-07-20, so they're all a few days old and nowhere near 90. The whole book was assessed in one
+sweep. (Check the number on screen before you present — it climbs by one each day.)
 
-Build the rule anyway, and handle it with a sentence in the room: *"everything here is eight days old
-because we just ran the sweep across the whole book. At ninety days this greys out and the account
-drops into my inspection queue."*
+Build the rule anyway, and handle it with a sentence in the room: *"every diagnostic here is days
+old, because we just ran the sweep across the whole book. At ninety days this greys out and the
+account drops into my inspection queue."*
 
 **Do not backdate a record to make the grey state appear.** It would contradict the story you're
 telling — that this is a brand new operating model and the book was just assessed. A manufactured
@@ -287,13 +288,37 @@ follow-on play should be queued behind it. It's several paragraphs, so give it r
 **4. Add a button element labelled "Accept."** Configure it to run an automation that creates a new
 record in the `Account Plays` table for this account and this play.
 
-**5. Add a button element labelled "Override."** Configure it to open the related `Diagnostics`
-record, so the CSM can type into the `Override Reason` field and explain why they're not taking the
-recommendation.
+**5. The Override path — read this before building it, because there's a constraint.**
+
+The CSM needs to record *why* they're not taking the recommendation. That reason belongs in
+`Override Reason`, which lives on the **Diagnostics** table.
+
+Here's the catch. Everything from Diagnostics reaches this page as a **lookup field, and lookup
+fields are read-only**. You cannot type into them. So you cannot put `Override Reason` on this page
+and have the CSM fill it in. That's a hard limit, not a settings problem — and it's the thing my
+earlier version of this guide glossed over.
+
+You need to get the CSM to the actual Diagnostics record, where the field is editable. Do it like
+this:
+
+- **Add a linked-record element for `Current Diagnostic`** to this block. It shows the diagnostic
+  attached to this account.
+- Clicking that element opens the Diagnostics record in an expanded view. `Override Reason` and
+  `Play Accepted` are both editable there.
+- Label the element **Override — record why** so its purpose is obvious.
+
+If your version of Interface Designer offers a button action like "go to record" that can target the
+linked diagnostic, use that instead and label the button **Override**. Same destination, fewer
+clicks. If it doesn't offer that, the linked-record element above does the job.
 
 That override path matters more than it looks. Every override is a signal that the model got
 something wrong, and the Director's screen has a queue that collects them for review. It's how the
 recommendations get better over time.
+
+**Same constraint applies to the Accept button in step 4.** It can't write to Diagnostics directly
+from here either. Point it at an automation instead: the automation sets `Play Accepted` to
+`Accepted` on the current diagnostic and creates the `Account Plays` record. An automation runs with
+its own permissions and isn't blocked by the read-only lookup problem.
 
 ### Making the constraint appear in red
 
@@ -326,18 +351,42 @@ story has been drafted, reviewed, or validated by the customer.
 **2. Add a grid element showing `Value Stories` filtered to this account.** Show these columns:
 `Value Story`, `Business Metric`, `Status`, `Narrative`.
 
-**3. Add a button labelled "Draft value narrative."** Configure it to run an automation that creates a
-new Value Stories record and generates the AI narrative for it.
+**3. Add a button labelled "Draft value narrative."**
 
-**What you'll see, and why it's correct:** every account reads `Draft`. Not one has a customer-validated
-value story. That means value coverage across the book is 0 out of 6.
+My earlier description of this button was wrong in two ways, so here is what it actually is.
 
-That is not missing data — it's the central finding of the whole strategic brief. The platform is
-working and people are using it, but nobody has ever proved the value to the person who signs the
-renewal. Leave it exactly as it is.
+Set the button's action to **create a new record** in `Value Stories`, with the `Account` link
+pre-filled to the current account. That's all it does. **There is no separate "generate the AI
+narrative" step** — `Narrative` is an AI field on the Value Stories table, so it runs by itself once
+the record exists. I described it as two actions; it's one.
 
-One detail if you look closely: Floor & Board has two value stories rather than one. The status field
-handles that correctly and still reads `Draft` rather than `Draft, Draft`.
+**Set the button to only appear when the account has no value story.** Right now that is exactly one
+account: **TrailLine**. The other five already have stories, so on those the button would do nothing
+useful except create duplicates.
+
+**What happens when you click it, and why that's the right outcome.** The new record is empty — no
+use case, no baseline, no source of truth. So AI-3 will return `INSUFFICIENT EVIDENCE` and list what
+it needs. That is correct behaviour, not a failure. It's the same refusal you're demonstrating
+deliberately later, happening on a genuinely empty record.
+
+**Do not use this button for the live AI demo.** Two of your demo beats run AI-3 on Corvus and on
+Floor & Board, and both of those accounts already have value story records. To run those live, open
+the existing record from the grid in step 2 above and regenerate the `Narrative` field there. The
+button creates records; it doesn't re-run AI on existing ones.
+
+### What you'll see in this block, and why it's correct
+
+**Value coverage across the book is 0 out of 6.** Not a single account has a customer-validated value
+story. That is not missing data — it's the central finding of the whole strategic brief. The platform
+is working and people are using it, but nobody has ever proved the value to the person who signs the
+renewal.
+
+Two details that look like bugs and aren't:
+
+- **TrailLine has no value story at all.** Its block will be empty apart from the button. There are
+  six value stories spread across five accounts.
+- **Floor & Board has two value stories, not one.** The status field handles that and still reads
+  `Draft` rather than `Draft, Draft`.
 
 ---
 
@@ -466,9 +515,19 @@ Go through these on screen before you call it finished:
 - [ ] Floor & Board shows constraint **Sponsorship** while its AI paragraph says **governance**, and
       the two tags make that legible rather than confusing
 - [ ] Harbor Lane displays its override reason; the other five accounts don't
-- [ ] Clicking through all six gives recommended plays **P2, P4, P6, P3, P5 and P1**
+- [ ] Each account recommends the right play. Check them by name, not by position:
+
+      | Account | Play |
+      |---|---|
+      | Floor & Board | **P2** Re-Sponsor |
+      | Corvus | **P4** Quantify & Translate |
+      | Voltaic | **P6** Governance Partner Insert |
+      | TrailLine | **P3** Kickoff Re-Contract |
+      | Harbor Lane | **P1** Prove One Thing |
+      | Meridian | **P5** Governance Case |
+
 - [ ] Only **Floor & Board and Voltaic** mention a follow-on play (P8)
-- [ ] Every value story across all six accounts reads **Draft**
+- [ ] Every value story reads **Draft** — and **TrailLine has none at all**, which is expected
 - [ ] The **Accept** button and the **Draft value narrative** button both fire
 
 If any of these come out differently, it's a build configuration problem rather than a data problem.
