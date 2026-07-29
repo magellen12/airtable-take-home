@@ -13,6 +13,45 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v3.2] — 2026-07-29 · `de586b9` — Answer the assessment's own bullets
+*1 file · +14 / −12*
+
+Audited [`docs/01`](docs/01-strategic-brief.md) against the three things the assessment says the
+brief **must make clear**, rather than against my own sense of whether it read well. Two were short.
+
+### Changed
+
+- **"How value realization connects to renewal *and expansion* outcomes."** Renewal had a stated
+  mechanism; expansion was asserted twice in passing and never explained. The
+  dated-value-narrative paragraph was defining a term rather than doing work, so it now carries
+  both: renewals because the date makes staleness visible and the base flags it, expansions
+  because procurement only argues about scope once value is settled. Corvus is the grounded case
+  ([`docs/03:165`](docs/03-transformation-methodology.md),
+  [`docs/02:153`](docs/02-book-diagnosis.md)) — *"everything a large expansion needs except the
+  sentence that makes it purchasable."*
+- **"What CSMs own versus partner on."** The brief asserted a *"clear CSM-owns-vs-partners line"*
+  and never drew it. Now drawn, straight from the table in
+  [`docs/04`](docs/04-operating-model.md): the CSM always owns the diagnostic, sponsor map, value
+  narrative and plan; partners lead solution architecture, the commercial path, and the
+  quantitative backing for any number that reaches a CFO. Named partners are drawn from the five
+  the role names; *value validation* stays an italic capability per [`AGENTS.md`](AGENTS.md) §1.
+- **Dropped `NRR` and `QoQ`.** Neither appears anywhere in the assessment — which says *"retention
+  and expansion"* — and neither was spelled out on first use, which §4 requires. `NRR` does appear
+  in [`docs/04:132`](docs/04-operating-model.md) and
+  [`session/qa-prep.md:138`](session/qa-prep.md), so it wasn't invented; it was just unexplained in
+  the one document a stranger reads first.
+
+### Funded by
+
+- Trimming the skills-matrix illustration in Priority 3. The pairing concept and the matrix
+  survive; the TrailLine builder-CSM example does not. Priority 3 still carries the two §4 threads
+  — the diagnostic as coaching instrument, and leads surfacing through play authorship.
+
+### Verified
+
+- **1,195 words**, still two pages. Every load-bearing figure unchanged; both required threads
+  present; zero bare `P1`/`P2`/`P3`; no invented organizational names. Checked by script.
+
 ## [v3.1] — 2026-07-29 · `04dce43` — Define the terms a first-time reader can't infer
 *1 file · +26 / −24*
 
