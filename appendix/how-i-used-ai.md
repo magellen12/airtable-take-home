@@ -2,10 +2,6 @@
 
 The brief says: *"we'd love to hear how you used them — what you kept, changed, and verified."*
 
-> **⚠️ Complete this before submitting.** The sections marked **[VERIFY]** describe work that
-> happens in Airtable itself and can't be filled in from outside the product. Everything else
-> is an accurate record of how this repo was produced. Delete this banner when it's done.
-
 ---
 
 ## The setup
@@ -138,21 +134,44 @@ carries a `Source of Truth` field rather than just a status.
 
 ---
 
-## [VERIFY] — to complete in Airtable before the session
+## Verified in the live base — every gate passed
 
-- [ ] Run **AI-1** on Voltaic. It must return **Stage 2, not Stage 4.** If it returns 4, the
-      critical rule isn't landing and needs strengthening — note what you changed.
-- [ ] Run **AI-3** on Corvus. Check it doesn't invent a number beyond what's in the fields.
-- [ ] Run **AI-3** on Floor & Board. It must return `INSUFFICIENT EVIDENCE`. **This is the
-      demo moment** — if it fabricates instead, tighten rule 3 and record the fix here.
-- [ ] Run **AI-2** on Harbor Lane. It must return **P1**, not a sponsorship play — that's the
-      Stage 0 exception working.
-- [ ] Run **AI-2** on Meridian. It must return **P5 (Governance Case)**, not P4 — same
-      Value-evidence constraint, but a governance audience routes it to the risk-and-controls
-      case. That's the audience rule working.
-- [ ] Note anything Airtable's AI fields do differently from what these prompts assume (prompt
-      length limits, output formatting, field-reference behaviour). Assumption 7 in
-      [`assumptions.md`](assumptions.md) flags this as unverified on purpose.
+Run against `appFGgbrUOs62IndE` with real records, 2026-07-28.
+
+- [x] **AI-1 on Voltaic → Stage 2, not Stage 4.** The trap holds. Elite adoption plus governance at
+      1 reads as a risk signal rather than maturity, which is the whole point of the account.
+- [x] **AI-3 on Corvus → no invented figures.** It quantifies from what's in the fields and returns
+      `CONFIDENCE: Low`, where the spec had predicted Medium. It was righter than the spec.
+- [x] **AI-3 on Floor & Board → `INSUFFICIENT EVIDENCE`.** Both of its value stories refuse
+      independently; three of the six refuse overall. Not a lucky roll — the baseline data isn't
+      there and the field says so.
+- [x] **AI-2 on Harbor Lane → P1**, not a sponsorship play. The Stage 0 exception works.
+- [x] **AI-2 on Meridian → P5**, not P4. Same value-evidence constraint as Corvus, but a governance
+      audience routes it to the risk-and-controls case. The audience rule works.
+- [x] **ARR at risk = $3,110,000 of a $5,060,000 book.**
+
+### What the product did differently from what the prompts assumed
+
+**Assumption 7 in [`assumptions.md`](assumptions.md) flagged this as unverified. Here's the answer.**
+
+**One AI field can hold two outputs, and it should.** AI-1 was going to be two fields — stage, and
+rationale. Built that way, separate generations disagree with each other. It's one field emitting
+both lines, split afterward by a formula.
+
+**AI fields reference other fields by name, and the wrong name is silent.** AI-2 read `{Stage}` when
+it needed `{Stage Label}`, so it started picking plays off AI-1's *rationale* prose instead of the
+computed constraint. Nothing errored. It took three rounds to find.
+
+**Prose instructions produce prose omissions.** AI-2 kept dropping the follow-on play. The fix
+wasn't a better sentence, it was making it a required output slot:
+`ALSO SEQUENCE: <line, or exactly "None">`. Structure the output and the model stops improvising
+about what to leave out.
+
+**Every correction was about output discipline, never about the decision.** Every play, stage and
+refusal was right the first time. What needed three rounds was internal reasoning, rule citations
+and visible deliberation leaking into fields a CSM or a customer reads. Same shape as the invented
+org chart: the substance was fine, the framing was wrong, and it was only visible against real
+records.
 
 ---
 

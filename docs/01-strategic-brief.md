@@ -83,7 +83,7 @@ their creative spin. I build the frameworks; we set the standards together — *
 floor, not the ceiling.** One rule underneath: *a CSM must own knowing what their account needs, and
 never have to be the smartest technical person in the room.* Depth is bought with partners and
 pairing; judgment is what I coach and inspect — weekly, from the base: % staged, stage progression
-QoQ, sponsor coverage (1/6), value coverage (0/6); and lagging, NRR and **renewal surprises, target
+QoQ, sponsor coverage (2/6), value coverage (0/6); and lagging, NRR and **renewal surprises, target
 zero** — a surprise at renewal is a diagnostic failure six months earlier.
 
 ---

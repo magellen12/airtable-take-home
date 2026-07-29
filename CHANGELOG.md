@@ -13,6 +13,72 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v3.0] — 2026-07-29 — Build the base, and let it correct the documents
+*11 files*
+
+The first version where the deliverable was executed rather than specified. Everything below was
+found by running the spec against real records — none of it was visible on paper.
+
+### Verified
+
+- **All three AI fields pass every gate**, run live on `appFGgbrUOs62IndE`: Voltaic returns Stage 2
+  not 4 · Floor & Board returns `INSUFFICIENT EVIDENCE` · Corvus invents no figures · Harbor Lane
+  returns P1 · Meridian returns P5 not P4 · **ARR at risk $3,110,000 of a $5,060,000 book**.
+- **The `[VERIFY]` banner is gone** from [`appendix/how-i-used-ai.md`](appendix/how-i-used-ai.md),
+  replaced with results — including the answer to assumption 7, which was flagged unverified on
+  purpose.
+
+### Changed — the base corrected the docs
+
+- **Sponsor coverage is 2 of 6, not 1 of 6.** Meridian *and* TrailLine both clear the published
+  definition. The number was wrong in four places. TrailLine qualifies on the letter of it while
+  its three threads are skeptical ops users — [`docs/04`](docs/04-operating-model.md) now says so
+  rather than tightening the definition until it returned the answer already written down.
+- **The Cockpit's left rail was missing an account.** [`interfaces.md`](airtable-build/interfaces.md)
+  listed five; the book has six. **Meridian** — $1.1M, the second-largest account — sorts last on a
+  $0 column, which is exactly how it went missing. Restored, with the note that it sits one quarter
+  outside the at-risk gate: if its value position holds, $3.11M → $4.21M.
+- **The Director's inspection queue is empty on seed data, and that's correct.** Nothing is past
+  cycle time, every diagnostic is days old, no override is pending, and every score ≥4 already
+  carries evidence. Rendered as four empty grids it reads as broken; rendered as one line it reads
+  as true. `DoD hit rate` and `plays over cycle time` are cut — zero plays are completed, so both
+  are undefined.
+- **`Account Plays` had a blank primary field on every record.** Its formula referenced
+  `{Account Name}` and `{Play Code}`, neither of which existed. Both added.
+- **`Exec Sponsor Named` was counting departed and unengaged sponsors** — Floor & Board's is
+  literally named "Unknown." Now conditioned on active status, which is what moves sponsor coverage.
+- **`Renewal Readiness`'s published formula never fired**, because it flags blank or `Stale` and all
+  six seeded stories are `Draft`. Rewritten, plus `ARRAYUNIQUE` for Floor & Board's two stories.
+
+### Added
+
+- **`Constraint Override` + `Constraint Override Reason`.** Harbor Lane's constraint is Value
+  Evidence on the assessment's own words — *"a clear value demonstration tied to an existing use
+  case"* — against a three-way score tie the formula resolves to Sponsorship. The reasoning now
+  lives in the base rather than in a deck.
+- **Six lookups on `Accounts`.** Interfaces cannot read across a link: a field element binds only to
+  its page's source table. Everything on `Diagnostics` had to be exposed on `Accounts` before the
+  Cockpit could render it. This invalidated a first draft of the build guide.
+- **Three new build documents** — [`cockpit-build-guide.md`](airtable-build/cockpit-build-guide.md),
+  [`director-review-build-guide.md`](airtable-build/director-review-build-guide.md), and
+  [`how-data-gets-in.md`](airtable-build/how-data-gets-in.md), the last answering how context
+  accumulates to inform future ratings.
+- **A live-base diff section in [`schema.md`](airtable-build/schema.md)** recording every deviation
+  between the spec and what was actually built.
+
+### Kept
+
+- **The constraint and AI-1's stage rationale disagree on four of six accounts, and both stay.**
+  They answer different questions — the constraint picks the play, the rationale explains the
+  stage. Resolved with labelling rather than by forcing agreement.
+- **Value coverage stays 0 of 6, and `Plays Authored` stays 0 across all six CSMs.** Both are
+  baselines, not gaps. The metrics that matter start at zero.
+- **The Cockpit's buttons were dropped in favour of opening the record.** A CSM challenging the
+  system is the point; two labelled places to disagree in writing — `Constraint Override` for the
+  formula, `Play Accepted` for the AI — beat a button that only navigates anyway.
+
+---
+
 ## [v2.7] — 2026-07-27 — Make the brief readable to someone who hasn't seen the assessment
 *7 files*
 
