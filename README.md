@@ -12,15 +12,11 @@ Airtable operating system the team would run it in.
 ## The short version
 
 Six accounts, **$5.06M ARR**. **61% of it ($3.11M) has a renewal conversation inside three
-quarters** — and all three of those accounts score **1 out of 5 on Value evidence**: nobody can
-state, in the buyer's language, what the customer actually got.
+quarters**: Floor & Board, Voltaic, and Corvus. 
 
-I scored the whole book on four dimensions — **Adoption depth, Sponsorship & multi-threading,
-Governance maturity, Value evidence.** Adoption averages **3.2/5**. Value evidence averages
-**1.3** and Governance **1.5**. In no account is the blocker "Airtable can't do this."
+I score each account 1 to 5 on four dimensions: adoption depth, executive sponsorship, governance maturity, and **value evidence**, meaning a quantified business outcome stated in the language of the person who signs. All three of these accounts sit at **1 of 5 on value evidence**, the bottom of the scale. Nobody can say what the customer got for the money. Book-wide, adoption averages 3.2, value evidence 1.3, governance 1.5. Nothing is blocked because "Airtable can't do this"; every blocker is organizational. 
 
-**The platform is working. The operating model around it isn't** — the job is moving from a
-relationship-led motion to a transformation-led one. That premise drives everything else here.
+**The platform works; the operating model around it doesn't** — the mandate is that shift, from relationship-led to a transformation-led.
 
 ---
 
