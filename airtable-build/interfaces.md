@@ -16,11 +16,18 @@ for a specific person — no general-purpose dashboards.
 | Floor & Board | $1.7M | 2Q | 2 ↓ | **Sponsorship** | ⚠️ No current value |
 | Corvus | $890K | 3Q | 2 | **Value evidence** | ⚠️ No current value |
 | Voltaic | $520K | 2Q | 2 *(presents 4)* | **Governance** | ⚠️ No current value |
-| TrailLine | $540K | yr 1 | 1 | **Adoption** | Not yet in cycle |
+| TrailLine | $540K | 7Q | 1 | **Adoption** | Not yet in cycle |
 | Harbor Lane | $310K | 5Q | 0 | **Value evidence** | Not yet in cycle |
+| Meridian | $1.1M | 4Q | 3 | **Value evidence** | ⚠️ No current value |
 
 Sorting by ARR at risk rather than by renewal date is deliberate: it puts the largest
 preventable loss at the top of the screen every morning.
+
+> Meridian is the row worth pausing on. It shows ⚠️ but contributes **$0** to ARR at risk — it
+> renews in four quarters and the at-risk gate cuts at three, so it sits one quarter outside the
+> window. If its value position doesn't change, the arithmetic moves it in: **$3.11M → $4.21M,
+> 61% → 83%.** *(An earlier draft of this table omitted Meridian entirely — it sorts last on a
+> $0 column, which is exactly how the second-largest account in the book becomes invisible.)*
 
 ### Main panel — the selected account
 
@@ -62,7 +69,7 @@ on Monday?* · **Type:** Dashboard
 
 | | | |
 |---|---|---|
-| **ARR at Risk** `$3.11M` — 61% of book | **Value Coverage** `0 / 6` — 0% | **Sponsor Coverage** `1 / 6` — 17% |
+| **ARR at Risk** `$3.11M` — 61% of book | **Value Coverage** `0 / 6` — 0% | **Sponsor Coverage** `2 / 6` — 33% |
 | **% of Book Staged** `6 / 6` — 100% | **Stage Progression QoQ** `baseline` | |
 
 Value Coverage sits in position two on purpose. It's the leading indicator I'd be judged on
@@ -95,6 +102,15 @@ size — who is contributing judgment back to the rest of the team.
 - Diagnostics older than 90 days
 - **Play overrides awaiting my review** — the model-quality feed
 - Accounts with a score ≥4 and no evidence (A3 flags)
+
+> **All four of these are empty on seed data, and that's the honest state of a book in week one.**
+> No play is past cycle time (nothing is completed yet), every diagnostic is days old, no override
+> is pending, and every score ≥4 already carries an evidence note. Rendered as four empty grids it
+> reads as broken; rendered as one line — *"inspection queue clear"* — it reads as true. These are
+> what gets inspected in a quarter, not today.
+>
+> **`DoD hit rate` and `plays over cycle time` are cut from Row 3** for the same reason: zero plays
+> are completed, so a hit rate is undefined and the columns would render blank.
 
 ### What I actually do here
 > Monday, 60 minutes, screen shared. Not a status round-robin — I open the ARR-at-risk-by-

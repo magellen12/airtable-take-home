@@ -131,7 +131,9 @@ Execution records. Where cycle time is measured.
 
 | Field | Type | Notes |
 |---|---|---|
-| `Name` | Formula | `{Account Name} & " — " & {Play Code}` |
+| `Play ID` | Formula | `{Account Name} & " — " & {Play Code}` — **primary.** Renders `Floor & Board Furniture — P2`. Named to match `Diagnostics.Diagnostic ID`, the base's other derived primary; the `ID` suffix signals a value that's computed rather than typed. Needs the two lookups below to exist first — both were missing until 2026-07-28, which is why this field was blank on every record |
+| `Account Name` | Lookup → `Accounts.Account` | via `Account`. Added 2026-07-28 |
+| `Play Code` | Lookup → `Plays.Code` | via `Play`. Added 2026-07-28 |
 | `Account` | Link → `Accounts` | |
 | `Play` | Link → `Plays` | |
 | `Owner` | Link → `CSMs` | |
@@ -242,3 +244,48 @@ reasons are the training data for the next version of it.
 **Why `Source of Truth` gates `Status`.** An AI-drafted number with no traceable source is the
 single most dangerous artifact this system could produce. The field is required before a value
 story can leave `Draft`.
+
+---
+
+## Live base — what building it actually changed
+
+Base `appFGgbrUOs62IndE`. This section is the diff between the spec above and the base as built.
+Kept honest deliberately: the corrections are part of the answer to *"what did you keep, change and
+verify."*
+
+### Fields added that this spec didn't have
+
+| Table | Field | Why it was needed |
+|---|---|---|
+| `Diagnostics` | `Constraint Override` (single select) + `Constraint Override Reason` (long text) | Lets a human overrule the computed constraint **in writing**. Used on Harbor Lane |
+| `Diagnostics` | `Diagnostic Age` (formula) | `DATETIME_DIFF(TODAY(), {Diagnostic Date}, 'days')`. The 90-day staleness rule needs it |
+| `Diagnostics` | `Stage Label` (formula) | Extracts just the `STAGE:` line out of AI-1's two-line output |
+| `Accounts` | `Adoption`, `Sponsorship`, `Governance`, `Stage Rationale`, `Recommended Play`, `Constraint Override Reason` (lookups) | **Interfaces cannot read across a link.** A field element binds only to the page's source table, so anything on `Diagnostics` had to be exposed on `Accounts` before the Cockpit could show it |
+| `Accounts` | `Diagnostic Age`, `Stage` (lookups) | Same reason |
+| `Account Plays` | `Account Name`, `Play Code` (lookups) | The primary-field formula references both; neither existed |
+| `CSMs` | `Book ARR` (rollup) | `SUM` over linked `Accounts.ARR`. Row 3 of the Director view. Totals $5,060,000 |
+
+### Where the live base differs from the spec above
+
+**`Renewal Readiness`'s final branch.** The published formula flags only blank or `Stale`, but all
+six seeded value stories are `Draft`, so the documented outcome never fired. The live formula ends
+`IF({Latest Value Story Status} = "Reviewed", "In progress", "⚠️ No current value")`. It also needs
+`ARRAYUNIQUE`, because Floor & Board has two value stories.
+
+**`Exec Sponsor Named` counts only active sponsors.** As published it counted departed and
+unengaged ones — Floor & Board's is literally named "Unknown," and Voltaic's had disengaged. The
+live rollup carries a `Status is Active` condition. This is what moves sponsor coverage to 2 of 6.
+
+**`Plays.Applies at Stage` is a multi-select `0`–`4`.** It loaded as single-line text holding ranges
+(`1-2`, `0-4`); the ranges are now expanded per record.
+
+**`Constraint` has an override branch in front of it:**
+`IF({Constraint Override}, {Constraint Override}, <the nested IFs>)`. Tie-break precedence among
+equal-lowest scores is **Sponsorship → Adoption → Value Evidence → Governance**.
+
+### Fields specified here and deliberately not built
+
+No interface reads them, and building unread fields is how a schema rots: `Threads Mapped`,
+`Cycle Time (days)`, `Over Cycle Time`, `Age (days)`, `Diagnostics Run`, `DoD Hit Rate`, `Evidence`
+(attachment). `DoD Hit Rate` and the cycle-time pair are additionally undefined on seed data —
+**zero plays are completed**, so there is nothing to compute from.

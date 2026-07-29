@@ -113,11 +113,19 @@ single version of the truth.
 |---|---|---|---|
 | **% of book staged** — accounts scored on the diagnostic | 0% | 100% | No diagnosis, no coaching, no prioritization |
 | **Stage progression QoQ** — accounts that advanced a stage | — | Baseline, then positive | The maturity-progression metric; the whole point is movement, not a static score |
-| **Sponsor coverage** — % with a named exec sponsor and ≥3 mapped threads | **17%** (1 of 6 — Meridian only) | 70% | Single-threading is how Floor & Board happened |
+| **Sponsor coverage** — % with a named exec sponsor and ≥3 mapped threads | **33%** (2 of 6 — Meridian and TrailLine) | 70% | Single-threading is how Floor & Board happened |
 | **Value coverage** — % with a customer-validated narrative ready ≥1 quarter before renewal | **0%** | 100% of accounts renewing within 3Q by day 60 | This is the renewal predictor |
 | **Governance body in place** — % of Stage 2+ accounts with a CoE or review path | low | rising | Structure is the durable fix for person-dependence |
 | **Play cycle time** — days from play start to DoD | — | Baseline by day 60, then compress | Tells me where the team is stuck vs. slow |
 | **Partner pull-through** — % of plays with the right partner engaged | — | >80% | Are CSMs asking for help, or drowning quietly? |
+
+> **A note on sponsor coverage, because building the base changed the number.** An earlier draft
+> said 1 of 6. Run against the live data, this definition returns **2 of 6** — Meridian and
+> TrailLine. TrailLine qualifies on the letter of it: a named exec sponsor plus three mapped
+> threads. But its three threads are skeptical ops users, not sponsor threads, which is arguably
+> not what this metric is trying to measure. I've left the number honest rather than tightening
+> the definition until it returned the answer I'd already written down. It's a good example of why
+> the definition matters as much as the target.
 
 ### Lagging — what I'm accountable for
 

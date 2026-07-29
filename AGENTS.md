@@ -73,7 +73,7 @@ in `02`" became plain English for this reason — and spell out an abbreviation 
 ## 5 · Numbers are verified, not remembered
 
 Load-bearing figures: book **$5.06M**, ARR at risk **$3,110,000 (61%)**, adoption avg **3.2**,
-value evidence **1.3**, governance **1.5**, sponsor coverage **1 of 6**, value coverage **0 of 6**,
+value evidence **1.3**, governance **1.5**, sponsor coverage **2 of 6**, value coverage **0 of 6**,
 seed data **84 records across 8 CSVs**.
 
 Before changing any of them, recompute. Run `python3 scripts/seed_airtable.py --dry-run` after

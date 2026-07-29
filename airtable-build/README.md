@@ -52,6 +52,9 @@ is the exact thing this team lost when it lost its managers.
 | [`schema.md`](schema.md) | 8 tables, every field, types, formulas, relationships |
 | [`ai-components.md`](ai-components.md) | The 3 AI fields, 1 agent, and 3 automations — with copy-pasteable prompts |
 | [`interfaces.md`](interfaces.md) | CSM Cockpit, Director Book Review, and the live diagnostic session view |
+| [`cockpit-build-guide.md`](cockpit-build-guide.md) | **Step-by-step build for Interface 1**, with live-verified values |
+| [`director-review-build-guide.md`](director-review-build-guide.md) | **Step-by-step build for Interface 2** — the demo opener |
+| [`how-data-gets-in.md`](how-data-gets-in.md) | **How context enters the base** — the diagnostic session, AG-1, and what's deliberately not wired |
 | [`build-checklist.md`](build-checklist.md) | Ordered build steps for a human in the UI — roughly 2–3 hours |
 | [`omni-build-brief.md`](omni-build-brief.md) | The same build as copy-paste prompts for **Airtable Omni** (the AI app builder) |
 | [`data/`](data/) | Import-ready CSVs: 6 accounts pre-scored, 8 plays, 19 stakeholders, 24 signals, 6 value stories, 6 CSMs w/ skills matrix |
