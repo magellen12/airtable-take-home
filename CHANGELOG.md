@@ -13,6 +13,106 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v3.2] — 2026-07-29 · `de586b9` — Answer the assessment's own bullets
+*1 file · +14 / −12*
+
+Audited [`docs/01`](docs/01-strategic-brief.md) against the three things the assessment says the
+brief **must make clear**, rather than against my own sense of whether it read well. Two were short.
+
+### Changed
+
+- **"How value realization connects to renewal *and expansion* outcomes."** Renewal had a stated
+  mechanism; expansion was asserted twice in passing and never explained. The
+  dated-value-narrative paragraph was defining a term rather than doing work, so it now carries
+  both: renewals because the date makes staleness visible and the base flags it, expansions
+  because procurement only argues about scope once value is settled. Corvus is the grounded case
+  ([`docs/03:165`](docs/03-transformation-methodology.md),
+  [`docs/02:153`](docs/02-book-diagnosis.md)) — *"everything a large expansion needs except the
+  sentence that makes it purchasable."*
+- **"What CSMs own versus partner on."** The brief asserted a *"clear CSM-owns-vs-partners line"*
+  and never drew it. Now drawn, straight from the table in
+  [`docs/04`](docs/04-operating-model.md): the CSM always owns the diagnostic, sponsor map, value
+  narrative and plan; partners lead solution architecture, the commercial path, and the
+  quantitative backing for any number that reaches a CFO. Named partners are drawn from the five
+  the role names; *value validation* stays an italic capability per [`AGENTS.md`](AGENTS.md) §1.
+- **Dropped `NRR` and `QoQ`.** Neither appears anywhere in the assessment — which says *"retention
+  and expansion"* — and neither was spelled out on first use, which §4 requires. `NRR` does appear
+  in [`docs/04:132`](docs/04-operating-model.md) and
+  [`session/qa-prep.md:138`](session/qa-prep.md), so it wasn't invented; it was just unexplained in
+  the one document a stranger reads first.
+
+### Funded by
+
+- Trimming the skills-matrix illustration in Priority 3. The pairing concept and the matrix
+  survive; the TrailLine builder-CSM example does not. Priority 3 still carries the two §4 threads
+  — the diagnostic as coaching instrument, and leads surfacing through play authorship.
+
+### Verified
+
+- **1,195 words**, still two pages. Every load-bearing figure unchanged; both required threads
+  present; zero bare `P1`/`P2`/`P3`; no invented organizational names. Checked by script.
+
+## [v3.1] — 2026-07-29 · `04dce43` — Define the terms a first-time reader can't infer
+*1 file · +26 / −24*
+
+Read as a standalone document — which is how a recruiter receives it — the brief leaned on terms
+it never introduced, and committed to a few things I haven't decided.
+
+### Changed — defined on first use
+
+- **The 1–5 scale and the four dimensions**, before any score is quoted. Worth stating plainly:
+  the scale is **mine, not the assessment's**. The assessment asks only for *"a scored assessment
+  and recommended plays"*; the four dimensions are defined in
+  [`docs/03`](docs/03-transformation-methodology.md). The brief was introducing both cold and then
+  quoting "1 of 5" as if the reader already had the frame.
+- **Staging** — one common read on how far an account has actually got.
+- **"Dated value narrative"** — it means *carrying a validation date*, not *outdated*. The
+  ambiguity was the whole problem; the date is the point, because it is what makes staleness
+  visible against `Draft → Reviewed → Customer-validated → Stale`
+  ([`docs/03:159`](docs/03-transformation-methodology.md)).
+
+### Changed — claimed less
+
+- **"With no manager layer I have no shared language"** read as though nobody manages the team.
+  Fifteen CSMs report to me directly, with no managers in between —
+  [`docs/04:4`](docs/04-operating-model.md) already had it right.
+- **"the manager roles I fill at day 90"** → knowing who the candidates are and whether the roles
+  are warranted. I may not fill them.
+- **"inspect weekly"** → *on a regular cadence*; and the **weekly book review and peer-authored
+  play library** are now *a shared place to see each other's accounts and reuse what works*. Both
+  named a commitment I haven't made, and the second introduced two artifacts with no context.
+- **"I grade the account *with* the CSM, never the person"** never said what that protects: the
+  score measures the account's maturity, not the owner's performance, which is what makes honest
+  scoring safe.
+- **"as the strongest's"** → *the most experienced CSM's account*.
+
+### Changed — cut for room
+
+- **The Voltaic trap paragraph.** This **reverses [v2.2](#v22--2026-07-24--9bedf3b--tighten-the-brief-to-12-pages)**,
+  which kept it through a much larger trim. Logged rather than quietly dropped, per
+  [`AGENTS.md`](AGENTS.md) §6. What's lost is *"seat growth without CS influence isn't health;
+  it's a customer that's priced us as a tool"* — Voltaic still appears three times.
+- *"A methodology in a doc dies the way Floor & Board's backlog did."*
+- The `(days 1–30 / 15–60 / 30–90)` parentheticals.
+
+### Verified
+
+- **Every load-bearing figure unchanged** — $5.06M, $3.11M/61%, 1 of 5, 3.2, 1.3, 1.5, 2/6, 0/6,
+  avg 3.5, avg 2.25 — checked by script, not by eye.
+- **Both required threads survive** ([`AGENTS.md`](AGENTS.md) §4): the people-manager lens and
+  *consistency is the floor, not the ceiling*. Zero bare `P1`/`P2`/`P3`.
+- **No invented organizational facts** ([`AGENTS.md`](AGENTS.md) §1). Specifically **not** written:
+  a cause or date for the manager layer's departure. The assessment says only that the team
+  *"recently lost its manager layer"*, and [`session/qa-prep.md:210`](session/qa-prep.md) still
+  lists *"reorg, attrition, or performance"* as an open question to ask.
+- **1,138 words**, still inside the 1–2 page bound of §4.
+
+### Not in this change
+
+- A **PDF rendering** of the brief now exists for recruiter distribution, carrying these same
+  eleven clarifications with the em dashes removed. It is a **presentation variant only** and is
+  deliberately not committed — `.gitignore` covers `*.pdf`. This document remains the source.
+
 ## [v3.0] — 2026-07-29 — Build the base, and let it correct the documents
 *11 files*
 
