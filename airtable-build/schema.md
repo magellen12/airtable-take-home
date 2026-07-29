@@ -131,7 +131,7 @@ Execution records. Where cycle time is measured.
 
 | Field | Type | Notes |
 |---|---|---|
-| `Name` | Formula | `{Account Name} & " — " & {Play Code}` — **primary.** Needs the two lookups below to exist first; both were missing until 2026-07-28, which is why this field was blank on every record |
+| `Play ID` | Formula | `{Account Name} & " — " & {Play Code}` — **primary.** Renders `Floor & Board Furniture — P2`. Named to match `Diagnostics.Diagnostic ID`, the base's other derived primary; the `ID` suffix signals a value that's computed rather than typed. Needs the two lookups below to exist first — both were missing until 2026-07-28, which is why this field was blank on every record |
 | `Account Name` | Lookup → `Accounts.Account` | via `Account`. Added 2026-07-28 |
 | `Play Code` | Lookup → `Plays.Code` | via `Play`. Added 2026-07-28 |
 | `Account` | Link → `Accounts` | |

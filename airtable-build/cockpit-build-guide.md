@@ -79,28 +79,19 @@ your screen is worded differently from what's written here, trust your screen. T
 Do these in the tables, before you touch Interfaces. None of them can be done through the API, which
 is why they're left to you.
 
-### 1a. Give the Account Plays table a working name column
+### 1a. ✅ Account Plays primary field — DONE
 
-Open the **Account Plays** table. Look at the first column — it's called `Name` and every single row
-is blank.
-
-That column is the record's title. It's blank because it was supposed to be built as a formula and
-never was.
-
-Click the `Name` field header, choose to edit the field, change its type from **Single line text**
-to **Formula**, and paste this in:
+The first column of `Account Plays` was called `Name`, was blank on all nine records, and needed to
+be a formula. It's now **`Play ID`**, a formula field:
 
 ```
 {Account Name} & " — " & {Play Code}
 ```
 
-Save it. All nine rows should immediately fill in, reading like `Floor & Board Furniture — P2` and
-`Voltaic Software — P6`.
+All nine rows render, e.g. `Floor & Board Furniture — P2`. Named to match
+`Diagnostics.Diagnostic ID`, the base's other derived primary.
 
-**Do this before anything else.** Two moments in your demo create Account Plays records live — the
-Accept button on this screen, and the automation in the last beat. If this column is still blank,
-every record created in front of your audience appears with no name on it, at exactly the moment
-you're showing off record creation.
+Nothing to do here — recorded because the rest of this guide assumes it.
 
 ### 1b. Delete a leftover field
 
