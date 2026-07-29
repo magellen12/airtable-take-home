@@ -285,40 +285,43 @@ This prints the AI's full recommendation. It comes out as five labelled parts: t
 that play was chosen, the first three moves to make, which partner team to bring in, and whether a
 follow-on play should be queued behind it. It's several paragraphs, so give it room.
 
-**4. Add a button element labelled "Accept."** Configure it to run an automation that creates a new
-record in the `Account Plays` table for this account and this play.
+**4. Add a linked-record element for `Current Diagnostic`.** Label it **Challenge this — open the
+diagnostic**.
 
-**5. The Override path — read this before building it, because there's a constraint.**
+No buttons. Buttons aren't required, and there's a constraint that makes them awkward anyway:
+everything from the Diagnostics table reaches this page as a **lookup field, and lookup fields are
+read-only**. Nobody can type into them from here. Getting the CSM onto the actual Diagnostics record
+is both simpler to build and better for what you're demonstrating.
 
-The CSM needs to record *why* they're not taking the recommendation. That reason belongs in
-`Override Reason`, which lives on the **Diagnostics** table.
+Clicking this element opens the Diagnostics record in an expanded, editable view. That record is
+where a CSM pushes back on what the system told them.
 
-Here's the catch. Everything from Diagnostics reaches this page as a **lookup field, and lookup
-fields are read-only**. You cannot type into them. So you cannot put `Override Reason` on this page
-and have the CSM fill it in. That's a hard limit, not a settings problem — and it's the thing my
-earlier version of this guide glossed over.
+### Why this is the point, not a workaround
 
-You need to get the CSM to the actual Diagnostics record, where the field is editable. Do it like
-this:
+There are **two separate things a CSM can challenge**, and both are already built:
 
-- **Add a linked-record element for `Current Diagnostic`** to this block. It shows the diagnostic
-  attached to this account.
-- Clicking that element opens the Diagnostics record in an expanded view. `Override Reason` and
-  `Play Accepted` are both editable there.
-- Label the element **Override — record why** so its purpose is obvious.
+**They can challenge the formula's diagnosis.** The four scores are editable, each with its own
+evidence note. If the CSM thinks adoption is really a 2 rather than a 4, they change it and say why
+in the evidence field. And if they think the computed binding constraint is wrong even though the
+scores are right, they set **`Constraint Override`** — a dropdown with all four dimensions — and
+explain themselves in **`Constraint Override Reason`**. That's exactly what happened on Harbor Lane.
 
-If your version of Interface Designer offers a button action like "go to record" that can target the
-linked diagnostic, use that instead and label the button **Override**. Same destination, fewer
-clicks. If it doesn't offer that, the linked-record element above does the job.
+**They can challenge the AI's recommendation.** **`Play Accepted`** is a dropdown with three
+options: **Accepted**, **Overridden**, **Pending**. If they're not running the recommended play, they
+set it to `Overridden` and write why in **`Override Reason`**.
 
-That override path matters more than it looks. Every override is a signal that the model got
-something wrong, and the Director's screen has a queue that collects them for review. It's how the
-recommendations get better over time.
+This is the whole argument for the system. The base does not hand a CSM an answer and expect
+compliance. It hands them a diagnosis, shows its working, and gives them two labelled places to
+disagree with it in writing. Everything starts at `Pending` — nothing has been rubber-stamped.
 
-**Same constraint applies to the Accept button in step 4.** It can't write to Diagnostics directly
-from here either. Point it at an automation instead: the automation sets `Play Accepted` to
-`Accepted` on the current diagnostic and creates the `Account Plays` record. An automation runs with
-its own permissions and isn't blocked by the read-only lookup problem.
+And the overrides aren't just recorded, they're inspected. The Director's screen has a queue that
+collects every override for review. That's the feedback loop: the recommendations improve because
+someone reads the objections.
+
+**Optional, if you want the play to be tracked once accepted.** Add an automation that watches
+`Play Accepted`, and when it changes to `Accepted`, creates the matching `Account Plays` record. An
+automation can write to Diagnostics even though the interface can't. Skip it if you're short on
+time — the nine `Account Plays` records already exist, so nothing on screen depends on it.
 
 ### Making the constraint appear in red
 
@@ -351,28 +354,17 @@ story has been drafted, reviewed, or validated by the customer.
 **2. Add a grid element showing `Value Stories` filtered to this account.** Show these columns:
 `Value Story`, `Business Metric`, `Status`, `Narrative`.
 
-**3. Add a button labelled "Draft value narrative."**
+**3. No button here either.** Make the grid rows clickable so the CSM opens the value story record
+itself, the same pattern as Block 2.
 
-My earlier description of this button was wrong in two ways, so here is what it actually is.
+That's where the useful work happens. On the open record they can edit the use case, baseline,
+current figure and source of truth, and regenerate the `Narrative` field once there's something for
+it to work from. The AI narrative is only as good as the evidence underneath it, and the evidence is
+what a CSM actually has to go and get.
 
-Set the button's action to **create a new record** in `Value Stories`, with the `Account` link
-pre-filled to the current account. That's all it does. **There is no separate "generate the AI
-narrative" step** — `Narrative` is an AI field on the Value Stories table, so it runs by itself once
-the record exists. I described it as two actions; it's one.
-
-**Set the button to only appear when the account has no value story.** Right now that is exactly one
-account: **TrailLine**. The other five already have stories, so on those the button would do nothing
-useful except create duplicates.
-
-**What happens when you click it, and why that's the right outcome.** The new record is empty — no
-use case, no baseline, no source of truth. So AI-3 will return `INSUFFICIENT EVIDENCE` and list what
-it needs. That is correct behaviour, not a failure. It's the same refusal you're demonstrating
-deliberately later, happening on a genuinely empty record.
-
-**Do not use this button for the live AI demo.** Two of your demo beats run AI-3 on Corvus and on
-Floor & Board, and both of those accounts already have value story records. To run those live, open
-the existing record from the grid in step 2 above and regenerate the `Narrative` field there. The
-button creates records; it doesn't re-run AI on existing ones.
+**This is also how you run the live AI demo.** Two of your beats regenerate the narrative on Corvus
+and on Floor & Board. Both already have value story records — open them from this grid and
+regenerate the field there.
 
 ### What you'll see in this block, and why it's correct
 
@@ -528,7 +520,10 @@ Go through these on screen before you call it finished:
 
 - [ ] Only **Floor & Board and Voltaic** mention a follow-on play (P8)
 - [ ] Every value story reads **Draft** — and **TrailLine has none at all**, which is expected
-- [ ] The **Accept** button and the **Draft value narrative** button both fire
+- [ ] Clicking the diagnostic in Block 2 opens an **editable** record where you can change a score,
+      set `Constraint Override`, and set `Play Accepted` to `Overridden` with a reason
+- [ ] Clicking a value story in Block 3 opens an **editable** record where `Narrative` can be
+      regenerated
 
 If any of these come out differently, it's a build configuration problem rather than a data problem.
 All ten were verified directly against the live base on 2026-07-28.
