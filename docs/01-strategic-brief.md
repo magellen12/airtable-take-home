@@ -42,8 +42,12 @@ The job is the book, not any one account. Three structural patterns, not six res
 **Priority 1 · Stand up the methodology — diagnose, stage, run a play.** Every account is scored on
 that same diagnostic and placed on a shared maturity ladder — that's what staging means: one common
 read on how far an account has actually got. The stage describes where an account is today; its
-*binding constraint* — the lowest-scoring dimension — prescribes the next play, each with a clear
-CSM-owns-vs-partners line. Fifteen CSMs report to me directly with no managers in between, so I
+*binding constraint* — the lowest-scoring dimension — prescribes the next play. The ownership line
+is fixed rather than per-CSM: the CSM always owns the diagnostic, the sponsor map, the value
+narrative and the transformation plan, while **Professional Services**, **Sales and Renewals** and
+a *value validation* capability lead solution architecture, the commercial path and the
+quantitative backing for any number we put in front of a CFO.
+Fifteen CSMs report to me directly with no managers in between, so I
 start with no shared language and no inspection surface; scoring an account is also how I read the
 CSM. **Governance and Center-of-Excellence work is a required play, not an aspiration:** the one
 answer to Meridian, Voltaic, and Floor & Board.
@@ -52,13 +56,13 @@ answer to Meridian, Voltaic, and Floor & Board.
 renewals.** Baseline, measure, convert into the buyer's terms, tell it back to them: every
 account renewing inside three quarters gets two or three outcomes *in the customer's language*,
 validated before commercial talks start. Renewals aren't decided by usage but by whether the
-economic buyer can repeat our number back — and the same asset funds Corvus's expansion.
+economic buyer can repeat our number back.
 
 **Priority 3 · Lead the team by developing people, not directing tasks.** Fifteen
 people who just lost their manager layer need clarity, development, and a reason to trust a new
-leader. A **skills matrix** (builder depth × executive presence × domain) drives deliberate
-**pairing of complements** — TrailLine's builder-CSM gets an exec partner, not a reassignment — so
-people grow into gaps rather than off accounts. The **diagnostic doubles as the coaching
+leader. A **skills matrix** across builder depth, executive presence and domain makes pairing
+deliberate rather than ad hoc, so people grow into gaps rather than off accounts. The
+**diagnostic doubles as the coaching
 instrument**: I grade the account rather than the CSM — the score measures the account's maturity,
 not the owner's performance, which is what makes honest scoring safe. And **leads surface through
 play authorship and diagnostic quality** — so by day 90 I expect to know who those people are, and
@@ -75,19 +79,21 @@ distraction from three near-term renewals), or an enablement curriculum (it ride
 average, which is why Meridian (avg 3.5, stuck on value evidence behind a governance gate) is
 blocked while Corvus (avg 2.25) is one artifact from an expansion.
 
-The commercial linkage is a **dated value narrative** — a written outcome carrying the date it was
-validated and the customer's confirmation that it's true, rather than a conversation someone
-remembers having. The date is what makes staleness visible: a narrative older than a quarter on a
-near-term renewal is a churn risk, because the outcome may no longer be one the customer repeats.
+Both commercial outcomes run through one artifact: a **dated value narrative**, a written outcome
+carrying the date it was validated and the customer's confirmation that it's true. **Renewals** turn
+on it because the date makes staleness visible — the base flags any narrative older than a quarter
+inside two quarters of renewal, which is how a renewal stops being a surprise. **Expansions** turn
+on it because procurement only argues about scope once value is settled: Corvus has everything a
+large expansion needs except the sentence that makes it purchasable.
 
 This is **the most tenured team in the company** — they know their customers better than I will — so
 the principle is **global consistency, local customization**: *what* we do is standard (diagnostic,
 plays, rhythm, definition of done); *how* each CSM runs it is theirs — their read on the customer,
 their creative spin. I build the frameworks; we set the standards together — **consistency is the
 floor, not the ceiling.** One rule underneath: *a CSM must own knowing what their account needs, and
-never have to be the smartest technical person in the room.* Depth is bought with partners and
-pairing; judgment is what I coach and inspect on a regular cadence, from the base: % staged, stage
-progression QoQ, sponsor coverage (2/6), value coverage (0/6); and lagging, NRR and **renewal
+never have to be the smartest technical person in the room.* Judgment is what I coach and inspect
+on a regular cadence, from the base: % of the book staged, stage progression quarter on quarter,
+sponsor coverage (2/6), value coverage (0/6); and lagging, retention and expansion and **renewal
 surprises, target zero** — a surprise at renewal is a diagnostic failure six months earlier.
 
 ---
