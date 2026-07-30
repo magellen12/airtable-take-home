@@ -64,23 +64,30 @@ rather than nice to have, and it's part of why I want the day-90 evidence before
 **"The lowest-score rule is crude. Real accounts have two constraints."**
 Agreed, and it's crude on purpose. A weighted multi-factor model is more accurate and less
 usable, and a methodology fifteen people won't run is worth less than a blunt one they will.
-The system handles the real case by sequencing — Floor & Board is Sponsorship then a CoE,
-Corvus is Value evidence then Adoption. **What I'd watch is the override rate.** If CSMs override
+The system handles the real case by sequencing, and it's worth knowing exactly what it does and
+doesn't sequence, because the base is open in front of you. Floor & Board is **P2 Re-Sponsor then
+P8 Renewal Value Review** — clearing the sponsor gap doesn't by itself produce the narrative the
+renewal needs. Corvus returns **no second play**, which is right: it's a genuinely single-constraint
+account. **Where I'd say the model is incomplete:** Floor & Board has governance at 1 and no CoE, and
+the model doesn't sequence a governance play there. It should. That's a gap in the sequencing rules,
+not in the scoring. **What I'd watch is the override rate.** If CSMs override
 the recommendation more than about 20% of the time, the model is wrong, not them, and the
 override reasons are the data for fixing it. That field exists for exactly this challenge.
 
 **"Where did the four dimensions come from?"**
 They're the four things that have to be true for transformation to survive contact with a real
 organization, and each one visibly fails on its own in this book — Floor & Board on
-sponsorship, Meridian on value evidence behind a governance gate, Harbor Lane on adoption and
-awareness, Corvus on value evidence. The labels also track what the function is measured on —
+sponsorship, TrailLine on adoption, Voltaic on governance, and Meridian and Corvus both on value
+evidence for different audiences. Four dimensions, four accounts where that dimension is the binding
+constraint. The labels also track what the function is measured on —
 adoption, sponsorship, governance, value realization. I'd hold them loosely: if the book showed
 me a fifth independent failure mode — change
 management capacity is my candidate — I'd add it. What I wouldn't do is let it reach seven,
 because at seven nobody scores honestly.
 
 **"What if a CSM just games the scores to look good?"**
-Two controls, and neither is trust. Evidence is required for any 4 or 5, and stage movement is
+Two controls, and neither is trust. Evidence is required for **every** score, not just the
+flattering ones — the form won't submit without it — and stage movement is
 inspected against the play record — you cannot claim a sponsorship improvement without a play
 that produced a named sponsor. But the honest answer is that **the incentive runs the other
 way**: a low score gets you partner resources. I'd worry more about theatrical pessimism than

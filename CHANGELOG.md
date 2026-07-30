@@ -83,6 +83,45 @@ important one is in the brief's first paragraph.
   automations, so all three interfaces and the absence of automations rest on the builder's word,
   not on a check. `Diagnostic Date` "defaults to today" could not be confirmed either.
 
+### Also audited: `session/qa-prep.md`
+
+Never checked against the live base before. 212 lines, four errors, all in claims about what the
+build does rather than in the judgment calls.
+
+- **The sequencing examples didn't match the base.** *"Floor & Board is Sponsorship then a CoE,
+  Corvus is Value evidence then Adoption."* Live: Floor & Board sequences **P8 Renewal Value
+  Review**, not a CoE, and Corvus returns **`ALSO SEQUENCE: None`**. Both examples were offered as
+  proof that the system sequences, in an answer conceding the lowest-score rule is crude — so both
+  would have failed if checked. Now stated as the base has it, plus the real gap volunteered:
+  Floor & Board has governance at 1 and no CoE and the model doesn't sequence a governance play
+  there. The same wrong CoE claim was in **talk track beat 4** and is fixed there too.
+- **The four-dimensions answer used the wrong account for adoption.** It cited *"Harbor Lane on
+  adoption and awareness"*; Harbor Lane's adoption is **2** and its binding constraint is **value
+  evidence**. It also left governance unexemplified while citing value evidence twice. Now:
+  Floor & Board on sponsorship, **TrailLine** on adoption (1, and its constraint), **Voltaic** on
+  governance (1, and its constraint), Meridian and Corvus on value evidence for different audiences.
+  Four dimensions, four accounts, each one the binding constraint.
+- **"Evidence is required for any 4 or 5"** understated the build. The form requires evidence for
+  **every** score; Airtable's required toggle isn't conditional. Corrected upward.
+
+### Verified in `qa-prep.md`, and left alone
+
+Checked and correct: Voltaic's 5 adoption / 1 governance / **2** value evidence; Meridian's 3.5
+average, $1.1M, four quarters, sponsorship 5, value-evidence constraint; TrailLine's sponsorship 3;
+Floor & Board's $1.7M, two quarters, no exec sponsor, and champion departed three months;
+**P3, P5 and P7 are the three plays without a built template**, exactly as claimed; `Source of
+Truth`, `Validated By` and the `Draft → Reviewed → Customer-validated` status ladder all exist as
+described; only Corvus carries a quantified impact and all six value stories are `Draft`, so *"the
+value narratives are mostly empty and only Corvus has numbers"* is accurate; value coverage 0 of 6;
+Marcus (builder 5, exec 2) and Ben (exec 5, builder 2) are paired both directions, which is the
+TrailLine pairing answer; and Voltaic's *"agents nobody owns and worried about cost"* is near-verbatim
+from a `Signals` record rather than an embellishment.
+
+*Not changed, flagged only:* `qa-prep` still says GRR, NRR and stage progression *QoQ*, which
+[v3.2](#v32--2026-07-29--de586b9--answer-the-assessments-own-bullets) deliberately removed from the
+brief as unexplained. Defensible as spoken vocabulary in a live Q&A where the brief has to stand
+alone, so it stays a known inconsistency rather than a silent one.
+
 ### Also
 
 - **`tools/pdf/` is now tracked.** It was untracked, which meant the brief's presentation variant
