@@ -6,3 +6,6 @@
 __pycache__/
 *.pyc
 .env
+
+# Generated HTML intermediate for the brief PDF
+tools/pdf/brief.html

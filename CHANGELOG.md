@@ -13,6 +13,125 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v3.3] — 2026-07-29 · `ed46d6e` — The build corrected the documents
+*8 files · +tools/pdf*
+
+Interface 1, Interface 2 and the diagnostic session form all got built this round, and building
+them falsified things the documents asserted. This entry is mostly a list of those. The most
+important one is in the brief's first paragraph.
+
+### Changed
+
+- **The value-evidence claim in the brief was wrong.** [`docs/01`](docs/01-strategic-brief.md) said
+  all three at-risk accounts *"sit at 1 of 5 on value evidence."* Read live from the base:
+  **Floor & Board 1, Corvus 1, Voltaic 2.** The **$3.11M / 61%** figure is unaffected, because
+  `Accounts.ARR at Risk` fires at `Value Evidence Score <= 2` rather than at 1 — so the headline
+  survived a claim that didn't. Now stated as *"none of that ARR scores above 2 of 5, and $2.59M of
+  it sits at 1."* Same force, one more real number, and it matches a base the reader can open. Fixed
+  in the brief, the PDF source, [`README.md`](README.md), [`AGENTS.md`](AGENTS.md) and the talk
+  track, and the PDF was regenerated.
+- **The talk track claimed an automation fired.** Beat 7 said A2 *"fired on Floor & Board and
+  Voltaic the morning I stood this up."* **No automations are built in this base.** The two
+  `Account Plays` rows whose `Outcome` reads "Auto-created by automation A2" are seed data. Beat 7
+  is now the diagnostic session form, which answers the *"where do the scores come from"* question
+  the demo previously left open, and A1, A2 and AG-1 are all labelled **specified, not built**.
+- **Two smaller unsourced claims in the talk track.** Floor & Board's *"one thread mapped"* was
+  two; what it actually has none of is an exec thread, which is the P2 target on the stakeholder
+  record. And Corvus's *"seven-figure expansion"* was a number that appears nowhere in the base —
+  now *"enterprise-wide rollout off a single contained business unit,"* which the account notes
+  support.
+- **[`schema.md`](airtable-build/schema.md)** described `Current Diagnostic` as *"set by automation
+  A1"* in the present tense. A1 is specified, not built.
+- **The interface guides were wrong in four places**, all found by building against them:
+  Number elements can't sum a money field or render a fraction, so ARR at Risk needs a grid with
+  the column total switched on; a Timeline was impossible because `Accounts` has **no date field at
+  all**; the empty Stage 4 bar can't render, because a chart's categories are the distinct values
+  present in a formula-derived lookup; and interfaces can't read across a link, so anything on
+  `Diagnostics` has to be exposed as a lookup on `Accounts` first.
+
+### Kept
+
+- **Requiring all ten form fields**, but for a corrected reason — see Verified. The line to say out
+  loud is unchanged: making the four evidence fields required is what stops a score being an
+  opinion.
+- **Grouping charts by a lookup field.** Flagged as a risk, tested, works. No flattening formula
+  fields were added to the base and none are needed.
+- **`session/` stays in the deliverable.** [`README.md`](README.md) advertises it and a written run
+  of show is evidence of how this role would be run. Two lines that described managing the room
+  rather than making the argument were softened instead.
+
+### Verified
+
+- **The blank-rating claim was wrong in both directions, and is now measured.** An early draft
+  required only the four evidence fields. The correction to it claimed a blank rating reads as `0`
+  and yields a confidently wrong constraint and play. Tested by submitting throwaway diagnostics
+  and reading back what computed: **`MIN` skips blanks**, so `Lowest Score` and `Constraint` stay
+  correct. The real damage is `Average`, which divides by a fixed `4` and so silently deflates
+  (2.25 reported where the mean of the scores given was 3.00), and **both AI fields, which stop on
+  `emptyDependency`** and leave `#ERROR!` where the Cockpit expects a stage. Require all four
+  ratings because a blank yields a *dead* record, not a wrong one.
+- **`Diagnostics` has two links to `Accounts`, and the plural one corrupts the account.** `Account`
+  is the history link and belongs on the form. `Accounts` is the reciprocal of
+  `Current Diagnostic`, and setting it from the diagnostic side **appends rather than replaces**: a
+  test record left TrailLine with two current diagnostics, `Constraint` reading `Adoption, Adoption`
+  and **`ARR at Risk` at `#ERROR!`**. So promoting a diagnostic is not one link field, which is the
+  honest reason A1 is an automation rather than a form field.
+- **No drift in the numbers.** After every test record was deleted: 6 accounts, 6 diagnostics,
+  ARR **$5,060,000**, ARR at Risk **$3,110,000 (61.5%)**, sponsor coverage 2 of 6, value coverage
+  0 of 6, every account on exactly one current diagnostic, no error cells.
+- **What could not be verified, stated as such.** Airtable exposes no API for interfaces or
+  automations, so all three interfaces and the absence of automations rest on the builder's word,
+  not on a check. `Diagnostic Date` "defaults to today" could not be confirmed either.
+
+### Also audited: `session/qa-prep.md`
+
+Never checked against the live base before. 212 lines, four errors, all in claims about what the
+build does rather than in the judgment calls.
+
+- **The sequencing examples didn't match the base.** *"Floor & Board is Sponsorship then a CoE,
+  Corvus is Value evidence then Adoption."* Live: Floor & Board sequences **P8 Renewal Value
+  Review**, not a CoE, and Corvus returns **`ALSO SEQUENCE: None`**. Both examples were offered as
+  proof that the system sequences, in an answer conceding the lowest-score rule is crude — so both
+  would have failed if checked. Now stated as the base has it, plus the real gap volunteered:
+  Floor & Board has governance at 1 and no CoE and the model doesn't sequence a governance play
+  there. The same wrong CoE claim was in **talk track beat 4** and is fixed there too.
+- **The four-dimensions answer used the wrong account for adoption.** It cited *"Harbor Lane on
+  adoption and awareness"*; Harbor Lane's adoption is **2** and its binding constraint is **value
+  evidence**. It also left governance unexemplified while citing value evidence twice. Now:
+  Floor & Board on sponsorship, **TrailLine** on adoption (1, and its constraint), **Voltaic** on
+  governance (1, and its constraint), Meridian and Corvus on value evidence for different audiences.
+  Four dimensions, four accounts, each one the binding constraint.
+- **"Evidence is required for any 4 or 5"** understated the build. The form requires evidence for
+  **every** score; Airtable's required toggle isn't conditional. Corrected upward.
+
+### Verified in `qa-prep.md`, and left alone
+
+Checked and correct: Voltaic's 5 adoption / 1 governance / **2** value evidence; Meridian's 3.5
+average, $1.1M, four quarters, sponsorship 5, value-evidence constraint; TrailLine's sponsorship 3;
+Floor & Board's $1.7M, two quarters, no exec sponsor, and champion departed three months;
+**P3, P5 and P7 are the three plays without a built template**, exactly as claimed; `Source of
+Truth`, `Validated By` and the `Draft → Reviewed → Customer-validated` status ladder all exist as
+described; only Corvus carries a quantified impact and all six value stories are `Draft`, so *"the
+value narratives are mostly empty and only Corvus has numbers"* is accurate; value coverage 0 of 6;
+Marcus (builder 5, exec 2) and Ben (exec 5, builder 2) are paired both directions, which is the
+TrailLine pairing answer; and Voltaic's *"agents nobody owns and worried about cost"* is near-verbatim
+from a `Signals` record rather than an embellishment.
+
+*Not changed, flagged only:* `qa-prep` still says GRR, NRR and stage progression *QoQ*, which
+[v3.2](#v32--2026-07-29--de586b9--answer-the-assessments-own-bullets) deliberately removed from the
+brief as unexplained. Defensible as spoken vocabulary in a live Q&A where the brief has to stand
+alone, so it stays a known inconsistency rather than a silent one.
+
+### Also
+
+- **`tools/pdf/` is now tracked.** It was untracked, which meant the brief's presentation variant
+  (`brief-plain.md`, the PDF's source, em dashes removed) lived outside the repo — so a content
+  correction could silently land in only one of the two files. That is exactly what this entry
+  corrects, so the toolchain belongs under version control. Regenerated PDF: 2 pages, 1,213 words,
+  zero em or en dashes.
+
+---
+
 ## [v3.2] — 2026-07-29 · `de586b9` — Answer the assessment's own bullets
 *1 file · +14 / −12*
 
