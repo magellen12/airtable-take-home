@@ -55,8 +55,14 @@ not a mandate."* Keep that split in any new play.
 
 ## 4 · Keep the brief at 1–2 pages
 
-[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece: a **~1,025-word
-body plus a ~60-word orienting header**, ~1,090 total, ~1.75 pages. Depth belongs in `docs/02–05`.
+[`docs/01-strategic-brief.md`](docs/01-strategic-brief.md) is the submission piece: a **~1,140-word
+body plus a ~60-word orienting header**, ~1,205 total in the markdown source and **1,213 words
+rendered**, filling **2 pages** of the Letter-size PDF. The assessment allows 1–2, so 2 is the
+ceiling and there is no room left. Depth belongs in `docs/02–05`.
+
+Recount rather than quoting this line. It said ~1,090 / ~1.75 pages for several revisions after the
+brief had grown past it, which is the exact failure §5 below is about. Counts:
+`pdftotext Strategic-Brief-*.pdf - | wc -w` for the rendered figure.
 When trimming, cut hedges, parentheticals and redundant examples — never concepts. Two threads
 must survive any edit: the
 **people-manager lens** (develop people rather than direct tasks; the diagnostic as a coaching
