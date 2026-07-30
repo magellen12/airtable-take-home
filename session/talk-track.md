@@ -12,9 +12,9 @@ it in.* Not a pitch. A director briefing their leadership.
 Do not start with a methodology. Start with the number.
 
 > "Six accounts, $5.06 million. Sixty-one percent of that has a renewal conversation inside
-> three quarters. And on all three of those accounts, nobody — not the CSM, not the account
-> team, not the customer's own champion — can tell you in the buyer's language what they got for
-> the money.
+> three quarters, and not one of those dollars has a value narrative scoring above a 2 out of 5.
+> Two and a half million of it is at a 1. Nobody — not the CSM, not the account team, not the
+> customer's own champion — can tell you in the buyer's language what they got for the money.
 >
 > That's not an adoption problem. Two of those three are adopting fine. It's the problem I'd
 > spend my first 90 days on."
@@ -74,8 +74,8 @@ Two minutes each, and **lead with the reasoning, not the activity.**
   base. I don't need fifteen CSMs who can hold their own with a CFO on AI risk — I need fifteen
   who diagnose that the account needs that conversation and pull the right partner in."
 
-**Then say what you're not doing, unprompted.** It's a prioritization-judgment signal and it
-pre-empts a question:
+**Then say what you're not doing, unprompted.** Prioritization is mostly what you leave out, so say
+what you left out:
 > "I'm not hiring the manager layer in 90 days, I'm not re-cutting segmentation, and I'm not
 > building an enablement curriculum. The first two are six-month distractions from three
 > renewals I have to survive first. The third rides on the plays."
@@ -89,11 +89,12 @@ Only two ideas need to land, and they're both mechanics, not concepts:
 **Stage describes, constraint prescribes — the lowest dimension picks the play, not the average.**
 > "Meridian has the highest average score in the book — 3.5 — and is producing nothing, because
 > its value evidence is a 2 and a review board is the gate; sponsorship at 5 and adoption at 4
-> don't open it. Corvus scores 2.25 and is one artifact away from a seven-figure expansion.
+> don't open it. Corvus scores 2.25 and is one artifact away from an enterprise-wide rollout off a
+> single contained business unit.
 > Managing to the average gets both of those exactly backwards."
 
-**Where the model was wrong, and what I did about it.** Volunteer this. It reads as rigor and
-it's true:
+**Where the model was wrong, and what I did about it.** Volunteer this, because it's true and it's
+the most useful thing you can tell them about the build:
 > "The first version told me to go recruit an executive sponsor at Harbor Lane. But nobody at
 > Harbor Lane has seen anything to sponsor — you can't sponsor an abstraction. So there's a
 > second rule: below Stage 1, value evidence leads. And it made a subtler error I kept — it
@@ -113,11 +114,23 @@ one that was clearly rehearsed into safety.
 |---|---|---|
 | 1 | **Director Book Review** | "This is my Monday. ARR at risk, value coverage zero out of six, no account in the book compounding. And the skills matrix — how I staff and pair the team — is on the same screen." |
 | 2 | **Switch to Dana's CSM Cockpit** | "Now the same base as a CSM. Floor & Board is top of her list — sorted by ARR at risk, not by renewal date, so the largest preventable loss is on screen every morning." |
-| 3 | **The diagnostic** | Four bars, constraint in red. "Sponsorship is a 1. Champion left three months ago, one thread mapped against a target of three." |
+| 3 | **The diagnostic** | Four bars, constraint in red. "Sponsorship is a 1. The champion left three months ago and the roadmap left with her. Two threads mapped against a target of three, and the one that matters is empty — nobody has ever engaged the VP Marketing seat above the vacancy." |
 | 4 | **The recommended play** | "P2 Re-Sponsor, three moves, Sales named — and behind it, stand up a CoE so this doesn't happen again when the *next* champion leaves. That's a CSM in month four running the same first move as the best CSM on the team." |
 | 5 | **⭐ Run AI-3 live on Corvus** | Generate it in the room. "Production AI adoption, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write — and Value Validation validates the number before it moves out of Draft." |
 | 6 | **⭐ Run AI-3 live on Floor & Board** | It returns `INSUFFICIENT EVIDENCE`. **Do not skip this.** "That's the most useful thing this field does all day. The failure mode of an AI value generator is a plausible invented number walking into a CFO conversation. It refuses, and it tells the CSM what to go get." |
-| 7 | **Automation A2** | "Fired on Floor & Board and Voltaic the morning I stood this up. Renewal inside two quarters, no current value narrative. Two quarters of warning instead of two weeks." |
+| 7 | **The diagnostic session form** | This is the "where do the scores come from" answer, so don't skip it. "The diagnostic isn't a form the CSM fills in afterwards. It's the agenda of a meeting they run with the customer, on screen, together — the 1-to-5 anchors are visible and the customer is reading them with you. Every score requires an evidence note before it can be submitted. That's what stops this being another CRM field nobody updates." |
+
+**On beat 7, two things not to claim.** No automations are built in this base. Promoting a new
+diagnostic to `Accounts.Current Diagnostic` is automation **A1**, which is specified in
+[`../airtable-build/ai-components.md`](../airtable-build/ai-components.md) and **not built** — say
+those words. **A2 is also not built**; the two `Account Plays` rows whose `Outcome` reads
+"Auto-created by automation A2" are seed data, not a run. An earlier version of this table claimed
+A2 "fired on Floor & Board and Voltaic the morning I stood this up." It did not.
+
+If you submit the form live, **repoint `Current Diagnostic` by hand before switching to the Cockpit**,
+and clear the old value first rather than adding to it. Setting that link from the diagnostic side
+appends instead of replacing, which gives the account two current diagnostics and puts `#ERROR!` in
+`ARR at Risk`. That is also the honest reason A1 is not a one-line automation.
 
 **Close the demo on the leverage test before they ask it:**
 > "The newest CSM on the team gets the same diagnosis, the same play, and a first draft of an
@@ -166,3 +179,8 @@ Prepared answers: [`qa-prep.md`](qa-prep.md).
       brief only carries the averages)
 - [ ] Know the four numbers cold: **$5.06M book · $3.11M at risk · 61% · Value evidence 1.3 avg
       vs Adoption 3.2**
+- [ ] Know the value-evidence scores individually, because the at-risk three are **not** all 1s:
+      Floor & Board 1, Corvus 1, **Voltaic 2**. `ARR at Risk` fires at 2 or below, which is why
+      $3.11M is right. Do not say "all three are at a 1."
+- [ ] Say **"specified, not built"** about AG-1 (notes to draft scores) and about automations A1
+      and A2. Nothing in this base is automated.

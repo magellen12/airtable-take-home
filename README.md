@@ -14,7 +14,7 @@ Airtable operating system the team would run it in.
 Six accounts, **$5.06M ARR**. **61% of it ($3.11M) has a renewal conversation inside three
 quarters**: Floor & Board, Voltaic, and Corvus. 
 
-I score each account 1 to 5 on four dimensions: adoption depth, executive sponsorship, governance maturity, and **value evidence**, meaning a quantified business outcome stated in the language of the person who signs. All three of these accounts sit at **1 of 5 on value evidence**, the bottom of the scale. Nobody can say what the customer got for the money. Book-wide, adoption averages 3.2, value evidence 1.3, governance 1.5. Nothing is blocked because "Airtable can't do this"; every blocker is organizational. 
+I score each account 1 to 5 on four dimensions: adoption depth, executive sponsorship, governance maturity, and **value evidence**, meaning a quantified business outcome stated in the language of the person who signs. None of that ARR scores above **2 of 5 on value evidence**, and **$2.59M of it sits at 1**, the bottom of the scale. Nobody can say what the customer got for the money. Book-wide, adoption averages 3.2, value evidence 1.3, governance 1.5. Nothing is blocked because "Airtable can't do this"; every blocker is organizational. 
 
 **The platform works; the operating model around it doesn't** — the mandate is that shift, from relationship-led to a transformation-led.
 

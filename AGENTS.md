@@ -114,5 +114,9 @@ It's Airtable's document. It stays gitignored at
 | `appendix/` | Assumptions, how-I-used-AI, reconciliation of two independent drafts. |
 
 **The one-line thesis, for orientation:** six accounts, $5.06M; 61% renews inside three quarters
-and all of it scores 1/5 on value evidence. The platform works; the operating model around it
-doesn't. Stage *describes*, the binding constraint *prescribes*.
+and none of it scores above 2/5 on value evidence, with $2.59M of it at 1. The platform works; the
+operating model around it doesn't. Stage *describes*, the binding constraint *prescribes*.
+
+**Value-evidence scores, live, so this is not re-derived from memory:** Floor & Board 1 · Corvus 1 ·
+Voltaic **2** · TrailLine 1 · Harbor Lane 1 · Meridian 2. `Accounts.ARR at Risk` fires at
+`Value Evidence Score <= 2`, which is why the $3.11M figure is right while "all three at 1" was not.

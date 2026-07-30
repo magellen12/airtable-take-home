@@ -25,7 +25,7 @@ The spine. One record per account.
 | `Contract Stage` | Single select | `First year` · `Mid-term` · `Renewal cycle` |
 | `Quarters to Renewal` | Number | Static in the prototype; CRM-sourced in production |
 | `CSM` | Link → `CSMs` | |
-| `Current Diagnostic` | Link → `Diagnostics` | The latest one; set by automation A1 |
+| `Current Diagnostic` | Link → `Diagnostics` | The latest one. **Set by hand in the prototype** — automation A1 is specified, not built |
 | `Stage` | Lookup → `Current Diagnostic.Stage` | |
 | `Constraint` | Lookup → `Current Diagnostic.Constraint` | |
 | `Value Evidence Score` | Lookup → `Current Diagnostic.Value Evidence` | Surfaced on Accounts because it's the renewal predictor |
