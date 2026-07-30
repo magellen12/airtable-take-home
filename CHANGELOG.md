@@ -145,6 +145,14 @@ or A2 runs, that Corvus's expansion has a figure attached, or that Floor & Board
 
 ### Also
 
+- **[`AGENTS.md`](AGENTS.md) §4 was itself a stale number**, which is the failure §5 of the same file
+  exists to prevent. It claimed a ~1,025-word body plus a ~60-word header, ~1,090 total, ~1.75 pages.
+  Recounted: **~1,140-word body, ~60-word header, 1,213 words rendered, filling 2 pages.** The
+  assessment allows 1–2, so there is no room left, and §4 now says to recount rather than quote it.
+- **Removed the stale second PDF from the repo root.** `Mauger-Strategic-Brief-*.pdf` was the older
+  pre-v3.2 text, still carrying the unexplained NRR/QoQ and lacking the owns-vs-partner line and the
+  expansion mechanism. It was never the file submitted, and having two similarly-named briefs sitting
+  together was a send-the-wrong-one risk. Both were gitignored, so this doesn't appear in the diff.
 - **`tools/pdf/` is now tracked.** It was untracked, which meant the brief's presentation variant
   (`brief-plain.md`, the PDF's source, em dashes removed) lived outside the repo — so a content
   correction could silently land in only one of the two files. That is exactly what this entry
