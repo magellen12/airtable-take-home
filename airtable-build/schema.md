@@ -165,7 +165,7 @@ The renewal spine. One per quantified outcome.
 | `Validated By` | Single line text | The customer name who said it back |
 | `Date Validated` | Date | |
 | `Age (days)` | Formula | `DATETIME_DIFF(TODAY(), {Date Validated}, 'days')` |
-| `Freshness` | Formula | `IF({Age (days)} > 90, "Stale", "Current")` — drives automation A2 |
+| `Freshness` | Formula | `IF({Age (days)} > 90, "Stale", "Current")` — **the trigger A2 would read. A2 is specified, not built** |
 
 ---
 

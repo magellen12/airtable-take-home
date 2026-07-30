@@ -51,10 +51,17 @@ Floor & Board's departed champion is visible here on day one, which is the whole
 
 ### What a CSM actually does here
 > Monday, 9am. Opens the Cockpit. Floor & Board is top of the list. Sees: constraint =
-> Sponsorship, champion departed 3 months ago, one thread mapped against a target of three,
-> no value narrative, renewal conversation in two quarters. The recommended play is **P2
-> Re-Sponsor** with three moves and Sales named as partner. They click Accept and the week has
-> a shape.
+> Sponsorship, champion departed 3 months ago, two threads mapped against a target of three and
+> the exec seat above the vacancy never engaged, no value narrative, renewal conversation in two
+> quarters. The recommended play is **P2 Re-Sponsor** with three moves and Sales named as partner,
+> sequencing **P8 Renewal Value Review** behind it. They open the record, set `Play Accepted`, and
+> the week has a shape.
+>
+> **As built, there is no Accept button.** Buttons were dropped from the Cockpit in favour of
+> opening the underlying record, because challenging the system is the point: `Constraint Override`
+> challenges the formula and `Play Accepted` challenges the AI. Both are editable on the
+> `Diagnostics` record and neither is editable from the Accounts page, because lookup fields are
+> read-only.
 >
 > No pattern recognition required. That's a CSM in month four running the same first move as
 > the best CSM on the team.
