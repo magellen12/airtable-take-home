@@ -62,7 +62,8 @@ recognition to know what to do next; they need to score honestly and read the lo
 
 The proof it works is Meridian: highest average in the book (3.50), producing nothing, because
 its **Value evidence is a 2** and a review board is the gate — Sponsorship at 5 and Adoption at 4
-don't open it. And Corvus: a below-average 2.25, one artifact away from a seven-figure expansion.
+don't open it. And Corvus: a below-average 2.25, one artifact away from an enterprise-wide rollout
+off a single contained business unit.
 
 **Two tiebreak rules:**
 

@@ -122,6 +122,27 @@ from a `Signals` record rather than an embellishment.
 brief as unexplained. Defensible as spoken vocabulary in a live Q&A where the brief has to stand
 alone, so it stays a known inconsistency rather than a silent one.
 
+### Swept the same four errors out of the files that weren't in the first pass
+
+Fixing a claim in one file and leaving it in three others is how the invented org chart survived
+nine files last time, so after merging the above I grepped for each corrected phrase across the
+whole repo. Four more hits:
+
+- **[`docs/03:65`](docs/03-transformation-methodology.md)** carried the same unsourced
+  *"seven-figure expansion"* for Corvus. This one mattered more than the talk track's, because
+  `docs/` is a deliverable.
+- **[`schema.md:168`](airtable-build/schema.md)** said `Freshness` *"drives automation A2"*, present
+  tense. Now "the trigger A2 would read. A2 is specified, not built."
+- **[`interfaces.md:54`](airtable-build/interfaces.md)** carried the *"one thread mapped"* error, and
+  also had the CSM **clicking an Accept button that doesn't exist** — buttons were dropped from the
+  Cockpit in favour of opening the record, which is the more defensible design anyway, since
+  `Constraint Override` challenges the formula and `Play Accepted` challenges the AI and both need
+  the record. The walkthrough now says so, and notes that lookups are read-only so neither is
+  editable from the Accounts page.
+
+Confirmed clean afterwards: no file still claims all three at-risk accounts sit at 1 of 5, that A1
+or A2 runs, that Corvus's expansion has a figure attached, or that Floor & Board has one thread.
+
 ### Also
 
 - **`tools/pdf/` is now tracked.** It was untracked, which meant the brief's presentation variant
