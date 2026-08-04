@@ -13,6 +13,48 @@ The deeper story behind the biggest revision (v2) is in
 
 ---
 
+## [v3.4] — 2026-08-04 — Session prep: what the base actually looks like on demo day
+*2 files*
+
+Rehearsal pass over [`session/`](session/) two days before the live session, checking the demo
+against the base rather than against the plan. Three things were wrong about the *run*, not about
+the argument.
+
+### Changed
+
+- **The live AI generation moved from Corvus to Floor & Board.** The pre-flight said *"one AI
+  generation held back to run live, not pre-generated."* That isn't true: **all six narratives are
+  already generated**, so beat 5 was a regeneration, not a generation. Direction matters, because
+  Corvus's current output is the strongest artifact in the build — it produces the CFO-ready numbers
+  and then reports `CONFIDENCE: Low`, disclosing that the figures are "an illustrative seed value
+  not yet reconciled against platform run logs." Re-rolling that in the room is a coin flip on
+  whether the disclosure survives. Floor & Board has genuinely no evidence, so it refuses every
+  time and only the wording varies. **Show Corvus, generate Floor & Board.**
+- **The three structural patterns now name which account proves each one.** The beat said "give one
+  account as evidence for each" without saying which, which is a decision you don't want to be
+  making live. Now Corvus for value realization, Floor & Board for person-dependence (*"the roadmap
+  left with her"*, verbatim from the stakeholder record), TrailLine for no readiness model.
+- **Added the empty-fields answer to [`qa-prep.md`](session/qa-prep.md).** `Play Accepted` is unset
+  on all six diagnostics, value coverage is 0 of 6, `Plays Authored` is 0 of 6, and five of six
+  narratives carry a stale flag. Each is a baseline rather than a gap, and each has a one-line
+  answer now. **Do not populate them to look finished** — a dashboard with invented coverage is
+  what this argument exists against.
+
+### Verified
+
+- **Two fields hidden in the base, neither deleted, deliberately.** `CSMs.From field: Paired With`
+  is the reciprocal half of a link whose other half is a live column on the Director Review skills
+  matrix, and its data is fully duplicated, so there was nothing to reclaim.
+  `Diagnostics.Diagnostic` turned out to have a **live interface dependency** on the *Inbox:
+  Accounts Detail* record page; Airtable warns that field deletion is undoable but dependency
+  changes are not. Hiding a field does **not** remove it from an interface that displays it, so
+  the field stays blank-but-present on that page. Cost of leaving it: nothing, on a page unlikely
+  to be opened.
+- **Already done, and no longer on any list:** the `zz Applies at Stage` field is gone from `Plays`,
+  and `Accounts.Diagnostic (from Current Diagnostic)` does not exist.
+
+---
+
 ## [v3.3] — 2026-07-29 · `ed46d6e` — The build corrected the documents
 *8 files · +tools/pdf*
 
