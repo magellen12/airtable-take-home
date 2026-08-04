@@ -35,11 +35,14 @@ Land three things:
    from a relationship-led motion to a transformation-led one — organizational change management
    with a platform attached, not feature adoption.*
 
-2. **Three structural patterns, not six account problems** — (1) value realization isn't a
-   discipline: the renewal risk is an *evidence* problem, not an adoption one; (2) transformation
-   is person-dependent *on both sides of the table* — the customer's roadmap lives in one head,
-   and our outcomes track individual CSM strengths; (3) we engage with no readiness model. Give
-   one account as evidence for each, not all six.
+2. **Three structural patterns, not six account problems.** Give **one** account as evidence for
+   each, not all six. The grounded pairings, checked against the account notes:
+
+   | Pattern | The account to use |
+   |---|---|
+   | Value realization isn't a discipline — the renewal risk is an *evidence* problem, not an adoption one | **Corvus.** Production AI in one BU, and a CFO who has never seen anything from us |
+   | Transformation is person-dependent *on both sides of the table* | **Floor & Board.** The champion left and *"the roadmap left with her"* — verbatim from the stakeholder record |
+   | We engage with no readiness model | **TrailLine.** A transformation vision sold to the COO, kickoff still three weeks out, and the ops team who will live in it is skeptical |
 
 3. **The trap — spend real time here.** Voltaic. Walk it deliberately:
    > "If you ranked this book by usage, Voltaic and Corvus are your healthiest accounts.
@@ -116,9 +119,30 @@ one that was clearly rehearsed into safety.
 | 2 | **Switch to Dana's CSM Cockpit** | "Now the same base as a CSM. Floor & Board is top of her list — sorted by ARR at risk, not by renewal date, so the largest preventable loss is on screen every morning." |
 | 3 | **The diagnostic** | Four bars, constraint in red. "Sponsorship is a 1. The champion left three months ago and the roadmap left with her. Two threads mapped against a target of three, and the one that matters is empty — nobody has ever engaged the VP Marketing seat above the vacancy." |
 | 4 | **The recommended play** | "P2 Re-Sponsor, three moves, Sales named, and it sequences P8 Renewal Value Review behind it — clearing the sponsor gap doesn't by itself produce the narrative the renewal needs. That's a CSM in month four running the same first move as the best CSM on the team." Volunteer the gap if you have room: governance is a 1 here with no CoE, and the model does **not** sequence a governance play. It should. Better to name that than have it found. |
-| 5 | **⭐ Run AI-3 live on Corvus** | Generate it in the room. "Production AI adoption, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write — and Value Validation validates the number before it moves out of Draft." |
-| 6 | **⭐ Run AI-3 live on Floor & Board** | It returns `INSUFFICIENT EVIDENCE`. **Do not skip this.** "That's the most useful thing this field does all day. The failure mode of an AI value generator is a plausible invented number walking into a CFO conversation. It refuses, and it tells the CSM what to go get." |
+| 5 | **Corvus's value narrative — show it, do NOT regenerate** | Read the confidence line out loud. "Production AI adoption in one BU, a CFO who's never seen anything from us. This is the paragraph the CSM couldn't write. And look at the bottom: it reports its own confidence as Low and says the figures are illustrative and not yet reconciled against platform run logs. Value Validation validates the number before it leaves Draft." |
+| 6 | **⭐ Generate live on Floor & Board** | This is the one you run in the room. It returns `INSUFFICIENT EVIDENCE`. **Do not skip this.** "That's the most useful thing this field does all day. The failure mode of an AI value generator is a plausible invented number walking into a CFO conversation. It refuses, and it tells the CSM what to go get." |
 | 7 | **The diagnostic session form** | This is the "where do the scores come from" answer, so don't skip it. "The diagnostic isn't a form the CSM fills in afterwards. It's the agenda of a meeting they run with the customer, on screen, together — the 1-to-5 anchors are visible and the customer is reading them with you. Every score requires an evidence note before it can be submitted. That's what stops this being another CRM field nobody updates." |
+
+### ⚠ Why beats 5 and 6 swapped — read before you rehearse them
+
+An earlier version ran **Corvus** live and showed Floor & Board. That's backwards, and it was
+checked against the base on 2026-07-29. **All six narratives are already generated**, so nothing is
+being generated fresh in the room either way — you are regenerating. Which one you regenerate
+matters:
+
+- **Corvus's current output is the best artifact in the build and you do not want to re-roll it.**
+  It produces the CFO-ready numbers *and* then reports `CONFIDENCE: Low`, stating that the figures
+  come from a champion's internal spreadsheet and are "an illustrative seed value not yet reconciled
+  against platform run logs." That self-disclosure is the single most defensible thing here in front
+  of Airtable, and a regeneration is a coin flip on whether it survives.
+- **Floor & Board is the safe live run and the better moment.** There is genuinely no evidence at
+  that account, so it will refuse again. Only the wording of what it asks for varies, and any
+  version of that list makes the point. It's also already flagged stale, so the regenerate control
+  is sitting right there.
+
+Five of the six narratives carry a stale flag. That's cosmetic — a dependency changed after
+generation — and regenerating them all risks changing output that currently passes every gate.
+**Leave them.**
 
 **On beat 7, two things not to claim.** No automations are built in this base. Promoting a new
 diagnostic to `Accounts.Current Diagnostic` is automation **A1**, which is specified in
@@ -173,8 +197,15 @@ Prepared answers: [`qa-prep.md`](qa-prep.md).
 
 - [ ] Base loaded, recruiter has editor access, workspace ID sent
 - [ ] Demo path walked end to end, timed
-- [ ] One AI generation held back to run **live** — not pre-generated
+- [ ] **The live generation is Floor & Board, not Corvus.** All six narratives are already
+      generated, so this is a regeneration either way — see beat 5/6 above for why the direction
+      matters. Leave Corvus's alone.
 - [ ] Floor & Board left in its `INSUFFICIENT EVIDENCE` state on purpose
+- [ ] Two fields hidden in the base so nothing reads as unfinished: `CSMs.From field: Paired With`
+      and `Diagnostics.Diagnostic`. **Neither was deleted, deliberately.** `Diagnostics.Diagnostic`
+      has a live interface dependency on the *Inbox: Accounts Detail* record page, and Airtable
+      warns that dependency changes can't be undone. It's blank on all six records, so the cost of
+      leaving it is a blank field on a page you probably won't open.
 - [ ] `02-book-diagnosis.md` open in a second tab for the full scoring table (the 1–2 page
       brief only carries the averages)
 - [ ] Know the four numbers cold: **$5.06M book · $3.11M at risk · 61% · Value evidence 1.3 avg

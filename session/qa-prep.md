@@ -201,6 +201,21 @@ second-largest account needs now and nobody on the team has run before, then P7.
 
 ---
 
+## Empty fields that are baselines, not gaps
+
+If they open the base and find these blank, the answer is "correct, and here's why" rather than a
+concession. All four checked live on 2026-07-29.
+
+| What's empty | Why that's right |
+|---|---|
+| `Play Accepted` — unset on all six diagnostics | These are the first diagnostics. The field exists so a CSM can **challenge** the AI's play, and nobody has run one yet |
+| Value coverage — 0 of 6 | The baseline. It's the number Priority 2 exists to move, and claiming any coverage today would be the exact failure the brief is about |
+| `Plays Authored` — 0 of 6 CSMs | Same. Play authorship is how leads surface by day 90, measured from zero |
+| Five of six value narratives flagged stale | Cosmetic. A dependency changed after generation. Regenerating them risks output that currently passes every gate |
+
+**Do not populate any of these to look finished.** A dashboard with invented coverage is the thing
+this whole argument is against.
+
 ## Questions I'd ask them
 
 Being asked "what questions do you have" is part of the assessment. These are real ones whose
